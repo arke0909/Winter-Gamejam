@@ -20,34 +20,33 @@ public enum SkillType
 }
 public class SkillManager : MonoSingleton<SkillManager>
 {
-    private Dictionary<Type, Skill> _skills;
+    private Dictionary<SkillType, Tuple<Type, Skill>> _skills;
     private Player _player;
-
     private void Awake()
     {
-        _skills = new Dictionary<Type, Skill>();
+        _skills = new Dictionary<SkillType, Tuple<Type, Skill>>();
     }
 
     private void Start()
     {
-        foreach (var skillType in Enum.GetValues(typeof(SkillType)))
+        foreach (SkillType skillType in Enum.GetValues(typeof(SkillType)))
         {
             Skill skill = GetComponent($"{skillType.ToString()}Skill") as Skill;
+            if (skill == null)
+            {
+                Debug.LogError($"{skillType} is not Found");
+                return;
+            }
             skill.Initialize(_player);
             Type type = skill.GetType();
-            
-            _skills.Add(type, skill);
+            Tuple<Type, Skill> tuple = new Tuple<Type, Skill>(type, skill);
+            _skills.Add(skillType, tuple);
         }
     }
 
-    public T GetSkill<T>() where T : Skill
+    public void GetSkill(SkillType type)
     {
-        Type type = typeof(T);
-
-        if (_skills.TryGetValue(type, out Skill targetSkill))
-        {
-            return targetSkill as T;
-        }
-        return null;
+        Debug.Assert(_skills.ContainsKey(type) == true, $"{type} is not Found");
+        _skills[type].Item2.OnSkill();
     }
 }
