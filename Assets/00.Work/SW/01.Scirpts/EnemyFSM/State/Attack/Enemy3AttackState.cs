@@ -12,11 +12,16 @@ public class Enemy3AttackState : EnmyState
 
         moveDecision.IsMoveEnd = false;
         _brain.EnemyRIgid.linearVelocity = Vector3.zero;
-        StartCoroutine(StartAttackTime());
+        Vector2 enemyRushDIr = (_brain.Target.transform.position - _brain.transform.position).normalized;
+        StartCoroutine(StartAttackTime(enemyRushDIr,0.2f));
     }
 
-    private IEnumerator StartAttackTime()
+    private IEnumerator StartAttackTime(Vector2 attackDirection, float attackPower)
     {
+        if(Physics2D.Raycast(transform.position, attackDirection, attackPower))
+        {
+            print("공격성공");
+        }
         yield return new WaitForSeconds(0.2f);
         moveDecision.IsMoveEnd = true;
     }

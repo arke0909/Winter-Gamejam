@@ -6,6 +6,7 @@ public class EnemyBrain : MonoBehaviour
     [SerializeField] private EnmyState startState;
     [SerializeField] private EnemyDataSO _enemyDataSO;
     [SerializeField] private Player _player;
+
     private List<EnmyState> _enmyStates;
     private EnmyState _currentState;
     private Rigidbody2D _rigidbody;
