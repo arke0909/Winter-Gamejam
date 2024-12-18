@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: SantanPet
   m_EditorClassIdentifier: 
   Damage: 5
+  LifeTime: 2
+  Speed: 25
   AttackTime: 1
   AttackRange: 3.2
