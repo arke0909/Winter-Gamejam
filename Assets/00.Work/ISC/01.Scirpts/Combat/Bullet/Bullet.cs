@@ -3,7 +3,7 @@ using GGMPool;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Bullet : MonoBehaviour, IPoolable
+public abstract class Bullet : MonoBehaviour, IPoolable
 {
     [SerializeField] private PoolManagerSO poolManagerSO;
     [SerializeField] private PoolTypeSO poolType;
@@ -47,10 +47,7 @@ public class Bullet : MonoBehaviour, IPoolable
         damageCaster.CastDamage(_damage, _knockbackPower);
     }
 
-    private void Hit()
-    {
-        throw new NotImplementedException();
-    }
+    protected abstract void Hit();
 
     private void CalculateTime()
     {
