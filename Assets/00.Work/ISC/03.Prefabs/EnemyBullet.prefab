@@ -129,5 +129,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolType: {fileID: 11400000, guid: 2b6a1cc043be7f445972e73a1c435560, type: 2}
-  speed: 0
-  <LifeTime>k__BackingField: 0
+  speed: 15
+  <LifeTime>k__BackingField: 1.4
