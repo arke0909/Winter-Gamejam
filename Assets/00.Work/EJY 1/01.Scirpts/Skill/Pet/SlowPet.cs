@@ -23,7 +23,7 @@ public class SlowPet : Pet
         }
     }
 
-    public void IncreaseLevel()
+    public void IncreaseLevel() 
     {
         if (upgradeLevel >= 5)
         {
