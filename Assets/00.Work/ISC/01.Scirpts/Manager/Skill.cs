@@ -7,15 +7,15 @@ public abstract class Skill : MonoBehaviour
     public bool skillEnabled = false;
     [SerializeField] protected float cooldown;
     protected float CooldownTimer;
-    // protected Player player;
+    protected Player Player;
 
     public bool IsCooldown => CooldownTimer > 0f;
     public event CooldownInfoEvent OnCooldownInfoEvent;
 
-    // public virtual void Initialize(Player player)
-    // {
-    //     player = this.player
-    // }
+    public virtual void Initialize(Player player)
+    {
+        Player = player;
+    }
 
     protected virtual void Update()
     {
