@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ReloadSkill : Skill
 {
+    public float[] values = new float[5];
+
     private Gun _gun;
 
     public override void Initialize(Player player)
@@ -13,5 +15,6 @@ public class ReloadSkill : Skill
 
     protected override void Upgrade()
     {
+        _gun.ReloadUpgrade(values[CurrentLevel]);
     }
 }

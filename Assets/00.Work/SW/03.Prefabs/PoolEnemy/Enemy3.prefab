@@ -191,6 +191,7 @@ MonoBehaviour:
   startState: {fileID: 3413424011404915428}
   _enemyDataSO: {fileID: 11400000, guid: ff7368cdbac23f9418285c69b3dde824, type: 2}
   _player: {fileID: 0}
+  _poolType: {fileID: 11400000, guid: 2729d3c8e8ede5e42adfbc9fcefd9c78, type: 2}
   IsLongRange: 0
   gunBasePosition: {fileID: 0}
 --- !u!50 &1860121947290048343
