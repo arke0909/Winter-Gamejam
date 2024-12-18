@@ -46,14 +46,35 @@ public class BoomPet : Pet
             RangeDraw();
             lastAttackTime = Time.time;
         }
+        //테스트용
+        if (Input.GetKeyDown(KeyCode.K))
+            IncreaseLevel();
+            
     }
 
     public override void RangeDraw()
     {
         Collider2D[] hitTargets = Physics2D.OverlapCircleAll(transform.position, Range);
+        float closestDistance = Mathf.Infinity;
+        GameObject closestTarget = null;
+        
         foreach (var target in hitTargets)
         {
-            Attack(target.gameObject);
+            if (target.CompareTag("Enemy")) 
+            {
+                float distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
+                if (distanceToTarget < closestDistance)
+                {
+                    closestDistance = distanceToTarget;
+                    closestTarget = target.gameObject; 
+                }
+            }
+        }
+
+        // 가장 가까운 적이 있으면 그 위치로 총알 발사
+        if (closestTarget != null)
+        {
+            Attack(closestTarget);
         }
     }
 
