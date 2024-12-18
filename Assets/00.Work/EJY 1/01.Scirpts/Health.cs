@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class Health : MonoBehaviour
 {
-    public float currentHealth;  
+    private float currentHealth;  
     protected float maxHealth;   
 
    
@@ -14,7 +14,7 @@ public abstract class Health : MonoBehaviour
     }
 
     // - 
-    public virtual void TakeDamage(float damage, Vector2 normal)
+    public virtual void TakeDamage(float damage)
     {
         currentHealth -= damage;
         if (currentHealth <= 0)
@@ -40,8 +40,5 @@ public abstract class Health : MonoBehaviour
         return currentHealth;
     }
 
-    internal void TakeDamage(int damage, Vector2 normal, Vector2 point, float knockbackPower)
-    {
-        throw new NotImplementedException();
-    }
+    
 }

@@ -23,11 +23,6 @@ public class Player : MonoBehaviour
         _playerMover.SetVelocity(_inputReader.InputDir);
     }
 
-    private void Flip()
-    {
-        
-    }
-
     private void SetComponent()
     {
         GetComponentsInChildren<IPlayerComponent>().ToList().ForEach(component => { _components.Add(component.GetType(), component); });
