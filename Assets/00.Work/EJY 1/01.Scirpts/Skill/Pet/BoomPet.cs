@@ -71,7 +71,7 @@ public class BoomPet : Pet
             }
         }
 
-        // 가장 가까운 적이 있으면 그 위치로 총알 발사
+        // 가장 가까운 적
         if (closestTarget != null)
         {
             Attack(closestTarget);
