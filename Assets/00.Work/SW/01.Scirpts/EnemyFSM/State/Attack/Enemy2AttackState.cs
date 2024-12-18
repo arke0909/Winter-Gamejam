@@ -15,7 +15,7 @@ public class Enemy2AttackState : EnmyState
                 if (decision.GetComponent<MoveDecision>() != null) moveDecision = decision.GetComponent<MoveDecision>();
 
         moveDecision.IsMoveEnd = false;
-        _brain.EnemyRIgid.linearVelocity = Vector3.zero;
+        _brain.EnemyRIgidCompo.linearVelocity = Vector3.zero;
         StartCoroutine(StartAttackTime());
     }
 

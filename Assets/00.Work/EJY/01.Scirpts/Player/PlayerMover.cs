@@ -7,6 +7,7 @@ public class PlayerMover : MonoBehaviour, IPlayerComponent
     private Rigidbody2D _rigidCompo;
     private Player _player;
 
+
     public void Initialize(Player player)
     {
         _player = player;
