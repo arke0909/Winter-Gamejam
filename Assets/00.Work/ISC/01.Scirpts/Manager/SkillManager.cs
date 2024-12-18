@@ -20,6 +20,8 @@ public enum SkillType
 }
 public class SkillManager : MonoSingleton<SkillManager>
 {
+    public Action OnHit;
+    
     private Dictionary<SkillType, Tuple<Type, Skill>> _skills;
     private Player _player;
     private void Awake()
@@ -47,6 +49,11 @@ public class SkillManager : MonoSingleton<SkillManager>
     public void GetSkill(SkillType type)
     {
         Debug.Assert(_skills.ContainsKey(type) == true, $"{type} is not Found");
+
+        if (_skills[type].Item2.TryGetComponent(out IBulletAble bullet))
+        {
+            OnHit += bullet.BulletAbility;
+        }
         _skills[type].Item2.OnSkill();
     }
 }
