@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour
     private void Spawn()
     {
         EnemyBrain brain = poolManager.Pop(poolType) as EnemyBrain;
-        brain.Init(_player); 
+        brain.Init(_player, transform); 
         if (minuteCount > 0)
             brain.EnemyStatCompo.UpgradeStat(1.3f * minuteCount);
     }
@@ -26,16 +26,16 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time >= 60 * minuteCount + 1)
+        if (Time.time >= 60 * (minuteCount + 1))
         {
+            print("강화");
             minuteCount++;
-            print("레벨업");
+            SpawnerProbability--;
         }
-        int random = Random.Range(0, SpawnerProbability);
         if(!spawnCoolTiem)
         {
-            
-            print("스폰함");
+            int random = Random.Range(0, SpawnerProbability);
+            if(random == 0) Spawn();
             spawnCoolTiem = true;
             StartCoroutine(StartSpawnCoolTiem());
         }
@@ -43,8 +43,7 @@ public class Spawner : MonoBehaviour
 
     private IEnumerator StartSpawnCoolTiem()
     {
-        yield return new WaitForSeconds(1.5f);
-        print("스폰시작");
+        yield return new WaitForSeconds(0.5f);
         spawnCoolTiem = false;
     }
 }

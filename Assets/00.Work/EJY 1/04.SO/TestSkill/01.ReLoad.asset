@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 573de054014e2364f9f3bd5ebc6355e0, type: 3}
+  m_Name: 01.ReLoad
+  m_EditorClassIdentifier: 
+  type: 0
+  toolTip: "\uCD1D \uC7A5\uC804 \uC18D\uB3C4 15/30/45/60/75% \uAC10\uC18C"
+  skillName: "\uB9AC\uB85C\uB4DC "
+  icon: {fileID: -114827430767561389, guid: 684eae13667d1c24b8851d5f704aabd2, type: 3}
+  itemId: 1
