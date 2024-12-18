@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 573de054014e2364f9f3bd5ebc6355e0, type: 3}
+  m_Name: 14.BoomPet
+  m_EditorClassIdentifier: 
+  type: 13
+  toolTip: "\uC801\uC5D0\uAC8C \uC801\uC911 \uC2DC \uBC18\uC9C0\uB984 3\uB9CC\uD07C
+    \uD3ED\uBC1C\uD558\uB294 \uCD1D\uC54C\uC744 \uBC1C\uC0AC\uD55C\uB2E4.  \uAE30\uBCF8
+    \uACF5\uACA9\uB825 : 6/10/12/16/18  \uD0C4\uC18D : 15   \uC0AC\uAC70\uB9AC :
+    6   \uACF5\uACA9 \uC18D\uB3C4 : 7\uCD08"
+  skillName: "\uD3ED\uBC1C \uD3AB "
+  icon: {fileID: -7028066036478859568, guid: 1b8b6a6770f2c174e96385cb721dad17, type: 3}
+  itemId: 14
