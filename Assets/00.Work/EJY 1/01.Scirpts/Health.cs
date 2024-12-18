@@ -33,4 +33,9 @@ public abstract class Health : MonoBehaviour
     {
         currentHealth = Mathf.Min(currentHealth + healAmount, maxHealth);
     }
+    //¹ÝÈ¯
+    public float GetCurrentHealth()
+    {
+        return currentHealth;
+    }
 }
