@@ -6,7 +6,7 @@ public abstract class Pet : MonoBehaviour
 {
     [SerializeField] private PetSO petSo;
     [SerializeField] protected PoolManagerSO poolManagerSO;
-    [SerializeField] protected PoolTypeSO poolcTypeSO;
+    [SerializeField] protected PoolTypeSO poolTypeSO;
     
     [field: SerializeField] public int CurrentLevel { get; protected set; } = 1;
     [field: SerializeField] public int UpgradeArrIdx { get; protected set; } = 0;
@@ -16,6 +16,7 @@ public abstract class Pet : MonoBehaviour
     protected float AttackTime;
     protected float[] UpgradeArray;
     protected float Range => petSo.AttackRange;
+    protected float KnockbackPower => petSo.KnockbackPower;
 
     private float cooldown;
 
