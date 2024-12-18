@@ -1,11 +1,8 @@
 using UnityEngine;
 
-public class Collectable
+public abstract class Collectable : MonoBehaviour
 {
-
-
-    public void Collect(Transform transform, float magneticPower)
-    {
-
-    }
+    protected bool _alreadyCollected;
+    protected bool _canCollectable;
+    public abstract void Collect(Transform transform, float magneticPower);
 }
