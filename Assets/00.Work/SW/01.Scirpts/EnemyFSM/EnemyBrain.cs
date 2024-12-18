@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using UnityEngine;
 
-public class EnemyBrain : MonoBehaviour
+public class EnemyBrain : MonoBehaviour, IPoolable
 {
     [SerializeField] private EnmyState startState;
     [SerializeField] private EnemyDataSO _enemyDataSO;
     [SerializeField] private Player _player;
+    [SerializeField] private PoolTypeSO _poolType;
 
     private List<EnmyState> _enmyStates;
     private EnmyState _currentState;
     private Rigidbody2D _rigidbody;
     private EnemyStat _enemyStat;
-    private EnemyHealth _enemyHealth;
+    private EnemyHealth _enemyHealth; 
+
 
     [SerializeField] private bool IsLongRange;
     [SerializeField] private Transform gunBasePosition;
@@ -23,7 +25,10 @@ public class EnemyBrain : MonoBehaviour
     public Rigidbody2D EnemyRIgidCompo {  get { return _rigidbody; } }
     public EnemyHealth EnemyHealthCompo { get { return _enemyHealth; } }
 
-    private int minuteCount = 1;
+    public PoolTypeSO PoolType => PoolType;
+
+    public GameObject GameObject => gameObject;
+
     public void Init()
     {
         _enmyStates = new List<EnmyState>();
@@ -60,5 +65,15 @@ public class EnemyBrain : MonoBehaviour
             _currentState.OnExitState();
         _currentState = golemAIState;
         _currentState.OnEnterState();
+    }
+
+    public void SetUpPool(Pool pool)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void ResetItem()
+    {
+        throw new System.NotImplementedException();
     }
 }

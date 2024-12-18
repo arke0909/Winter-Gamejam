@@ -6,8 +6,13 @@ public class Spawner : MonoBehaviour
     [SerializeField] private PoolTypeSO poolType;
     [SerializeField] private PoolManagerSO poolManager;
 
-    private int minuteCount = 1;
+    private int minuteCount = 0;
     private float Drainage = 1.3f;
+
+    private void Awake()
+    {
+        
+    }
 
     private void Spawn()
     {
@@ -18,7 +23,7 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time >= 60 * minuteCount)
+        if (Time.time >= 60 * minuteCount + 1)
         {
             minuteCount++;
         }
