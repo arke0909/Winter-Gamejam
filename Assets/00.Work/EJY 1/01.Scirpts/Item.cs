@@ -14,8 +14,8 @@ public class Item : MonoBehaviour
     [SerializeField]TextMeshProUGUI levelText;
     [SerializeField]TextMeshProUGUI skillame;
     [SerializeField] TextMeshProUGUI tooltip;
-   
 
+   
     //waepon 이란게 있긴한데..
     void Start()
     {
@@ -27,53 +27,124 @@ public class Item : MonoBehaviour
         tooltip.text=testSkillSO.toolTip;
 
     }
-    
-    void Update()
+
+    private void OnEnable()
     {
-        
+        levelText.text = "Lv." + level;
+
     }
 
-    private void LateUpdate()
-    {
-        levelText.text = "Lv." + (level );
-    }
+   
+  
     public void OnClick()
     {
         switch (testSkillSO.type) { 
         case TestSkillSO.skillType.Reload:
+                if (level == 0)
+                {
+                    //0에서 1로 => 증강이 처음으로 선택되어 추가되어야 할때 써야할 로직
+                }
+                else
+                {
+                    //이후 로직.. 
+                }
             break;
         case TestSkillSO.skillType.Haste:
-            break;
+                if (level == 0)
+                {
+                    //0에서 1로 => 증강이 처음으로 선택되어 추가되어야 할때 써야할 로직
+                }
+                else
+                {
+                    //이후 로직.. 
+                }
+                break;
         case TestSkillSO.skillType.TriggerStrength:
-            break;
+                if (level == 0)
+                {
+                    //0에서 1로 => 증강이 처음으로 선택되어 추가되어야 할때 써야할 로직
+                }
+                else
+                {
+                    //이후 로직.. 
+                }
+                break;
         case TestSkillSO.skillType.Adrenaline:
-            break;
+                if (level == 0)
+                {
+                    
+                }
+                break;
         case TestSkillSO.skillType.Penetration:
-            break;
+                if (level == 0)
+                {
+
+                }
+                break;
         case TestSkillSO.skillType.ElectronicBullet:
-            break;
+                if (level == 0)
+                {
+
+                }
+                break;
         case TestSkillSO.skillType.BoomIsArt:
-            break;
+                if (level == 0)
+                {
+
+                }
+                break;
         case TestSkillSO.skillType.LookLikeLong:
-            break;
+                if (level == 0)
+                {
+
+                }
+                break;
         case TestSkillSO.skillType.LimeBullet:
-            break;
+                if (level == 0)
+                {
+
+                }
+                break;
         case TestSkillSO.skillType.CellBullet:
-            break;
+                if (level == 0)
+                {
+
+                }
+                break;
         case TestSkillSO.skillType.Seasoneded:
-            break;
+                if (level == 0)
+                {
+
+                }
+                break;
         case TestSkillSO.skillType.BloodedBullet:
-            break;
+                if (level == 0)
+                {
+
+                }
+                break;
         case TestSkillSO.skillType.SamTanPet:
-            break;
+                if (level == 0)
+                {
+
+                }
+                break;
         case TestSkillSO.skillType.BoomPet:
-            break;
+                if (level == 0)
+                {
+
+                }
+                break;
         case TestSkillSO.skillType.SlowPet:
-            break;
+                if (level == 0)
+                {
+
+                }
+                break;
 
 
         }
-        level++;
+        level++; //로직 끝나고 레벨값이 오릅니다~
 
         
     }
