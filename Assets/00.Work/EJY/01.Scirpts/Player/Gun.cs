@@ -13,7 +13,7 @@ public class Gun : MonoBehaviour, IPlayerComponent
     private Player _player;
     private InputReader _inputReader;
 
-    private bool _canFire;
+    private bool _canFire = true;
 
     [field: SerializeField]
     public float ReloadTime { get; private set; } = 2;
