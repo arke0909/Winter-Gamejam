@@ -4,12 +4,12 @@ using UnityEngine;
 public abstract class EnmyState : MonoBehaviour
 {
     protected EnemyBrain _brain;
-    protected EnemyDataSO _dataSO;
+    protected EnemyStat _stat;
     protected List<EnemyDecision> _decisions;
-    public virtual void Init(EnemyBrain brain, EnemyDataSO enemyDataSO)
+    public virtual void Init(EnemyBrain brain, EnemyStat enemyStat)
     {
         _brain = brain;
-        _dataSO = enemyDataSO;
+        _stat = enemyStat;
         _decisions = new List<EnemyDecision>();
         GetComponentsInChildren(_decisions);
         _decisions.ForEach(decision => decision.Init(brain));

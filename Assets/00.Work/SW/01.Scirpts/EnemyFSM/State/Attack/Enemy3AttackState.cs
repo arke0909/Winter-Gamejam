@@ -4,6 +4,7 @@ using UnityEngine;
 public class Enemy3AttackState : EnmyState
 {
     private MoveDecision moveDecision;
+    [SerializeField] private LayerMask playerLayer;
     public override void OnEnterState()
     {
         if (moveDecision == null)
@@ -11,14 +12,14 @@ public class Enemy3AttackState : EnmyState
                 if (decision.GetComponent<MoveDecision>() != null) moveDecision = decision.GetComponent<MoveDecision>();
 
         moveDecision.IsMoveEnd = false;
-        _brain.EnemyRIgid.linearVelocity = Vector3.zero;
+        _brain.EnemyRIgidCompo.linearVelocity = Vector3.zero;
         Vector2 enemyRushDIr = (_brain.Target.transform.position - _brain.transform.position).normalized;
-        StartCoroutine(StartAttackTime(enemyRushDIr,0.2f));
+        StartCoroutine(StartAttackTime());
     }
 
-    private IEnumerator StartAttackTime(Vector2 attackDirection, float attackPower)
+    private IEnumerator StartAttackTime()
     {
-        if(Physics2D.Raycast(transform.position, attackDirection, attackPower))
+        if(Physics2D.OverlapCircle(transform.position, 0.7f, playerLayer))
         {
             print("공격성공");
         }
@@ -34,5 +35,10 @@ public class Enemy3AttackState : EnmyState
     public override void UpdateState()
     {
         base.UpdateState();
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, 0.5f);
     }
 }

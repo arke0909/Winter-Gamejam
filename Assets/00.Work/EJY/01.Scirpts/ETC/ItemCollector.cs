@@ -24,4 +24,13 @@ public class ItemCollector : MonoBehaviour
             }
         }
     }
+
+#if UNITY_EDITOR
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, _radius);
+        Gizmos.color = Color.white;
+    }
+#endif
 }
