@@ -4,7 +4,7 @@ public class DeadState : EnmyState
 {
     public override void OnEnterState()
     {
-        _brain.EnemyRIgid.linearVelocity = Vector3.zero;
+        _brain.EnemyRIgidCompo.linearVelocity = Vector3.zero;
     }
 
     public override void OnExitState()

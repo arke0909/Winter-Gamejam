@@ -13,7 +13,7 @@ public class Enemy1AttackState : EnmyState
                 if (decision.GetComponent<MoveDecision>() != null) moveDecision = decision.GetComponent<MoveDecision>();
 
         moveDecision.IsMoveEnd = false;
-        _brain.EnemyRIgid.linearVelocity = Vector3.zero;
+        _brain.EnemyRIgidCompo.linearVelocity = Vector3.zero;
 
         Vector2 enemyRushDIr = (_brain.Target.transform.position - _brain.transform.position).normalized;
         StartCoroutine(StartRushTime(enemyRushDIr, rushDistance));
@@ -22,8 +22,8 @@ public class Enemy1AttackState : EnmyState
 
     private IEnumerator StartRushTime(Vector2 rushDirection, float rushPower)
     {
-        _brain.EnemyRIgid.linearVelocity = rushDirection * rushPower;
-        if(Physics2D.OverlapCircle(transform.position,0.5f,playerLayer))
+        _brain.EnemyRIgidCompo.linearVelocity = rushDirection * rushPower;
+        if(Physics2D.OverlapCircle(transform.position,0.7f,playerLayer))
         {
             print("공격성공");
         }
