@@ -14,7 +14,7 @@ public abstract class Health : MonoBehaviour
     }
 
     // - 
-    public virtual void TakeDamage(float damage, Vector2 normal)
+    public virtual void TakeDamage(float damage)
     {
         currentHealth -= damage;
         if (currentHealth <= 0)
