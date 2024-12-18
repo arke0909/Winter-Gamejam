@@ -20,7 +20,7 @@ public class BoomPet : Pet
             case 0: petDamage = 6f; break;
             case 1: petDamage = 10f; break;
             case 2: petDamage = 12f; break;
-            case 3: petDamage = 16f; break;
+           case 3: petDamage = 16f; break;
             case 4: petDamage = 18f; break;
             default: petDamage = 18f; break;
         }
