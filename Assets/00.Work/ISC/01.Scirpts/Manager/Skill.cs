@@ -19,6 +19,7 @@ public abstract class Skill : MonoBehaviour
     public void OnSkill()
     {
         skillEnabled = true;
+        Upgrade();
     }
 
     public virtual void UseSkill()

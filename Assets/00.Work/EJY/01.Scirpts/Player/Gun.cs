@@ -90,4 +90,14 @@ public class Gun : MonoBehaviour, IPlayerComponent
     {
         _inputReader.OnAttackEvent -= HandleSAttackEvent;
     }
+
+    public void ReloadUpgrade(float multiply)
+    {
+        currentLoadTime = BaseReloadTime - (BaseReloadTime * multiply);
+    }
+
+    public void AttackUpgrade(float multiply)
+    {
+
+    }
 }
