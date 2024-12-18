@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2674626589333048010}
   - component: {fileID: 8978378461850935989}
   - component: {fileID: -8651264537770466090}
-  - component: {fileID: 7573735338247291738}
+  - component: {fileID: 1202692231828429721}
   m_Layer: 0
   m_Name: EnemyBullet
   m_TagString: Untagged
@@ -116,7 +116,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7573735338247291738
+--- !u!114 &1202692231828429721
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,11 +125,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1366658347451685464}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9183f4e280cbf034c83a0bc28c39ca7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e85daa83c945ca448674614f67d65f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolManagerSO: {fileID: 11400000, guid: d37261864854dfa41af86456b43594a7, type: 2}
-  poolType: {fileID: 11400000, guid: 2b6a1cc043be7f445972e73a1c435560, type: 2}
-  damageCaster: {fileID: 0}
-  speed: 15
-  <LifeTime>k__BackingField: 1.4

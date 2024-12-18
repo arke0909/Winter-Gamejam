@@ -1,16 +1,8 @@
 using UnityEngine;
 
-public class EnemyBullet : MonoBehaviour
+public class EnemyBullet : Bullet
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected override void Hit()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

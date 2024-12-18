@@ -53,7 +53,6 @@ public abstract class Bullet : MonoBehaviour, IPoolable
         if (Time.time - _startTime > LifeTime)
         {
             _isDead = true;
-            
             poolManagerSO.Push(this);
         }
     }
@@ -74,7 +73,7 @@ public abstract class Bullet : MonoBehaviour, IPoolable
 
     public virtual void ResetItem()
     {
+        _startTime = Time.time;
         _isDead = false;
-        _startTime = 0;
     }
 }

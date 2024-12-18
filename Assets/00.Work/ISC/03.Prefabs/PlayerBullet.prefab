@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5567493839329275820}
   - component: {fileID: 3011482866974408046}
   - component: {fileID: 1516940579963831465}
-  - component: {fileID: 6978186351945444026}
+  - component: {fileID: 2983877796086677668}
   m_Layer: 0
   m_Name: PlayerBullet
   m_TagString: Untagged
@@ -116,7 +116,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6978186351945444026
+--- !u!114 &2983877796086677668
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,11 +125,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 288639611536451263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9183f4e280cbf034c83a0bc28c39ca7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7363a7e05cc8c4e45b5de0ac497f5728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   poolManagerSO: {fileID: 11400000, guid: d37261864854dfa41af86456b43594a7, type: 2}
   poolType: {fileID: 11400000, guid: b77bb4890723fe440bc4ffa7447a6771, type: 2}
   damageCaster: {fileID: 0}
-  speed: 25
-  <LifeTime>k__BackingField: 0.8
+  speed: 0
+  <LifeTime>k__BackingField: 0
