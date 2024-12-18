@@ -2,7 +2,6 @@ using System;
 using GGMPool;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 public class Bullet : MonoBehaviour, IPoolable
 {
@@ -21,7 +20,7 @@ public class Bullet : MonoBehaviour, IPoolable
     private void Awake()
     {
         _rigid = GetComponent<Rigidbody2D>();
-    } 
+    }
     
     private void Start()
     {
@@ -52,7 +51,7 @@ public class Bullet : MonoBehaviour, IPoolable
         _pool = pool;
     }
 
-    public void ResetItem()
+    public virtual void ResetItem()
     {
         _startTime = 0;
     }
