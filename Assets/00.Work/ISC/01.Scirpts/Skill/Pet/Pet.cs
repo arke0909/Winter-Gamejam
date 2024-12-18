@@ -4,6 +4,8 @@ using GGMPool;
 
 public abstract class Pet : MonoBehaviour
 {
+    [SerializeField] protected Transform fireForceTrm;
+    
     [SerializeField] private PetSO petSo;
     [SerializeField] protected PoolManagerSO poolManagerSO;
     [SerializeField] protected PoolTypeSO poolTypeSO;
@@ -25,10 +27,10 @@ public abstract class Pet : MonoBehaviour
     private void Awake()
     {
         Debug.Assert(petSo != null,$"PetSO is NULL or Empty");
-        Initalize();
+        Initialize();
     }
 
-    private void Initalize()
+    private void Initialize()
     {
         AttackTime = petSo.AttackTime;
         UpgradeArray = petSo.IncreaseValues;

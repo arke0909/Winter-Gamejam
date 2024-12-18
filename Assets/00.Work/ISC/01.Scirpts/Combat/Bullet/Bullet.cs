@@ -1,12 +1,13 @@
 using System;
 using GGMPool;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public abstract class Bullet : MonoBehaviour, IPoolable
 {
-    [SerializeField] private PoolManagerSO poolManagerSO;
+    [SerializeField] private PoolManagerSO poolManagerSo;
     [SerializeField] private PoolTypeSO poolType;
-    [SerializeField] private DamageCaster damageCaster;
+    [SerializeField] protected DamageCaster damageCaster;
     
     [SerializeField] protected float speed;
     
@@ -15,7 +16,9 @@ public abstract class Bullet : MonoBehaviour, IPoolable
 
     private bool _isDead = false;
 
-    private float _damage, _knockbackPower;
+    protected float _damage, _knockbackPower;
+
+    protected GameObject Target;
     
     public PoolTypeSO PoolType => poolType;
     public GameObject GameObject => this.gameObject;
@@ -40,10 +43,11 @@ public abstract class Bullet : MonoBehaviour, IPoolable
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (_isDead) return;
-
+        Target = other.gameObject;
         Hit();
 
         damageCaster.CastDamage(_damage, _knockbackPower);
+        poolManagerSo.Push(this);
     }
 
     protected abstract void Hit();
@@ -53,7 +57,7 @@ public abstract class Bullet : MonoBehaviour, IPoolable
         if (Time.time - _startTime > LifeTime)
         {
             _isDead = true;
-            poolManagerSO.Push(this);
+            poolManagerSo.Push(this);
         }
     }
 
