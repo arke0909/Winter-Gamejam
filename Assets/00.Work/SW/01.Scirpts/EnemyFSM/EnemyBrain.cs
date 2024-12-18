@@ -1,4 +1,5 @@
 using GGMPool;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using UnityEngine;
@@ -7,15 +8,15 @@ public class EnemyBrain : MonoBehaviour, IPoolable
 {
     [SerializeField] private EnmyState startState;
     [SerializeField] private EnemyDataSO _enemyDataSO;
-    [SerializeField] private Player _player;
     [SerializeField] private PoolTypeSO _poolType;
 
+    private Player _player;
     private List<EnmyState> _enmyStates;
     private EnmyState _currentState;
     private Rigidbody2D _rigidbody;
     private EnemyStat _enemyStat;
-    private EnemyHealth _enemyHealth; 
-
+    private EnemyHealth _enemyHealth;
+    private Pool _pool;
 
     [SerializeField] private bool IsLongRange;
     [SerializeField] private Transform gunBasePosition;
@@ -25,12 +26,18 @@ public class EnemyBrain : MonoBehaviour, IPoolable
     public Rigidbody2D EnemyRIgidCompo {  get { return _rigidbody; } }
     public EnemyHealth EnemyHealthCompo { get { return _enemyHealth; } }
 
-    public PoolTypeSO PoolType => PoolType;
+    public PoolTypeSO PoolType => _poolType;
 
     public GameObject GameObject => gameObject;
 
-    public void Init()
+    private bool _alreadyCollected;
+
+    public void Init(Player target)
     {
+        _player = target;
+        if (_alreadyCollected) return;
+        _alreadyCollected = true;
+
         _enmyStates = new List<EnmyState>();
         GetComponentsInChildren(_enmyStates);
 
@@ -38,11 +45,17 @@ public class EnemyBrain : MonoBehaviour, IPoolable
         _enemyHealth = GetComponent<EnemyHealth>();
         _enemyStat = GetComponent<EnemyStat>();
         _enemyStat.SetStat(_enemyDataSO);
-        _enemyHealth.Initialize(EnemyStatCompo.Range);
-        print(_enemyStat);
+        _enemyHealth.Initialize(EnemyStatCompo.Hp);
+        StartCoroutine(SpawnTiem());
         _enmyStates.ForEach(state => state.Init(this, _enemyStat));
         _currentState = startState;
         
+    }
+
+    private IEnumerator SpawnTiem()
+    {
+        yield return null;
+        _enemyHealth.Initialize(EnemyStatCompo.Hp);
     }
 
     private void Update()
@@ -69,11 +82,11 @@ public class EnemyBrain : MonoBehaviour, IPoolable
 
     public void SetUpPool(Pool pool)
     {
-        throw new System.NotImplementedException();
+        _pool = pool;
     }
 
     public void ResetItem()
     {
-        throw new System.NotImplementedException();
+        _alreadyCollected = false;
     }
 }

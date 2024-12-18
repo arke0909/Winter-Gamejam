@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolType: {fileID: 11400000, guid: 322e07d88a4dd054fa99e539ce30572e, type: 2}
   poolManager: {fileID: 11400000, guid: d37261864854dfa41af86456b43594a7, type: 2}
+  _player: {fileID: 1518078824}
 --- !u!4 &371923226
 Transform:
   m_ObjectHideFlags: 0
@@ -196,6 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolType: {fileID: 11400000, guid: 2729d3c8e8ede5e42adfbc9fcefd9c78, type: 2}
   poolManager: {fileID: 11400000, guid: d37261864854dfa41af86456b43594a7, type: 2}
+  _player: {fileID: 1518078824}
 --- !u!4 &426216199
 Transform:
   m_ObjectHideFlags: 0
@@ -799,6 +801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolType: {fileID: 11400000, guid: 6c408ebe43b6d5943b1753734e86c68d, type: 2}
   poolManager: {fileID: 11400000, guid: d37261864854dfa41af86456b43594a7, type: 2}
+  _player: {fileID: 1518078824}
 --- !u!4 &2115219705
 Transform:
   m_ObjectHideFlags: 0
