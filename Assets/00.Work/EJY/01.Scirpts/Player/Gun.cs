@@ -2,6 +2,7 @@ using GGMPool;
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Gun : MonoBehaviour, IPlayerComponent
 {
@@ -37,12 +38,16 @@ public class Gun : MonoBehaviour, IPlayerComponent
 
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
 
-        transform.rotation = Quaternion.Euler(0,0,angle);
+        GunFlip(angle);
+
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
-    private void GunFlip()
+    private void GunFlip(float angle)
     {
+        float scaleY = angle > 90 || angle < -90 ? -1 : 1;
 
+        transform.localScale = new Vector3(1, scaleY, 1);
     }
 
     private void HandleSAttackEvent()
