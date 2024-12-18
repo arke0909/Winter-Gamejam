@@ -2,16 +2,17 @@ using UnityEngine;
 
 public abstract class Health : MonoBehaviour
 {
-    public float maxHealth = 100f; 
-    public float currentHealth;
+    public float currentHealth;  
+    protected float maxHealth;   
 
-    protected virtual void Start()
+   
+    public void Initialize(float maxHealth)
     {
-        currentHealth = maxHealth;
+        this.maxHealth = maxHealth; 
+        currentHealth = maxHealth;  
     }
-    
 
-   //µ¥¹ÌÁö
+    // - 
     public virtual void TakeDamage(float damage)
     {
         currentHealth -= damage;
@@ -21,13 +22,13 @@ public abstract class Health : MonoBehaviour
         }
     }
 
-    // »ç¸Á
+    // »ç¸Á 
     protected virtual void Die()
     {
-       //¶ì·Î¸® Á×À¸¼Ì½À´Ï´Ù
+       
     }
 
-    // Ã¼·ÂÀ» È¸º¹
+    //+
     public virtual void Heal(float healAmount)
     {
         currentHealth = Mathf.Min(currentHealth + healAmount, maxHealth);
