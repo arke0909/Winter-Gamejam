@@ -31,6 +31,7 @@ public class SkillManager : MonoSingleton<SkillManager>
 
     private void Start()
     {
+        _player = GameManager.Instance.Player;
         foreach (SkillType skillType in Enum.GetValues(typeof(SkillType)))
         {
             Skill skill = GetComponent($"{skillType.ToString()}Skill") as Skill;
@@ -54,6 +55,8 @@ public class SkillManager : MonoSingleton<SkillManager>
         {
             OnHit += bullet.BulletAbility;
         }
+        
+        _skills[type].Item2.UpgradeSkill();
         _skills[type].Item2.OnSkill();
     }
 }

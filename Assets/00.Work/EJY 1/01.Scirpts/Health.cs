@@ -1,44 +1,50 @@
-using System;
 using UnityEngine;
+using UnityEngine.Events;
 
-public abstract class Health : MonoBehaviour
+public class Health : MonoBehaviour
 {
-    private float currentHealth;  
-    protected float maxHealth;   
+    [field : SerializeField]
+    public float MaxHealth { get; private set; }
+    private float _currentHealth;
 
-   
-    public void Initialize(float maxHealth)
-    {
-        this.maxHealth = maxHealth; 
-        currentHealth = maxHealth;  
-    }
+    public UnityEvent DieEvent;
 
-    // - 
-    public virtual void TakeDamage(float damage)
+    public float CurrentHealth
     {
-        currentHealth -= damage;
-        if (currentHealth <= 0)
+        get
         {
-            Die();
+            return _currentHealth;
+        }
+
+        private set
+        {
+            if(value <= 0)
+                _currentHealth = 0;
+            else
+                _currentHealth = value;
         }
     }
 
-    // »ç¸Á 
+    public void Initialize(float maxHealth)
+    {
+        MaxHealth = maxHealth; 
+        CurrentHealth = maxHealth;
+    }
+
+    public virtual void TakeDamage(float damage)
+    {
+        CurrentHealth -= damage;
+        if (_currentHealth == 0)
+            Die();
+    }
+
     protected virtual void Die()
     {
-       
+        DieEvent?.Invoke();
     }
 
-    //+
-    public virtual void Heal(float healAmount)
-    {
-        currentHealth = Mathf.Min(currentHealth + healAmount, maxHealth);
-    }
-    //¹ÝÈ¯
     public float GetCurrentHealth()
     {
-        return currentHealth;
+        return _currentHealth;
     }
-
-    
 }

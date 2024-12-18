@@ -12,5 +12,9 @@ public class PetSO : ScriptableObject
     [Header("Attack Settings")]
     public float AttackTime;
     public float AttackRange;
+    public float KnockbackPower;
+
+    [Space(10)] [Header("Level Settings")]
+    public float[] IncreaseValues;
 
 }
