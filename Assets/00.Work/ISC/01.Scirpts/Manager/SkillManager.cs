@@ -54,6 +54,8 @@ public class SkillManager : MonoSingleton<SkillManager>
         {
             OnHit += bullet.BulletAbility;
         }
+        
+        _skills[type].Item2.UpgradeSkill();
         _skills[type].Item2.OnSkill();
     }
 }

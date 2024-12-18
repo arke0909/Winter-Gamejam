@@ -13,6 +13,12 @@ public class SamtanPet : Pet
     private int _maxBullet = 3;
 
     private float[] _rotates;
+    
+    protected override void AfterInit()
+    {
+        AttackTime = UpgradeArray[UpgradeArrIdx];
+    }
+    
     protected override void Attack(GameObject target)
     {
         _rotates = new float[_maxBullet];
@@ -29,5 +35,12 @@ public class SamtanPet : Pet
             PetBullet obj = poolManagerSO.Pop(poolTypeSO) as PetBullet;
             obj.SetDir(fireForceTrm.position, fireForceTrm.right);
         }
+    }
+
+    public override void Upgrade()
+    {
+        base.Upgrade();
+        
+        AttackTime = UpgradeArray[UpgradeArrIdx];
     }
 }

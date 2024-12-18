@@ -3,6 +3,10 @@ using UnityEngine;
 
 public abstract class Skill : MonoBehaviour
 {
+    public int CurrentLevel { get; protected set; }
+    
+    private int _maxLevel;
+    
     public bool skillEnabled = false;
     
     protected Player Player;
@@ -18,6 +22,18 @@ public abstract class Skill : MonoBehaviour
     }
 
     public virtual void UseSkill()
+    {
+    }
+
+    public void UpgradeSkill()
+    {
+        if (!skillEnabled || CurrentLevel >= _maxLevel) return;
+        
+        CurrentLevel++;
+        Upgrade();
+    }
+
+    protected virtual void Upgrade()
     {
     }
 }

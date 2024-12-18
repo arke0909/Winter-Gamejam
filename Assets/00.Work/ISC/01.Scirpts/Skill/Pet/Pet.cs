@@ -5,8 +5,13 @@ public abstract class Pet : MonoBehaviour
 {
     [SerializeField] private PetSO petSo;
 
+    [field: SerializeField] public int CurrentLevel { get; protected set; } = 1;
+    [field: SerializeField] public int UpgradeArrIdx { get; protected set; } = 0;
+
+    private int _maxLevel = 5;
     protected float Damage => petSo.Damage;
-    protected float AttackTime => petSo.AttackTime;
+    protected float AttackTime;
+    protected float[] UpgradeArray;
     protected float Range => petSo.AttackRange;
 
     private float cooldown;
@@ -16,10 +21,25 @@ public abstract class Pet : MonoBehaviour
     private void Awake()
     {
         Debug.Assert(petSo != null,$"PetSO is NULL or Empty");
+        Initalize();
+    }
+
+    private void Initalize()
+    {
+        AttackTime = petSo.AttackTime;
+        UpgradeArray = petSo.IncreaseValues;
+
+        AfterInit();
+    }
+
+    protected virtual void AfterInit()
+    {
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+            Upgrade();
         if (cooldown > 0)
         {
             cooldown -= Time.deltaTime;
@@ -34,6 +54,13 @@ public abstract class Pet : MonoBehaviour
     private void FixedUpdate()
     {
         RangeDraw();
+    }
+
+    public virtual void Upgrade()
+    {
+        if (CurrentLevel >= _maxLevel || UpgradeArrIdx + 1 >= UpgradeArray.Length) return;
+        CurrentLevel++;
+        UpgradeArrIdx++;
     }
 
     public virtual void RangeDraw()
