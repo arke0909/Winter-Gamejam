@@ -16,7 +16,7 @@ public class Gun : MonoBehaviour, IPlayerComponent
     [field: SerializeField]
     public float BaseReloadTime { get; private set; } = 2;
 
-    private float currentLoadTime;
+    private float currentReloadTime;
 
     [field: SerializeField]
     public float BaseAttack { get; private set; } = 10;
@@ -29,7 +29,7 @@ public class Gun : MonoBehaviour, IPlayerComponent
 
         _inputReader = _player.GetCompo<InputReader>();
 
-        currentLoadTime = BaseReloadTime;
+        currentReloadTime = BaseReloadTime;
 
         _inputReader.OnAttackEvent += HandleSAttackEvent;
     }
@@ -82,7 +82,7 @@ public class Gun : MonoBehaviour, IPlayerComponent
     private IEnumerator ReloadCoroutine()
     {
         _canFire = false;
-        yield return new WaitForSeconds(BaseReloadTime);
+        yield return new WaitForSeconds(currentReloadTime);
         _canFire = true;
     }
 
@@ -93,7 +93,8 @@ public class Gun : MonoBehaviour, IPlayerComponent
 
     public void ReloadUpgrade(float multiply)
     {
-        currentLoadTime = BaseReloadTime - (BaseReloadTime * multiply);
+        currentReloadTime = BaseReloadTime - (BaseReloadTime * multiply);
+        Debug.Log(currentReloadTime);
     }
 
     public void AttackUpgrade(float multiply)

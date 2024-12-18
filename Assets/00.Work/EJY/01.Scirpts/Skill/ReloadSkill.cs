@@ -20,7 +20,7 @@ public class ReloadSkill : Skill
     {
         if (Keyboard.current.digit1Key.wasPressedThisFrame)
         {
-            Upgrade();
+            UpgradeSkill();
         }
     }
 

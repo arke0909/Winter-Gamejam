@@ -3,6 +3,7 @@ using UnityEngine;
 
 public abstract class Skill : MonoBehaviour
 {
+    [field : SerializeField]
     public int CurrentLevel { get; protected set; }
     
     private int _maxLevel;
