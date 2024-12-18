@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -46,5 +47,11 @@ public class Health : MonoBehaviour
     public float GetCurrentHealth()
     {
         return _currentHealth;
+    }
+
+    internal void UpgradeHealth(float value)
+    {
+        MaxHealth += value;
+        _currentHealth = MaxHealth;
     }
 }

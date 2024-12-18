@@ -1,10 +1,8 @@
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class ReloadSkill : Skill
+public class TriggerStrengthSkill : Skill
 {
-    [field : SerializeField]
+    [field: SerializeField]
     public float[] values = new float[5];
 
     private Gun _gun;
@@ -18,6 +16,6 @@ public class ReloadSkill : Skill
 
     protected override void Upgrade()
     {
-        _gun.ReloadUpgrade(values[UpgradeArrIdx]);
+        _gun.AttackUpgrade(values[UpgradeArrIdx]);
     }
 }
