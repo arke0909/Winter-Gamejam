@@ -1,13 +1,20 @@
 using System;
+using GGMPool;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-public class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour, IPoolable
 {
+    [SerializeField] private PoolTypeSO poolType;
+    
     [SerializeField] protected float speed;
     
-    private Rigidbody2D _rigid;
+    private Rigidbody2D _rigid; 
+    private Pool _pool;
+    
+    public PoolTypeSO PoolType => poolType;
+    public GameObject GameObject => this.gameObject;
     
     [field: SerializeField] public float LifeTime { get; set; }
     private float _startTime;
@@ -38,5 +45,15 @@ public class Bullet : MonoBehaviour
     private void SetMove()
     {
         _rigid.linearVelocity = transform.right * speed;
+    }
+
+    public void SetUpPool(Pool pool)
+    {
+        _pool = pool;
+    }
+
+    public void ResetItem()
+    {
+        _startTime = 0;
     }
 }

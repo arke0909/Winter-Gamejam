@@ -12,7 +12,7 @@ public class BoomPet : Pet
     private int upgradeLevel = 0;
     private float petDamage;
     private float lastAttackTime = 0f;
-    
+
     private void SetDamageBasedOnUpgradeLevel()
     {
         switch (upgradeLevel)
@@ -20,7 +20,7 @@ public class BoomPet : Pet
             case 0: petDamage = 6f; break;
             case 1: petDamage = 10f; break;
             case 2: petDamage = 12f; break;
-           case 3: petDamage = 16f; break;
+            case 3: petDamage = 16f; break;
             case 4: petDamage = 18f; break;
             default: petDamage = 18f; break;
         }
@@ -41,20 +41,40 @@ public class BoomPet : Pet
 
     private void Update()
     {
-        
         if (Time.time - lastAttackTime >= AttackTime)
         {
             RangeDraw();
-            lastAttackTime = Time.time; 
+            lastAttackTime = Time.time;
         }
+        //테스트용
+        if (Input.GetKeyDown(KeyCode.K))
+            IncreaseLevel();
+            
     }
 
     public override void RangeDraw()
     {
         Collider2D[] hitTargets = Physics2D.OverlapCircleAll(transform.position, Range);
+        float closestDistance = Mathf.Infinity;
+        GameObject closestTarget = null;
+        
         foreach (var target in hitTargets)
         {
-            Attack(target.gameObject);
+            if (target.GetComponent<KAYTestEnemyHealth>()) 
+            {
+                float distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
+                if (distanceToTarget < closestDistance)
+                {
+                    closestDistance = distanceToTarget;
+                    closestTarget = target.gameObject; 
+                }
+            }
+        }
+
+        // 가장 가까운 적이 있으면 그 위치로 총알 발사
+        if (closestTarget != null)
+        {
+            Attack(closestTarget);
         }
     }
 
@@ -66,24 +86,18 @@ public class BoomPet : Pet
 
     private void FireBoomBullet(Vector3 targetPosition)
     {
-
         GameObject bullet = Instantiate(boomBulletPrefab, transform.position, Quaternion.identity);
 
-        
         KAYBoomBullet boomBullet = bullet.GetComponent<KAYBoomBullet>();
-
-        //아직 그 뭐시기 풀 매니저 어떻게 써야할지 몰라서 이렇게 해둿어요...
-        //그리고 폭발 그것도 없길래..
 
         if (boomBullet != null)
         {
-            boomBullet.Damage = petDamage;
+            boomBullet.Damage = petDamage; 
             boomBullet.ExplosionRadius = ExplosionRadius;
             boomBullet.ExplosionDamageMultiplier = ExplosionDamageMultiplier;
         }
 
-        // �Ѿ� �߻� ���� ���
         Vector3 direction = (targetPosition - transform.position).normalized;
-        bullet.GetComponent<Rigidbody2D>().linearVelocity = direction * 5f; // �ӵ� 5
+        bullet.GetComponent<Rigidbody2D>().linearVelocity = direction * 5f; // 속도임의
     }
 }

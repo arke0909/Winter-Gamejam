@@ -16,6 +16,11 @@ public abstract class Pet : MonoBehaviour
         Debug.Assert(petSo != null,$"PetSO is NULL or Empty");
     }
 
+    private void FixedUpdate()
+    {
+        RangeDraw();
+    }
+
     public virtual void RangeDraw()
     {
         Collider2D = Physics2D.OverlapCircle(transform.position, Range);
