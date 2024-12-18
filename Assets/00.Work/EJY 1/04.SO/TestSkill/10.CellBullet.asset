@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 573de054014e2364f9f3bd5ebc6355e0, type: 3}
+  m_Name: 10.CellBullet
+  m_EditorClassIdentifier: 
+  type: 9
+  toolTip: "\uCD1D\uC54C\uC774 \uC801\uC911 \uC2DC 3\uAC08\uB798 \uBD84\uC5F4, \uAE30\uBCF8
+    \uB300\uBBF8\uC9C0\uC758 n%\uB9CC\uD07C \uB300\uBBF8\uC9C0,  \uAC15\uD654\uD560
+    \uB54C \uB9C8\uB2E4 \uD558\uB098\uC529 \uC99D\uAC00"
+  skillName: "\uC138\uD3EC\uD0C4"
+  icon: {fileID: -7028066036478859568, guid: 1b8b6a6770f2c174e96385cb721dad17, type: 3}
+  itemId: 10
