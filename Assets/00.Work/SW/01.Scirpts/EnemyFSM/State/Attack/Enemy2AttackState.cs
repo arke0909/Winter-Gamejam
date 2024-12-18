@@ -23,7 +23,7 @@ public class Enemy2AttackState : EnmyState
     {
         Bullet poolable = poolManager.Pop(poolType) as Bullet;
         Vector2 bulletDir = _brain.Target.transform.position - transform.position;
-        poolable.SetDir(transform.position,bulletDir);
+        poolable.Initialize(transform.position,bulletDir);
         yield return new WaitForSeconds(0.2f);
         moveDecision.IsMoveEnd = true;
     }

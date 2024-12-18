@@ -1,10 +1,13 @@
 using System;
 using UnityEngine;
+using GGMPool;
 
 public abstract class Pet : MonoBehaviour
 {
     [SerializeField] private PetSO petSo;
-
+    [SerializeField] protected PoolManagerSO poolManagerSO;
+    [SerializeField] protected PoolTypeSO poolcTypeSO;
+    
     [field: SerializeField] public int CurrentLevel { get; protected set; } = 1;
     [field: SerializeField] public int UpgradeArrIdx { get; protected set; } = 0;
 

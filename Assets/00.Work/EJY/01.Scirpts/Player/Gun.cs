@@ -66,7 +66,7 @@ public class Gun : MonoBehaviour, IPlayerComponent
         Debug.Log("Fire!!");
         Bullet bullet = _poolManager.Pop(_poolType) as Bullet;
 
-        bullet.SetDir(_firePos.position, _firePos.right);
+        bullet.Initialize(_firePos.position, _firePos.right);
     }
 
     private void Reload()
