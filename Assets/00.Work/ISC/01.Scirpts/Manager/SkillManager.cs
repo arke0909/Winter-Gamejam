@@ -17,9 +17,6 @@ public enum SkillType
     CellBullet,
     Seasoneded,
     BloodedBullet,
-    CellPet,
-    BoomPet,
-    IcePet
 }
 public class SkillManager : MonoSingleton<SkillManager>
 {

@@ -1,11 +1,6 @@
 using UnityEngine;
 
-public class SantanPet : Skill
+public class SantanPet : Pet
 {
-    [SerializeField] private PetSO petSO;
     
-    public override void UseSkill()
-    {
-        
-    }
 }
