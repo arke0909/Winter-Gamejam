@@ -9,4 +9,6 @@ public class EnemyHealth : Health
         _brain = GetComponent<EnemyBrain>();
         Initialize(_brain.EnemyDataSO.hp);
     }
+
+
 }

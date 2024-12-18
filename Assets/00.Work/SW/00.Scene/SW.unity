@@ -1931,7 +1931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLayer:
     serializedVersion: 2
-    m_Bits: 8192
+    m_Bits: 0
 --- !u!1 &7009100014299641613
 GameObject:
   m_ObjectHideFlags: 0
@@ -2142,6 +2142,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5eb0653d54780246a0be8f1d4fab567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <MaxHealth>k__BackingField: 0
+  DieEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7986870737505237175
 GameObject:
   m_ObjectHideFlags: 0
@@ -2218,6 +2222,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5eb0653d54780246a0be8f1d4fab567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <MaxHealth>k__BackingField: 0
+  DieEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8418438911631005908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2279,6 +2287,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5eb0653d54780246a0be8f1d4fab567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <MaxHealth>k__BackingField: 0
+  DieEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &9037487592278790635
 Transform:
   m_ObjectHideFlags: 0

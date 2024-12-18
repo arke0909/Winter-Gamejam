@@ -20,13 +20,15 @@ public class Health : MonoBehaviour
         {
             if(value <= 0)
                 _currentHealth = 0;
+            else
+                _currentHealth = value;
         }
     }
 
     public void Initialize(float maxHealth)
     {
         MaxHealth = maxHealth; 
-        CurrentHealth = maxHealth;  
+        CurrentHealth = maxHealth;
     }
 
     public virtual void TakeDamage(float damage)
