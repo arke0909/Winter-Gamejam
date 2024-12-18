@@ -3,13 +3,17 @@ using UnityEngine;
 
 public class GameManager : MonoSingleton<GameManager>
 {
+
     [SerializeField] private float _multiplyValueExpLimit = 20;
 
     [SerializeField] private float _maxExp = 100;
+    [SerializeField] private float _exp;
+
     private float _originMaxExp;
-    private float _exp;
 
     private Player player;
+    [field : SerializeField] public int Level { get; private set; } = 1;
+
     public float EXP
     {
         get
@@ -35,7 +39,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void EXPUp(float expValue)
     {
-        EXP += expValue;
+        _exp += expValue;
 
         if (_exp >= _maxExp)
         {
@@ -47,12 +51,12 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void EXPLimitUp(float multiplyValue)
     {
-        _maxExp +=  (_originMaxExp * multiplyValue) - _originMaxExp;
+        _maxExp += (_originMaxExp * multiplyValue);
     }
 
     private void LevelUp()
     {
-
+        Level++;
     }
 
 }
