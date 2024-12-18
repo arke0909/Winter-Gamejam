@@ -8,6 +8,7 @@ public class Gun : MonoBehaviour, IPlayerComponent
 {
     [SerializeField] private PoolTypeSO _poolType;
     [SerializeField] private PoolManagerSO _poolManager;
+    [SerializeField] private Transform _firePos;
 
     private Player _player;
     private InputReader _inputReader;
@@ -61,7 +62,10 @@ public class Gun : MonoBehaviour, IPlayerComponent
 
     private void Fire()
     {
+        Debug.Log("Fire!!");
+        Bullet bullet = _poolManager.Pop(_poolType) as Bullet;
 
+        bullet.SetDir(_firePos.position, _firePos.right);
     }
 
     private void Reload()

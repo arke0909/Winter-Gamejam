@@ -25,7 +25,6 @@ public class Bullet : MonoBehaviour, IPoolable
     private void Start()
     {
         _startTime = Time.time;
-        SetMove();
     }
 
     private void Update()
@@ -41,8 +40,10 @@ public class Bullet : MonoBehaviour, IPoolable
         }
     }
 
-    private void SetMove()
+    public void SetDir(Vector3 position , Vector3 dir)
     {
+        transform.position = position;
+        transform.right = dir;
         _rigid.linearVelocity = transform.right * speed;
     }
 
