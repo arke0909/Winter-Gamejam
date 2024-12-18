@@ -4,6 +4,6 @@ public class DeadDecision : EnemyDecision
 {
     public override bool MakeDecision()
     {
-        return _brain.EnemyDataSO.hp <= 0;
+        return _brain.EnemyHealth.GetCurrentHealth() <= 0;
     }
 }
