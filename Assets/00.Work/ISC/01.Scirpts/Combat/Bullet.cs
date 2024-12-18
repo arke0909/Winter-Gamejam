@@ -1,9 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 public class Bullet : MonoBehaviour
 {
+    public UnityEvent OnHit;
+    
     [SerializeField] protected float speed;
     
     private Rigidbody2D _rigid;
