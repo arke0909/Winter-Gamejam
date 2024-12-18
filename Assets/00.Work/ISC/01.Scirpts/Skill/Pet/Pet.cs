@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public abstract class Pet : MonoBehaviour
@@ -9,7 +10,12 @@ public abstract class Pet : MonoBehaviour
     protected float Range => petSo.AttackRange;
 
     protected Collider2D Collider2D;
-    
+
+    private void Awake()
+    {
+        Debug.Assert(petSo != null,$"PetSO is NULL or Empty");
+    }
+
     public virtual void RangeDraw()
     {
         Collider2D = Physics2D.OverlapCircle(transform.position, Range);

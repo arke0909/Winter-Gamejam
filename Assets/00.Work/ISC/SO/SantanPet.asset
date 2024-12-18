@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6691d92bb4850e04fb348cbe94e8fe25, type: 3}
-  m_Name: New Pet SO
+  m_Name: SantanPet
   m_EditorClassIdentifier: 
-  Damage: 0
-  AttackTime: 0
+  Damage: 5
+  AttackTime: 1
+  AttackRange: 5
