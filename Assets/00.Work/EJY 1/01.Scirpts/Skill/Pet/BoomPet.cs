@@ -60,7 +60,7 @@ public class BoomPet : Pet
         
         foreach (var target in hitTargets)
         {
-            if (target.CompareTag("Enemy")) 
+            if (target.GetComponent<KAYTestEnemyHealth>()) 
             {
                 float distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
                 if (distanceToTarget < closestDistance)
