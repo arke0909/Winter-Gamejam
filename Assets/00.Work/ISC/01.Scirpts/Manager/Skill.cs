@@ -5,7 +5,7 @@ public abstract class Skill : MonoBehaviour
 {
     public int CurrentLevel { get; protected set; }
     
-    private int _maxLevel;
+    private readonly int _maxLevel = 5;
     
     public bool skillEnabled = false;
     

@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 317ebf221effd784cbbcd79a9c8894f7, type: 3}
-  m_Name: PetBullet_Type
+  m_Name: SamtanPetBullet_Type
   m_EditorClassIdentifier: 
-  typeName: PetBullet
+  typeName: SamtanPetBullet

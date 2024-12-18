@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1486e263e7016b643b78c6fb1c6caafd, type: 3}
-  m_Name: PetBullet_Item
+  m_Name: BoomPetBullet_Item
   m_EditorClassIdentifier: 
-  poolType: {fileID: 11400000, guid: d53a5b90051789848a736e66e8a18644, type: 2}
-  prefab: {fileID: 3492915067813953977, guid: fd1a2621a4aad9846bf7661f2f740f11, type: 3}
+  poolType: {fileID: 11400000, guid: 00f26ce9924f87441b20d9620e1208c5, type: 2}
+  prefab: {fileID: 1440422081799377207, guid: 3da350fe8b470dc4db1662a33072baaa, type: 3}
   initCount: 200

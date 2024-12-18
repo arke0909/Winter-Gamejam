@@ -498,10 +498,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   petSo: {fileID: 11400000, guid: 217fb8ab233d0b542a276aee3b0d0614, type: 2}
-  <CurrentLevel>k__BackingField: 1
-  <UpgradeArrIdx>k__BackingField: 0
   poolManagerSO: {fileID: 11400000, guid: d37261864854dfa41af86456b43594a7, type: 2}
   poolTypeSO: {fileID: 11400000, guid: d53a5b90051789848a736e66e8a18644, type: 2}
+  <CurrentLevel>k__BackingField: 1
+  <UpgradeArrIdx>k__BackingField: 0
   fireForceTrm: {fileID: 578767273}
 --- !u!212 &1782142480
 SpriteRenderer:

@@ -11,7 +11,7 @@ public abstract class Pet : MonoBehaviour
     [field: SerializeField] public int CurrentLevel { get; protected set; } = 1;
     [field: SerializeField] public int UpgradeArrIdx { get; protected set; } = 0;
 
-    private int _maxLevel = 5;
+    private readonly int _maxLevel = 5;
     protected float Damage => petSo.Damage;
     protected float AttackTime;
     protected float[] UpgradeArray;
