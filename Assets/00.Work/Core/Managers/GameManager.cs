@@ -12,6 +12,7 @@ public class GameManager : MonoSingleton<GameManager>
     private float _originMaxExp;
 
     private Player player;
+    public Player Player => player;
     [field : SerializeField] public int Level { get; private set; } = 1;
 
     public float EXP

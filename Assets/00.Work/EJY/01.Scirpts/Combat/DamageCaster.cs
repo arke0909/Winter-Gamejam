@@ -15,7 +15,7 @@ public class DamageCaster : MonoBehaviour
         _colliders = new Collider2D[detectCount];
     }
 
-    public bool CastDamage(int damage, float knockbackPower)
+    public bool CastDamage(float damage, float knockbackPower)
     {
         int cnt = Physics2D.OverlapCircle(transform.position, damageRadius, filter, _colliders);
 

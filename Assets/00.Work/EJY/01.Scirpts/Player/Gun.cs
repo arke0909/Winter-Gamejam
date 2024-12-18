@@ -1,8 +1,6 @@
 using GGMPool;
-using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Gun : MonoBehaviour, IPlayerComponent
 {
@@ -17,13 +15,16 @@ public class Gun : MonoBehaviour, IPlayerComponent
 
     [field: SerializeField]
     public float ReloadTime { get; private set; } = 2;
-    public float CurrentReloadTime { get; private set; } = 0;
+
+    private float currentLoadTime;
 
     public void Initialize(Player player)
     {
         _player = player;
 
         _inputReader = _player.GetCompo<InputReader>();
+
+        currentLoadTime = ReloadTime;
 
         _inputReader.OnAttackEvent += HandleSAttackEvent;
     }
