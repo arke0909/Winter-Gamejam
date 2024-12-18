@@ -13,7 +13,7 @@ public class KAYTestEnemyHealth :Health
 
     private void Start()
     {
-        Initialize(max);
+        Initialize(max);    
     }
 
 
