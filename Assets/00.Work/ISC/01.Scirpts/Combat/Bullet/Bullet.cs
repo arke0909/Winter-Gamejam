@@ -1,7 +1,6 @@
 using System;
 using GGMPool;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Bullet : MonoBehaviour, IPoolable
 {

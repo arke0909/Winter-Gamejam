@@ -167,7 +167,8 @@ MonoBehaviour:
   _poolType: {fileID: 11400000, guid: b77bb4890723fe440bc4ffa7447a6771, type: 2}
   _poolManager: {fileID: 11400000, guid: d37261864854dfa41af86456b43594a7, type: 2}
   _firePos: {fileID: 1954733642}
-  <ReloadTime>k__BackingField: 2
+  <BaseReloadTime>k__BackingField: 2
+  <BaseAttack>k__BackingField: 10
 --- !u!1001 &500157284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -329,6 +330,7 @@ MonoBehaviour:
   _multiplyValueExpLimit: 0.2
   _maxExp: 100
   _exp: 0
+  <Level>k__BackingField: 1
 --- !u!1001 &776147148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -488,6 +490,70 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _poolManager: {fileID: 11400000, guid: d37261864854dfa41af86456b43594a7, type: 2}
+--- !u!1 &1406661411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1406661414}
+  - component: {fileID: 1406661413}
+  - component: {fileID: 1406661412}
+  m_Layer: 0
+  m_Name: SkillManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1406661412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406661411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce46b910d6bd4c142bc8fdd4230d2ccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillEnabled: 0
+  values:
+  - 0.15
+  - 0.3
+  - 0.45
+  - 0.6
+  - 0.75
+--- !u!114 &1406661413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406661411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b62617c4f8dfd4f9d5b1b3faaf6eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1406661414
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406661411}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1601467639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1169,3 +1235,4 @@ SceneRoots:
   - {fileID: 1601467639}
   - {fileID: 500157284}
   - {fileID: 1674317678}
+  - {fileID: 1406661414}
