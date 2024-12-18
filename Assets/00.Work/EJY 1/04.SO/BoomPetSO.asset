@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: BoomPetSO
   m_EditorClassIdentifier: 
   Damage: 6
-  LifeTime: 0
   AttackTime: 6
   AttackRange: 7

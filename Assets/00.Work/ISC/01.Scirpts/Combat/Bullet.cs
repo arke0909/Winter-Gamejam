@@ -5,8 +5,6 @@ using UnityEngine.Serialization;
 
 public class Bullet : MonoBehaviour
 {
-    public UnityEvent OnHit;
-    
     [SerializeField] protected float speed;
     
     private Rigidbody2D _rigid;
@@ -16,8 +14,8 @@ public class Bullet : MonoBehaviour
     private void Awake()
     {
         _rigid = GetComponent<Rigidbody2D>();
-    }
-
+    } 
+    
     private void Start()
     {
         _startTime = Time.time;
