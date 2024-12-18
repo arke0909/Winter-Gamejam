@@ -17,6 +17,11 @@ public abstract class Skill : MonoBehaviour
         Player = player;
     }
 
+    public void OnSkill()
+    {
+        skillEnabled = true;
+    }
+
     protected virtual void Update()
     {
         if (CooldownTimer > 0)
