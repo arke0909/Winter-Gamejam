@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class MoveDecision : EnemyDecision
 {
-    public bool IsAttackEnd {  get; set; }
+    public bool IsMoveEnd {  get; set; }
     public override bool MakeDecision()
     {
-        if (IsAttackEnd)
+        if (IsMoveEnd)
         {
-            IsAttackEnd = false;
+            IsMoveEnd = false;
             return true;
         }
 

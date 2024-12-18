@@ -1,30 +1,33 @@
+using System.Collections;
 using UnityEngine;
 
-public class AttackState : EnmyState
+public class Enemy3AttackState : EnmyState
 {
     private MoveDecision moveDecision;
-    private float velocityY;
     public override void OnEnterState()
     {
-        if (moveDecision == null) 
-            foreach(EnemyDecision decision in _decisions )
+        if (moveDecision == null)
+            foreach (EnemyDecision decision in _decisions)
                 if (decision.GetComponent<MoveDecision>() != null) moveDecision = decision.GetComponent<MoveDecision>();
 
-        moveDecision.IsAttackEnd = false;
-        velocityY = _brain.EnemyRIgid.linearVelocityY;
+        moveDecision.IsMoveEnd = false;
         _brain.EnemyRIgid.linearVelocity = Vector3.zero;
+        StartCoroutine(StartAttackTime());
+    }
 
+    private IEnumerator StartAttackTime()
+    {
+        yield return new WaitForSeconds(0.2f);
+        moveDecision.IsMoveEnd = true;
     }
 
     public override void OnExitState()
     {
-        
+
     }
 
     public override void UpdateState()
     {
-        print("Attack");
         base.UpdateState();
     }
-
 }
