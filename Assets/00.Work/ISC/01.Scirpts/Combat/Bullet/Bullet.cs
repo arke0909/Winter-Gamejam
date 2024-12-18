@@ -5,12 +5,18 @@ using UnityEngine.Events;
 
 public class Bullet : MonoBehaviour, IPoolable
 {
+    [SerializeField] private PoolManagerSO poolManagerSO;
     [SerializeField] private PoolTypeSO poolType;
+    [SerializeField] private DamageCaster damageCaster;
     
     [SerializeField] protected float speed;
     
-    private Rigidbody2D _rigid; 
+    private Rigidbody2D _rigid;
     private Pool _pool;
+
+    private bool _isDead = false;
+
+    private float _damage, _knockbackPower;
     
     public PoolTypeSO PoolType => poolType;
     public GameObject GameObject => this.gameObject;
@@ -32,19 +38,37 @@ public class Bullet : MonoBehaviour, IPoolable
         CalculateTime();
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (_isDead) return;
+
+        Hit();
+
+        damageCaster.CastDamage(_damage, _knockbackPower);
+    }
+
+    private void Hit()
+    {
+        throw new NotImplementedException();
+    }
+
     private void CalculateTime()
     {
         if (Time.time - _startTime > LifeTime)
         {
-            Destroy(gameObject);
+            _isDead = true;
+            
+            poolManagerSO.Push(this);
         }
     }
 
-    public void SetDir(Vector3 position , Vector3 dir)
+    public void Initialize(Vector3 position , Vector3 dir, float damage, float knockbackPower)
     {
         transform.position = position;
         transform.right = dir;
         _rigid.linearVelocity = transform.right * speed;
+        _damage = damage;
+        _knockbackPower = knockbackPower;
     }
 
     public void SetUpPool(Pool pool)
@@ -54,6 +78,7 @@ public class Bullet : MonoBehaviour, IPoolable
 
     public virtual void ResetItem()
     {
+        _isDead = false;
         _startTime = 0;
     }
 }

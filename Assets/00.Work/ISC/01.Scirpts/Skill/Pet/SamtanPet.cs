@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class SamtanPet : Pet
 {
-    [SerializeField] private PoolManagerSO poolManagerSO;
-    [SerializeField] private PoolTypeSO poolTypeSO;
     [SerializeField] private Transform fireForceTrm;
     
     private Vector3 _dir;
@@ -33,7 +31,7 @@ public class SamtanPet : Pet
             Quaternion q = Quaternion.Euler(0f, 0f, _rotates[i]);
             fireForceTrm.localRotation = q;
             PetBullet obj = poolManagerSO.Pop(poolTypeSO) as PetBullet;
-            obj.SetDir(fireForceTrm.position, fireForceTrm.right);
+            obj.Initialize(fireForceTrm.position, fireForceTrm.right);
         }
     }
 
