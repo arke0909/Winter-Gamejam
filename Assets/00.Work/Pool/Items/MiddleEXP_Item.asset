@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6691d92bb4850e04fb348cbe94e8fe25, type: 3}
-  m_Name: SantanPet
+  m_Script: {fileID: 11500000, guid: 1486e263e7016b643b78c6fb1c6caafd, type: 3}
+  m_Name: MiddleEXP_Item
   m_EditorClassIdentifier: 
-  Damage: 5
-  LifeTime: 2
-  Speed: 25
-  AttackTime: 1
-  AttackRange: 3.2
+  poolType: {fileID: 11400000, guid: 9623fb45065019a499e40fc98a48acb9, type: 2}
+  prefab: {fileID: 6851050452542980882, guid: db9fa260f36f8504fbf531479852d3bb, type: 3}
+  initCount: 200

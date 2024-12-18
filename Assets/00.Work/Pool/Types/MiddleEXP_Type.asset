@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6691d92bb4850e04fb348cbe94e8fe25, type: 3}
-  m_Name: SantanPet
+  m_Script: {fileID: 11500000, guid: 317ebf221effd784cbbcd79a9c8894f7, type: 3}
+  m_Name: MiddleEXP_Type
   m_EditorClassIdentifier: 
-  Damage: 5
-  LifeTime: 2
-  Speed: 25
-  AttackTime: 1
-  AttackRange: 3.2
+  typeName: MiddleEXP
