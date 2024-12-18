@@ -1,6 +1,7 @@
 using GGMPool;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Runtime.Serialization;
 using UnityEngine;
 
@@ -32,9 +33,10 @@ public class EnemyBrain : MonoBehaviour, IPoolable
 
     private bool _alreadyCollected;
 
-    public void Init(Player target)
+    public void Init(Player target, Transform startingPoint)
     {
         _player = target;
+        transform.position = startingPoint.position;
         if (_alreadyCollected) return;
         _alreadyCollected = true;
 
