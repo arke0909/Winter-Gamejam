@@ -6,15 +6,21 @@ public class PlayerMover : MonoBehaviour, IPlayerComponent
 
     private Rigidbody2D _rigidCompo;
     private Player _player;
+    private float _origin;
 
     public void Initialize(Player player)
     {
         _player = player;
+        _origin = _moveSpeed;
     }
 
     private void Awake()
     {
         _rigidCompo = GetComponent<Rigidbody2D>();
+    }
+    public void SetSpeed(float multiply)
+    {
+        _moveSpeed = _origin * multiply;
     }
 
     public void SetVelocity(Vector2 moveDir)
