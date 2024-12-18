@@ -10,4 +10,8 @@ public class ReloadSkill : Skill
 
         _gun = player.GetCompo<Gun>();
     }
+
+    protected override void Upgrade()
+    {
+    }
 }
