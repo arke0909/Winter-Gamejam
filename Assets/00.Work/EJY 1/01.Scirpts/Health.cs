@@ -9,11 +9,20 @@ public class Health : MonoBehaviour
     public float MaxHealth { get; private set; }
     private float _currentHealth;
     private Rigidbody2D _rigidCompo;
+    private EnemyBrain _enemyBrain;
 
     public UnityEvent DieEvent;
     public UnityEvent HitEvent;
 
     private Coroutine _kbCoroutine;
+
+    private void Awake()
+    {
+        _rigidCompo = GetComponent<Rigidbody2D>();
+        _enemyBrain = GetComponent<EnemyBrain>();
+
+    }
+
     public float CurrentHealth
     {
         get
@@ -37,13 +46,13 @@ public class Health : MonoBehaviour
         _rigidCompo = GetComponent<Rigidbody2D>();
     }
 
-    public virtual void TakeDamage(float damage/*, Vector2 normal, Vector2 point, float knockbackPower*/)
+    public virtual void TakeDamage(float damage, Vector2 normal, Vector2 point, float knockbackPower = 0)
     {
         _currentHealth -= damage;
         HitEvent?.Invoke();
 
-       /* if (knockbackPower > 0)
-            GetKnockback(normal * -1, knockbackPower);*/
+        if (knockbackPower > 0)
+            GetKnockback(normal * -1, knockbackPower);
 
         if (_currentHealth == 0)
             DieEvent?.Invoke();
@@ -63,10 +72,10 @@ public class Health : MonoBehaviour
 
     private IEnumerator KnockbackCoroutine()
     {
-        //_canMove = false;
+        _enemyBrain._CanMove = false;
         yield return new WaitForSeconds(0.2f);
         _rigidCompo.linearVelocity = Vector2.zero;
-        //_canMove = true;
+        _enemyBrain._CanMove = true;
     }
 
     public float GetCurrentHealth()
