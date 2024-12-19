@@ -34,11 +34,12 @@ public class SkillManager : MonoSingleton<SkillManager>
         _player = GameManager.Instance.Player;
         foreach (SkillType skillType in Enum.GetValues(typeof(SkillType)))
         {
+            Debug.Log($"{skillType} initialized");
             Skill skill = GetComponent($"{skillType.ToString()}Skill") as Skill;
             if (skill == null)
             {
-                Debug.LogError($"{skillType} is not Found");
-                return;
+                Debug.Log($"{skillType} is not Found");
+                continue;
             }
             skill.Initialize(_player);
             Type type = skill.GetType();
@@ -46,9 +47,28 @@ public class SkillManager : MonoSingleton<SkillManager>
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Debug.Log(_skills[SkillType.Reload]);
+            Debug.Log(_skills[SkillType.Haste]);
+            Debug.Log(_skills[SkillType.TriggerStrength]);
+            Debug.Log(_skills[SkillType.Adrenaline]);
+            Debug.Log(_skills[SkillType.Penetration]);
+             Debug.Log(_skills[SkillType.ElectronicBullet]);
+             Debug.Log(_skills[SkillType.BoomIsArt]);
+             Debug.Log(_skills[SkillType.CatchMe]);
+             Debug.Log(_skills[SkillType.LimeBullet]);
+            Debug.Log(_skills[SkillType.CellBullet]);
+             Debug.Log(_skills[SkillType.Seasoneded]);
+            Debug.Log(_skills[SkillType.BloodedBullet]);
+        }
+    }
+
     public void GetSkill(SkillType type)
     {
-        Debug.Assert(_skills.ContainsKey(type) == true, $"{type} is not Found");
+        if (_skills.ContainsKey(type) == false) Debug.Log($"{type} is not Found");
 
         if (_skills[type].TryGetComponent(out IBulletAble bullet))
         {

@@ -548,7 +548,8 @@ GameObject:
   - component: {fileID: 1054933453}
   - component: {fileID: 1054933452}
   - component: {fileID: 1054933454}
-  m_Layer: 0
+  - component: {fileID: 1054933455}
+  m_Layer: 8
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -671,6 +672,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1054933455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054933451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cfd4f55a57507247974d90870bfbda8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <MaxHealth>k__BackingField: 0
+  DieEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  HitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1226769749
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,6 +702,15 @@ GameObject:
   - component: {fileID: 1226769750}
   - component: {fileID: 1226769752}
   - component: {fileID: 1226769751}
+  - component: {fileID: 1226769760}
+  - component: {fileID: 1226769756}
+  - component: {fileID: 1226769755}
+  - component: {fileID: 1226769754}
+  - component: {fileID: 1226769753}
+  - component: {fileID: 1226769761}
+  - component: {fileID: 1226769763}
+  - component: {fileID: 1226769762}
+  - component: {fileID: 1226769764}
   m_Layer: 0
   m_Name: SkillManager
   m_TagString: Untagged
@@ -735,6 +764,201 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46b62617c4f8dfd4f9d5b1b3faaf6eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1226769753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226769749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d7a6e672443a7c4888970a983d28f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <UpgradeArrIdx>k__BackingField: 0
+  skillEnabled: 0
+  values:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+--- !u!114 &1226769754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226769749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce46b910d6bd4c142bc8fdd4230d2ccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <UpgradeArrIdx>k__BackingField: 0
+  skillEnabled: 0
+  values:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+--- !u!114 &1226769755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226769749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06d86ccbf4a4cf46b339d6dc61e5feb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <UpgradeArrIdx>k__BackingField: 0
+  skillEnabled: 0
+  _values: 0000000000000000000000000000000000000000
+--- !u!114 &1226769756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226769749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6117fc6234a754499d1a1bdbd994007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <UpgradeArrIdx>k__BackingField: 0
+  skillEnabled: 0
+  _values:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+--- !u!114 &1226769760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226769749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0474eb60e9422684da8fedaa1152b558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <UpgradeArrIdx>k__BackingField: 0
+  skillEnabled: 0
+  _values:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+--- !u!114 &1226769761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226769749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3655b94488162e41905666b3246fc1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <UpgradeArrIdx>k__BackingField: 0
+  skillEnabled: 0
+  poolManagerSo: {fileID: 0}
+  poolTypeSo: {fileID: 0}
+  upgradeValues: 00000000
+--- !u!114 &1226769762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226769749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56e2c714fe353a40a1001117b6246d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <UpgradeArrIdx>k__BackingField: 0
+  skillEnabled: 0
+  _values:
+  - damageRadius: 0
+    multiply: 0
+  - damageRadius: 0
+    multiply: 0
+  - damageRadius: 0
+    multiply: 0
+  - damageRadius: 0
+    multiply: 0
+  - damageRadius: 0
+    multiply: 0
+  filter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+--- !u!114 &1226769763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226769749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb1103c014a8af4d9e495b1d3d13743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <UpgradeArrIdx>k__BackingField: 0
+  skillEnabled: 0
+  _chainRange: 0
+  upgradeValues: 0000000000000000000000000000000000000000
+  fliter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+--- !u!114 &1226769764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226769749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 447704ccae01bbe4b91a51930b528766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <UpgradeArrIdx>k__BackingField: 0
+  skillEnabled: 0
 --- !u!1 &1237726264
 GameObject:
   m_ObjectHideFlags: 0
