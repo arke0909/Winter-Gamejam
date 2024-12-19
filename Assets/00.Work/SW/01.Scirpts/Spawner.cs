@@ -28,7 +28,7 @@ public class Spawner : MonoBehaviour
     {
         if (Time.time >= 60 * (minuteCount + 1))
         {
-            print("강화");
+            print("강화");    
             minuteCount++;
             SpawnerProbability--;
         }

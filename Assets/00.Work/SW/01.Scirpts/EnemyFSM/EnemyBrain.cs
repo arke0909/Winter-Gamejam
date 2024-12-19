@@ -10,6 +10,7 @@ public class EnemyBrain : MonoBehaviour, IPoolable
     [SerializeField] private EnmyState startState;
     [SerializeField] private EnemyDataSO _enemyDataSO;
     [SerializeField] private PoolTypeSO _poolType;
+    [SerializeField] private HpBa _hpBa;
 
     private Player _player;
     private List<EnmyState> _enmyStates;
@@ -29,6 +30,7 @@ public class EnemyBrain : MonoBehaviour, IPoolable
     public EnemyAnimator EnemyAnimatorCompo => _enemyAnimator;
     public PoolTypeSO PoolType => _poolType;
     public GameObject GameObject => gameObject;
+    public HpBa HpBa => _hpBa;
     public DamageCaster DamageCasterCompo { get; private set; }
     public bool _CanMove { get; set; } = true;
 
@@ -50,6 +52,7 @@ public class EnemyBrain : MonoBehaviour, IPoolable
         _enemyAnimator = GetComponentInChildren<EnemyAnimator>();
         DamageCasterCompo = GetComponentInChildren<DamageCaster>();
 
+        _hpBa.HpReset();
         _enemyStat.SetStat(_enemyDataSO);
         _enemyHealth.Initialize(EnemyStatCompo.Hp);
         _enemyHealth.NextHealth = 1;
@@ -69,11 +72,6 @@ public class EnemyBrain : MonoBehaviour, IPoolable
     {
         if (_currentState == null) return;
         _currentState.UpdateState();
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            _enemyHealth.TakeDamage(1);
-        }
     }
 
     public void ChangeState(EnmyState golemAIState)

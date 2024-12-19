@@ -68,7 +68,7 @@ public class BloodedBulletSkill : Skill, IBulletAble
             if (_damageCnt > 0 && _isActive)
             {
                 Debug.Log("아야!");
-                health.TakeDamage(_gun.CurrentAttack * _bloodedDamage);
+                health.TakeDamage(_gun.CurrentAttack * _bloodedDamage, Vector2.zero, Vector2.zero);
                 _damageCnt--;
             }
         }

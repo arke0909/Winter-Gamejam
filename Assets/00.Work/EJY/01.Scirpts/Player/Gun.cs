@@ -88,7 +88,7 @@ public class Gun : MonoBehaviour, IPlayerComponent
         _canFire = true;
     }
 
-    private void OnDisable()
+    private void OnApplicationQuit()
     {
         _inputReader.OnAttackEvent -= HandleSAttackEvent;
     }

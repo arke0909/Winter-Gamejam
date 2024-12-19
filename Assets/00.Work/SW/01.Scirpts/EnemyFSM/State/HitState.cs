@@ -7,6 +7,7 @@ public class HitState : EnmyState
     private bool IsHit;
     public override void OnEnterState()
     {
+        _brain.HpBa.SetHpBa();
         if (moveDecision == null)
             foreach (EnemyDecision decision in _decisions)
                 if (decision.GetComponent<MoveDecision>() != null) moveDecision = decision.GetComponent<MoveDecision>();
