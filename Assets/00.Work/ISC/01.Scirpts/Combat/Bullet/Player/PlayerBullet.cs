@@ -12,6 +12,13 @@ public class PlayerBullet : Bullet
         GameManager.Instance.IsHoming.OnValueChanged += HandleHoming;
     }
 
+    private void FixedUpdate()
+    {
+        if (!isHoming) return;
+
+
+    }
+
     private void HandleHoming(bool prev, bool next)
     {
         isHoming = next;
