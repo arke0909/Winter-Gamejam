@@ -78,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -5075369398116776684, guid: 35683e3c39978c949adf2089b997189f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -132,4 +132,5 @@ MonoBehaviour:
   poolType: {fileID: 11400000, guid: 2b6a1cc043be7f445972e73a1c435560, type: 2}
   damageCaster: {fileID: 0}
   speed: 17
+  PenetrationCnt: 0
   <LifeTime>k__BackingField: 0.6
