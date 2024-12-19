@@ -20,7 +20,7 @@ public enum SkillType
 }
 public class SkillManager : MonoSingleton<SkillManager>
 {
-    public Action OnHit;
+    public Action<Transform> OnHit;
     
     private Dictionary<SkillType, Tuple<Type, Skill>> _skills;
     private Player _player;

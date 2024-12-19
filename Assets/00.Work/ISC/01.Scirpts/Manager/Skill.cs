@@ -15,6 +15,12 @@ public abstract class Skill : MonoBehaviour
     public virtual void Initialize(Player player)
     {
         _Player = player;
+
+        AtferInit();
+    }
+
+    protected virtual void AtferInit()
+    {
     }
 
     public void OnSkill()
