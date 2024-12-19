@@ -77,6 +77,9 @@ GameObject:
   - component: {fileID: 5935915460431681238}
   - component: {fileID: 1562841509780766496}
   - component: {fileID: 8096563437863341175}
+  - component: {fileID: 6349261786517433378}
+  - component: {fileID: 8378863398544292833}
+  - component: {fileID: 1959989250704739566}
   m_Layer: 0
   m_Name: SkillManager
   m_TagString: Untagged
@@ -386,6 +389,57 @@ MonoBehaviour:
   - 1.7
   - 1.9
   - 2.2
+--- !u!114 &6349261786517433378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5091443015153490010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a5a8718b8fe1214699f7e056f901dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <UpgradeArrIdx>k__BackingField: 0
+  <MaxLevel>k__BackingField: 5
+  skillEnabled: 0
+  target: {fileID: 0}
+  petPrefab: {fileID: 7766535983330351181, guid: 9b695c2ee19d1ac4d96e5ffa2c47983b, type: 3}
+--- !u!114 &8378863398544292833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5091443015153490010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ccf2301ed334744f94a0544a90277ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <UpgradeArrIdx>k__BackingField: 0
+  <MaxLevel>k__BackingField: 5
+  skillEnabled: 0
+  target: {fileID: 0}
+  petPrefab: {fileID: 7003160491141575692, guid: 8a6d65ae836be4f4787c9a88333ab0d1, type: 3}
+--- !u!114 &1959989250704739566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5091443015153490010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d26edc0953109428893c107bf86593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <UpgradeArrIdx>k__BackingField: 0
+  <MaxLevel>k__BackingField: 5
+  skillEnabled: 0
+  target: {fileID: 0}
+  petPrefab: {fileID: 67267662140739520, guid: a3ab6e0eb5ad20c408b51f0bcc3245c0, type: 3}
 --- !u!1 &6481404640385742357
 GameObject:
   m_ObjectHideFlags: 0
