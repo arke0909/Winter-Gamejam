@@ -14,13 +14,14 @@ public class augmentationUI : MonoBehaviour
 
     public void Show()
     {
-
+        Time.timeScale = 0f;
         rect.localScale = Vector3.one;
         NextLevel();
 
     }
     public void Hide()
     {
+        Time.timeScale = 1f;
         rect.localScale = Vector3.zero;
     }
 
@@ -58,7 +59,7 @@ public class augmentationUI : MonoBehaviour
             if(rItem.level >= 5)
             {
                 rItem.gameObject.SetActive(false);
-                //¿©µû°¡ ¸¸·¾ÀÏ¶§ ³Ö¾î¾ßÇÏ´Âµ¥ Àú´ÉÇØÁü.. ¸ð¸£°ÙÀ½
+                //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¶ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½Ï´Âµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.. ï¿½ð¸£°ï¿½ï¿½ï¿½
             }
             else
             {

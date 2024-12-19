@@ -33,4 +33,102 @@ public class Item : MonoBehaviour
         levelText.text = "Lv." + level;
 
     }
+    
+    public void OnClick()
+    {
+        switch (testSkillSO.type) { 
+        case SkillType.Reload:
+                if (level == 0)
+                {
+                    //0���� 1�� => ������ ó������ ���õǾ� �߰��Ǿ�� �Ҷ� ����� ����
+                }
+                else
+                {
+                    //���� ����.. 
+                }
+            break;
+        case SkillType.Haste:
+                if (level == 0)
+                {
+                    //0���� 1�� => ������ ó������ ���õǾ� �߰��Ǿ�� �Ҷ� ����� ����
+                }
+                else
+                {
+                    //���� ����.. 
+                }
+                break;
+        case SkillType.TriggerStrength:
+                if (level == 0)
+                {
+                    //0���� 1�� => ������ ó������ ���õǾ� �߰��Ǿ�� �Ҷ� ����� ����
+                }
+                else
+                {
+                    //���� ����.. 
+                }
+                break;
+        case SkillType.Adrenaline:
+                if (level == 0)
+                {
+                    
+                }
+                break;
+        case SkillType.Penetration:
+                if (level == 0)
+                {
+
+                }
+                break;
+        case SkillType.ElectronicBullet:
+                if (level == 0)
+                {
+
+                }
+                break;
+        case SkillType.BoomIsArt:
+                if (level == 0)
+                {
+
+                }
+                break;
+        case SkillType.CatchMe:
+                if (level == 0)
+                {
+
+                }
+                break;
+        case SkillType.LimeBullet:
+                if (level == 0)
+                {
+
+                }
+                break;
+        case SkillType.CellBullet:
+                if (level == 0)
+                {
+
+                }
+                break;
+        case SkillType.Seasoneded:
+                if (level == 0)
+                {
+
+                }
+                break;
+        case SkillType.BloodedBullet:
+                if (level == 0)
+                {
+
+                }
+                break;
+        case SkillType.SummonPet:
+                if (level == 0)
+                {
+
+                }
+                break;
+        }
+        if (level < 5)
+            level++; //���� ������ �������� �����ϴ�~
+    }
 }
