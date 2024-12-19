@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private InputReader _inputReader;
+    [field : SerializeField]  public InputReader InputCompo {  get; private set; }
 
     private Dictionary<Type, IPlayerComponent> _components;
     private PlayerMover _playerMover;
@@ -20,14 +20,14 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _playerMover.SetVelocity(_inputReader.InputDir);
+        _playerMover.SetVelocity(InputCompo.InputDir);
     }
 
     private void SetComponent()
     {
         GetComponentsInChildren<IPlayerComponent>().ToList().ForEach(component => { _components.Add(component.GetType(), component); });
 
-        _components.Add(_inputReader.GetType(), _inputReader);
+        _components.Add(InputCompo.GetType(), InputCompo);
 
         _components.Values.ToList().ForEach(component => { component.Initialize(this); });
     }

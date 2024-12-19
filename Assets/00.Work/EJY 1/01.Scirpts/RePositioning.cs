@@ -30,8 +30,9 @@ public class RePositioning : MonoBehaviour
         float diffX = Mathf.Abs(playerPos.x - myPos.x);
         float diffY = Mathf.Abs(playerPos.y - myPos.y);
 
-        // Vector3 playerDir = GameManager.instance.player.inputVec;   // 들고와야함
-        Vector3 playerDir = WorldManager.instance.player.transform.position;
+        Vector3 playerDir = GameManager.Instance.Player.InputCompo.InputDir;
+        
+        //Vector3 playerDir = WorldManager.instance.player.transform.position;
         float dirX = playerDir.x < 0 ? -1 : 1;
         float dirY = playerDir.y < 0 ? -1 : 1;
 
