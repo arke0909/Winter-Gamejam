@@ -10,7 +10,7 @@ public class ClickUI : MonoBehaviour, IPointerClickHandler
     
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("따운");
+        GetComponent<Item>().OnClick();
         OnSkillClicked?.Invoke(testSkillSo.type, testSkillSo.petType);
     }
 }

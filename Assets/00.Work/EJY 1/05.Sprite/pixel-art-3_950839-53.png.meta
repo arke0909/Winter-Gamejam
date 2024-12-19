@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pixel-art-3_950839-53_0: 4724866826906262631
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
