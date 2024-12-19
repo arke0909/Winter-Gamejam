@@ -12,7 +12,7 @@ public enum SkillType
     Penetration,
     ElectronicBullet,
     BoomIsArt,
-    LookLikeLong,
+    CatchMe,
     LimeBullet,
     CellBullet,
     Seasoneded,

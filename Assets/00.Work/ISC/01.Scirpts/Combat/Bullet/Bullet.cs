@@ -67,10 +67,15 @@ public abstract class Bullet : MonoBehaviour, IPoolable
     public void Initialize(Vector3 position , Vector3 dir, float damage, float knockbackPower)
     {
         transform.position = position;
-        transform.right = dir;
-        _rigid.linearVelocity = transform.right * speed;
+        transform.right = dir.normalized;
+        SetMove(transform.right);
         _damage = damage;
         _knockbackPower = knockbackPower;
+    }
+
+    private void SetMove(Vector2 dir)
+    {
+        _rigid.linearVelocity = dir * speed;
     }
 
     public void SetUpPool(Pool pool)

@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameManager : MonoSingleton<GameManager>
 {
     public NotifyValue<int> Penetation = new NotifyValue<int>(0);
+    public NotifyValue<bool> IsHoming = new NotifyValue<bool>();
 
     [SerializeField] private float _multiplyValueExpLimit = 20;
 
@@ -60,6 +61,10 @@ public class GameManager : MonoSingleton<GameManager>
         Level++;
     }
 
+    public void SetHomingValue(bool value)
+    {
+        IsHoming.Value = value;
+    }
     public void SetPenetation(int value)
     {
         Penetation.Value = value;
