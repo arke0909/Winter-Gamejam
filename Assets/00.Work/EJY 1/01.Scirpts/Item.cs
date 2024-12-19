@@ -5,26 +5,26 @@ using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
-   public TestSkillSO testSkillSO;
+    public TestSkillSO testSkillSO;
     public int level;
 
 
-    [SerializeField]Image icon;
-    
-    [SerializeField]TextMeshProUGUI levelText;
-    [SerializeField]TextMeshProUGUI skillame;
+    [SerializeField] Image icon;
+
+    [SerializeField] TextMeshProUGUI levelText;
+    [SerializeField] TextMeshProUGUI skillame;
     [SerializeField] TextMeshProUGUI tooltip;
 
-   
+
     //waepon �̶��� �ֱ��ѵ�..
     void Start()
     {
-        
+
         icon.sprite = testSkillSO.icon;
 
-       
-         skillame.text = testSkillSO.skillName;
-        tooltip.text=testSkillSO.toolTip;
+
+        skillame.text = testSkillSO.skillName;
+        tooltip.text = testSkillSO.toolTip;
 
     }
 
@@ -33,21 +33,12 @@ public class Item : MonoBehaviour
         levelText.text = "Lv." + level;
 
     }
-    
+
     public void OnClick()
     {
-        switch (testSkillSO.type) { 
-        case SkillType.Reload:
-                if (level == 0)
-                {
-                    //0���� 1�� => ������ ó������ ���õǾ� �߰��Ǿ�� �Ҷ� ����� ����
-                }
-                else
-                {
-                    //���� ����.. 
-                }
-            break;
-        case SkillType.Haste:
+        switch (testSkillSO.type)
+        {
+            case SkillType.Reload:
                 if (level == 0)
                 {
                     //0���� 1�� => ������ ó������ ���õǾ� �߰��Ǿ�� �Ҷ� ����� ����
@@ -57,7 +48,7 @@ public class Item : MonoBehaviour
                     //���� ����.. 
                 }
                 break;
-        case SkillType.TriggerStrength:
+            case SkillType.Haste:
                 if (level == 0)
                 {
                     //0���� 1�� => ������ ó������ ���õǾ� �߰��Ǿ�� �Ҷ� ����� ����
@@ -67,61 +58,83 @@ public class Item : MonoBehaviour
                     //���� ����.. 
                 }
                 break;
-        case SkillType.Adrenaline:
+            case SkillType.TriggerStrength:
                 if (level == 0)
                 {
-                    
+                    //0���� 1�� => ������ ó������ ���õǾ� �߰��Ǿ�� �Ҷ� ����� ����
                 }
-                break;
-        case SkillType.Penetration:
-                if (level == 0)
+                else
                 {
-
+                    //���� ����.. 
                 }
                 break;
-        case SkillType.ElectronicBullet:
-                if (level == 0)
-                {
-
-                }
-                break;
-        case SkillType.BoomIsArt:
+            case SkillType.Adrenaline:
                 if (level == 0)
                 {
 
                 }
                 break;
-        case SkillType.CatchMe:
+            case SkillType.Penetration:
                 if (level == 0)
                 {
 
                 }
                 break;
-        case SkillType.LimeBullet:
+            case SkillType.ElectronicBullet:
                 if (level == 0)
                 {
 
                 }
                 break;
-        case SkillType.CellBullet:
+            case SkillType.BoomIsArt:
                 if (level == 0)
                 {
 
                 }
                 break;
-        case SkillType.Seasoneded:
+            case SkillType.CatchMe:
                 if (level == 0)
                 {
 
                 }
                 break;
-        case SkillType.BloodedBullet:
+            case SkillType.LimeBullet:
                 if (level == 0)
                 {
 
                 }
                 break;
-        case SkillType.SummonPet:
+            case SkillType.CellBullet:
+                if (level == 0)
+                {
+
+                }
+                break;
+            case SkillType.Seasoneded:
+                if (level == 0)
+                {
+
+                }
+                break;
+            case SkillType.BloodedBullet:
+                if (level == 0)
+                {
+
+                }
+                break;
+            case SkillType.SummonSamtan:
+                if (level == 0)
+                {
+
+                }
+                break;
+            case SkillType.SummonBoom:
+                if (level == 0)
+                {
+
+                }
+                break;
+            case SkillType.SummonSlow:
                 if (level == 0)
                 {
 
