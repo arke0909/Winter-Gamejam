@@ -8,13 +8,13 @@ public class ExpSpawner : MonoBehaviour
     [SerializeField]
     private List<PoolTypeSO> _poolType;
 
-    public void ExpDrop()
+    public void ExpDrop(Transform transform)
     {
         Debug.Log("¶³±À");
 
         int idx = Random.Range(0, _poolType.Count);
         PoolTypeSO poolType = _poolType[idx];
 
-        _poolManager.Pop(poolType);
+        _poolManager.Pop(poolType).GameObject.transform.position = transform.position;
     }
 }
