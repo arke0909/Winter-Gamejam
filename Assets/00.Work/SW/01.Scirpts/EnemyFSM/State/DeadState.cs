@@ -16,6 +16,7 @@ public class DeadState : EnmyState
     private IEnumerator DeadTIme()
     {
         yield return new WaitForSeconds(0.5f);
+        _brain.EnemyHealthCompo.DieEvent?.Invoke();
         _brain.HpBa.HpReset();
         poolManager.Push(_brain);
     }

@@ -16,15 +16,24 @@ public class SettingUI : MonoBehaviour
     public void Show()
     {
         gameObject.SetActive(true);
+        Time.timeScale = 0f;
     }
 
-    public void Hide() { gameObject.SetActive(false); }
+    public void Hide()
+    { 
+        gameObject.SetActive(false);
+        Time.timeScale = 1f;
+}
 
     public void Quit()
     {
         Application.Quit();
     }
-
+    private void Update()
+    {
+        if(Input.GetKeyUp(KeyCode.Escape))
+            Hide();
+    }
     public void realShow()
     {
         realQuit.SetActive(true);

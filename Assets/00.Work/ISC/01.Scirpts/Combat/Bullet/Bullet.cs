@@ -77,7 +77,7 @@ public abstract class Bullet : MonoBehaviour, IPoolable
         SetMove(direction);
         _damage = damage;
         _knockbackPower = knockbackPower;
-        transform.rotation = Quaternion.FromToRotation(Vector2.up, dir);
+        transform.rotation = Quaternion.FromToRotation(Vector2.right, dir);
     }
 
     protected void SetMove(Vector2 dir)
