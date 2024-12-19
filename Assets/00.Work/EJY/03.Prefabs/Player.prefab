@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90efa94ee099866438cef135ac75cf2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputReader: {fileID: 11400000, guid: e790090ef595d5d4496afd3e693722fb, type: 2}
+  <InputCompo>k__BackingField: {fileID: 11400000, guid: e790090ef595d5d4496afd3e693722fb, type: 2}
 --- !u!114 &1259038663861594915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,7 +446,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 735098819995849586, guid: 9e3dad0c48e01d446aed66ed8b7c519a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2b69f78f88264ae4e9ed400b3bdcea77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -43,7 +43,7 @@ public class ElectronicBulletSkill : Skill, IBulletAble
             {
                 Debug.Log("이거 개수만큼 맞은거");
                 _lineRenderer.SetPosition(i, _colliders[i].transform.position);
-                health.TakeDamage(_gun.CurrentAttack * 0.65f);
+                health.TakeDamage(_gun.CurrentAttack * 0.65f,Vector2.zero,Vector2.zero,0);
             }
         }
     }
