@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6154857385081989118}
   - component: {fileID: 2849116354033114107}
   - component: {fileID: 836459430520691313}
+  - component: {fileID: 841199963727077391}
   m_Layer: 0
   m_Name: BoomEffect
   m_TagString: Untagged
@@ -116,7 +117,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.35
+      scalar: 0.2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1553,13 +1554,6 @@ ParticleSystem:
     - sprite: {fileID: -6792727409738739100, guid: 9bf587df7b71b0f4ea759b6fde229486, type: 3}
     - sprite: {fileID: -7792522051529752083, guid: 9bf587df7b71b0f4ea759b6fde229486, type: 3}
     - sprite: {fileID: 793541858117636248, guid: 9bf587df7b71b0f4ea759b6fde229486, type: 3}
-    - sprite: {fileID: 1860984990781535702, guid: 9bf587df7b71b0f4ea759b6fde229486, type: 3}
-    - sprite: {fileID: -8665808488807385726, guid: 9bf587df7b71b0f4ea759b6fde229486, type: 3}
-    - sprite: {fileID: -7562583296102109932, guid: 9bf587df7b71b0f4ea759b6fde229486, type: 3}
-    - sprite: {fileID: -1794979912326799122, guid: 9bf587df7b71b0f4ea759b6fde229486, type: 3}
-    - sprite: {fileID: 5774946278920530199, guid: 9bf587df7b71b0f4ea759b6fde229486, type: 3}
-    - sprite: {fileID: 1907544941967075340, guid: 9bf587df7b71b0f4ea759b6fde229486, type: 3}
-    - sprite: {fileID: -5480505623937186310, guid: 9bf587df7b71b0f4ea759b6fde229486, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -4905,3 +4899,17 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &841199963727077391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122736069300394273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cd65d39e9355ea4091118a866de6257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _poolType: {fileID: 11400000, guid: 88ff5d66409512e4db90c514cd7c8865, type: 2}
+  _poolManager: {fileID: 11400000, guid: d37261864854dfa41af86456b43594a7, type: 2}

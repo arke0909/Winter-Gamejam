@@ -19,19 +19,19 @@ public class MoveState : EnmyState
     public override void UpdateState()
     {
         Vector2 enemyDIr = (_brain.Target.transform.position - _brain.transform.position).normalized;
-        if (longRange)
-            if (Vector3.Distance(_brain.transform.position, _brain.Target.transform.position) < _brain.EnemyStatCompo.Range)
-            {
-                _brain.EnemyRIgidCompo.linearVelocity = Vector2.zero;
-                if (moveStartTime >= _stat.AttackSpeed)
-                    base.UpdateState();
-                else
-                    moveStartTime += Time.deltaTime;
+        if (Vector3.Distance(_brain.transform.position, _brain.Target.transform.position) < _brain.EnemyStatCompo.Range)
+        {
+            _brain.EnemyRIgidCompo.linearVelocity = Vector2.zero;
+            if (moveStartTime >= _stat.AttackSpeed)
+                base.UpdateState();
+            else
+                moveStartTime += Time.deltaTime;
 
-                _brain.EnemyAnimatorCompo.Flip(enemyDIr.x);
-                _brain.EnemyAnimatorCompo.EnemyAniChange(EnemyAnimation.Idie);   
-                return;
-            }
+            _brain.EnemyAnimatorCompo.Flip(enemyDIr.x);
+            print("Á¤Áö");
+            _brain.EnemyAnimatorCompo.EnemyAniChange(EnemyAnimation.Idie);   
+            return;
+        }
         if(_brain._CanMove)
         {
             _brain.EnemyAnimatorCompo.EnemyAniChange(EnemyAnimation.Move);
