@@ -7,8 +7,13 @@ public class RePositioning : MonoBehaviour
     [SerializeField] private Vector2 _size;
     [SerializeField] private Vector2 _position;
     [SerializeField] private LayerMask spawnerLayer;
+
+    private bool _isGameing;
+
     private void Awake()
     {
+        _isGameing = true;
+
         var colliders = Physics2D.OverlapBoxAll(_position, _size, 0,spawnerLayer);
         foreach (var collider in colliders)
         {
@@ -18,13 +23,14 @@ public class RePositioning : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (!_isGameing) return;
+
         if (!collision.CompareTag("Area"))
         {
             return;
         }
 
         Vector3 playerPos = GameManager.Instance.Player.transform.position;
-        Debug.Log("´©°¡");
         Vector3 myPos = transform.position;
 
         float diffX = Mathf.Abs(playerPos.x - myPos.x);
@@ -64,6 +70,11 @@ public class RePositioning : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        _isGameing = false;
     }
 
     private void OnDrawGizmos()
