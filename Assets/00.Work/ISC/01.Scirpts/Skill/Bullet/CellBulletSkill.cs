@@ -21,6 +21,14 @@ public class CellBulletSkill : Skill, IBulletAble
         _angle = _plusAngle;
     }
 
+    protected override void Upgrade()
+    {
+        int cnt = upgradeValues[UpgradeArrIdx];
+        
+        _plusAngle = 360 / (float)cnt;
+        _angle = _plusAngle;
+    }
+
 
     public void BulletAbility(Transform targetTrm)
     {

@@ -13,7 +13,9 @@ public class HitState : EnmyState
         _brain.EnemyRIgidCompo.linearVelocity = Vector3.zero;
         _brain.EnemyAnimatorCompo.EnemyAniChange(EnemyAnimation.Hit);
         _brain.EnemyHealthCompo.NextHealth += 1;
-        //_brain.EnemyHealthCompo.GetKnockback();
+
+        Vector2 enemyDIr = -(_brain.Target.transform.position - _brain.transform.position).normalized;
+        _brain.EnemyHealthCompo.GetKnockback(enemyDIr,5);
         print(_brain.EnemyHealthCompo.NextHealth);
         IsHit = true;
         StartCoroutine(HitTime());

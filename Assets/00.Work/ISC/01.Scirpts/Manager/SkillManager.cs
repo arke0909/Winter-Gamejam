@@ -12,7 +12,7 @@ public enum SkillType
     Penetration,
     ElectronicBullet,
     BoomIsArt,
-    LookLikeLong,
+    CatchMe,
     LimeBullet,
     CellBullet,
     Seasoneded,
@@ -22,11 +22,11 @@ public class SkillManager : MonoSingleton<SkillManager>
 {
     public Action<Transform> OnHit;
     
-    private Dictionary<SkillType, Tuple<Type, Skill>> _skills;
+    private Dictionary<SkillType, Skill> _skills;
     private Player _player;
     private void Awake()
     {
-        _skills = new Dictionary<SkillType, Tuple<Type, Skill>>();
+        _skills = new Dictionary<SkillType, Skill>();
     }
 
     private void Start()
@@ -42,8 +42,7 @@ public class SkillManager : MonoSingleton<SkillManager>
             }
             skill.Initialize(_player);
             Type type = skill.GetType();
-            Tuple<Type, Skill> tuple = new Tuple<Type, Skill>(type, skill);
-            _skills.Add(skillType, tuple);
+            _skills.Add(skillType, skill);
         }
     }
 
@@ -51,12 +50,12 @@ public class SkillManager : MonoSingleton<SkillManager>
     {
         Debug.Assert(_skills.ContainsKey(type) == true, $"{type} is not Found");
 
-        if (_skills[type].Item2.TryGetComponent(out IBulletAble bullet))
+        if (_skills[type].TryGetComponent(out IBulletAble bullet))
         {
             OnHit += bullet.BulletAbility;
         }
         
-        _skills[type].Item2.UpgradeSkill();
-        _skills[type].Item2.OnSkill();
+        _skills[type].UpgradeSkill();
+        _skills[type].OnSkill();
     }
 }
