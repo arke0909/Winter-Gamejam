@@ -9,8 +9,6 @@ public class PlayerBullet : Bullet
     [SerializeField] private bool isHoming;
     private Collider2D _enemyCollider = null;
 
-    private TrailRenderer _trailRenderer;
-
     private Vector2 moveDir;
 
     protected override void Awake()
@@ -18,8 +16,6 @@ public class PlayerBullet : Bullet
         base.Awake();
         GameManager.Instance.Penetation.OnValueChanged += HandlePenetationCount;
         GameManager.Instance.IsHoming.OnValueChanged += HandleHoming;
-
-        _trailRenderer = GetComponentInChildren<TrailRenderer>();
     }
 
     private void FixedUpdate()
@@ -55,17 +51,6 @@ public class PlayerBullet : Bullet
     private void HandlePenetationCount(int prev, int next)
     {
         PenetrationCnt = next;
-    }
-
-    private void OnDisable()
-    {
-        _trailRenderer.enabled = false;
-    }
-
-    public override void ResetItem()
-    {
-        base.ResetItem();
-        _trailRenderer.enabled = true;
     }
 
     protected override void Hit()
