@@ -10,6 +10,7 @@ public class Enemy2AttackState : EnmyState
     [SerializeField] private PoolManagerSO poolManager;
     public override void OnEnterState()
     {
+        _brain.EnemyAnimatorCompo.EnemyAniChange(EnemyAnimation.Attack);
         if (moveDecision == null)
             foreach (EnemyDecision decision in _decisions)
                 if (decision.GetComponent<MoveDecision>() != null) moveDecision = decision.GetComponent<MoveDecision>();

@@ -6,7 +6,7 @@ public abstract class Skill : MonoBehaviour
     public int CurrentLevel { get; protected set; } = 1;
     [field: SerializeField] public int UpgradeArrIdx { get; protected set; } = 0;
 
-    private readonly int _maxLevel = 5;
+    public int MaxLevel { get; protected set; } = 5;
     
     public bool skillEnabled = false;
     
@@ -35,7 +35,7 @@ public abstract class Skill : MonoBehaviour
 
     public void UpgradeSkill()
     {
-        if (!skillEnabled || CurrentLevel >= _maxLevel) return;
+        if (!skillEnabled || CurrentLevel >= MaxLevel) return;
         
         CurrentLevel++;
         UpgradeArrIdx++;

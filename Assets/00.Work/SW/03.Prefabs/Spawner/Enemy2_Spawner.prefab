@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2428942542656267151}
   - component: {fileID: 4425324063438599506}
+  - component: {fileID: 4514025114095369819}
   m_Layer: 0
   m_Name: Enemy2_Spawner
   m_TagString: Untagged
@@ -47,3 +48,39 @@ MonoBehaviour:
   poolType: {fileID: 11400000, guid: 322e07d88a4dd054fa99e539ce30572e, type: 2}
   poolManager: {fileID: 11400000, guid: d37261864854dfa41af86456b43594a7, type: 2}
   _player: {fileID: 0}
+--- !u!58 &4514025114095369819
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605017135073050964}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5

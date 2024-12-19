@@ -21,7 +21,6 @@ public class EnemyBrain : MonoBehaviour, IPoolable
     private EnemyAnimator _enemyAnimator;
 
     [SerializeField] private bool IsLongRange;
-    [SerializeField] private Transform gunBasePosition;
 
     public EnemyStat EnemyStatCompo { get { return _enemyStat; } }
     public Player Target { get { return _player; } }
@@ -31,6 +30,7 @@ public class EnemyBrain : MonoBehaviour, IPoolable
     public PoolTypeSO PoolType => _poolType;
     public GameObject GameObject => gameObject;
     public DamageCaster DamageCasterCompo { get; private set; }
+    public bool _CanMove { get; set; } = true;
 
     private bool _alreadyCollected;
 
@@ -52,6 +52,7 @@ public class EnemyBrain : MonoBehaviour, IPoolable
 
         _enemyStat.SetStat(_enemyDataSO);
         _enemyHealth.Initialize(EnemyStatCompo.Hp);
+        _enemyHealth.NextHealth = 1;
         StartCoroutine(SpawnTiem());
         _enmyStates.ForEach(state => state.Init(this, _enemyStat));
         _currentState = startState;
@@ -69,13 +70,10 @@ public class EnemyBrain : MonoBehaviour, IPoolable
         if (_currentState == null) return;
         _currentState.UpdateState();
 
-        if (IsLongRange)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Vector3 dir = Target.transform.position - transform.position;
-            float z = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            gunBasePosition.rotation = Quaternion.Euler(0,0,z);
+            _enemyHealth.TakeDamage(1);
         }
-
     }
 
     public void ChangeState(EnmyState golemAIState)

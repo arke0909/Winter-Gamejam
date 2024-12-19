@@ -41,6 +41,13 @@ public class Spawner : MonoBehaviour
         }
     }
 
+    public void SetSpawnerPoint()
+    {
+        float x = Random.Range(-20, 20);
+        float y = Random.Range(-20, 20);
+        transform.position = new Vector2(_player.transform.position.x + x, _player.transform.position.y + y);
+    }
+
     private IEnumerator StartSpawnCoolTiem()
     {
         yield return new WaitForSeconds(0.5f);
