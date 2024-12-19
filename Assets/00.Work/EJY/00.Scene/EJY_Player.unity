@@ -501,6 +501,10 @@ GameObject:
   - component: {fileID: 1406661414}
   - component: {fileID: 1406661413}
   - component: {fileID: 1406661412}
+  - component: {fileID: 1406661415}
+  - component: {fileID: 1406661416}
+  - component: {fileID: 1406661417}
+  - component: {fileID: 1406661418}
   m_Layer: 0
   m_Name: SkillManager
   m_TagString: Untagged
@@ -520,6 +524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce46b910d6bd4c142bc8fdd4230d2ccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <UpgradeArrIdx>k__BackingField: 0
   skillEnabled: 0
   values:
   - 0.15
@@ -554,6 +559,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1406661415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406661411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6117fc6234a754499d1a1bdbd994007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <UpgradeArrIdx>k__BackingField: 0
+  skillEnabled: 0
+  _values:
+  - 1.1
+  - 1.2
+  - 1.3
+  - 1.4
+  - 1.5
+--- !u!114 &1406661416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406661411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d7a6e672443a7c4888970a983d28f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <UpgradeArrIdx>k__BackingField: 0
+  skillEnabled: 0
+  values:
+  - 1.3
+  - 1.5
+  - 1.7
+  - 1.9
+  - 2.2
+--- !u!114 &1406661417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406661411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0474eb60e9422684da8fedaa1152b558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <UpgradeArrIdx>k__BackingField: 0
+  skillEnabled: 0
+  _values:
+  - 50
+  - 100
+  - 150
+  - 200
+  - 300
+--- !u!114 &1406661418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406661411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06d86ccbf4a4cf46b339d6dc61e5feb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <UpgradeArrIdx>k__BackingField: 0
+  skillEnabled: 0
+  _values: 0200000004000000060000000800000009000000
 --- !u!1001 &1601467639
 PrefabInstance:
   m_ObjectHideFlags: 0

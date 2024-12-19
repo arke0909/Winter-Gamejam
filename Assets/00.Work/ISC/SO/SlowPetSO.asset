@@ -10,10 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6691d92bb4850e04fb348cbe94e8fe25, type: 3}
-  m_Name: BoomPetSO
+  m_Name: SlowPetSO
   m_EditorClassIdentifier: 
-  Damage: 6
-  LifeTime: 0
-  Speed: 0
-  AttackTime: 1
-  AttackRange: 7
+  Damage: 5
+  LifeTime: 1
+  Speed: 18
+  AttackTime: 7.5
+  AttackRange: 6
+  KnockbackPower: 1
+  IncreaseValues:
+  - 0.15
+  - 0.2
+  - 0.25
+  - 0.3
+  - 0.4

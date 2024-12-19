@@ -30,6 +30,7 @@ public class Gun : MonoBehaviour, IPlayerComponent
         _inputReader = _player.GetCompo<InputReader>();
 
         currentReloadTime = BaseReloadTime;
+        currentAttack = BaseAttack;
 
         _inputReader.OnAttackEvent += HandleSAttackEvent;
     }
@@ -94,11 +95,10 @@ public class Gun : MonoBehaviour, IPlayerComponent
     public void ReloadUpgrade(float multiply)
     {
         currentReloadTime = BaseReloadTime - (BaseReloadTime * multiply);
-        Debug.Log(currentReloadTime);
     }
 
     public void AttackUpgrade(float multiply)
     {
-
+        currentAttack = BaseAttack * multiply;
     }
 }

@@ -4,6 +4,8 @@ using GGMPool;
 
 public abstract class Pet : MonoBehaviour
 {
+    [SerializeField] protected Transform fireForceTrm;
+    
     [SerializeField] private PetSO petSo;
     [SerializeField] protected PoolManagerSO poolManagerSO;
     [SerializeField] protected PoolTypeSO poolTypeSO;
@@ -11,12 +13,12 @@ public abstract class Pet : MonoBehaviour
     [field: SerializeField] public int CurrentLevel { get; protected set; } = 1;
     [field: SerializeField] public int UpgradeArrIdx { get; protected set; } = 0;
 
-    private int _maxLevel = 5;
-    protected float Damage => petSo.Damage;
-    protected float AttackTime;
-    protected float[] UpgradeArray;
-    protected float Range => petSo.AttackRange;
-    protected float KnockbackPower => petSo.KnockbackPower;
+    private readonly int _maxLevel = 5;
+    [SerializeField] protected float Damage;
+    [SerializeField] protected float AttackTime;
+    [SerializeField] protected float[] UpgradeArray;
+    [SerializeField] protected float Range;
+    [SerializeField] protected float KnockbackPower;
 
     private float cooldown;
 
@@ -25,13 +27,16 @@ public abstract class Pet : MonoBehaviour
     private void Awake()
     {
         Debug.Assert(petSo != null,$"PetSO is NULL or Empty");
-        Initalize();
+        Initialize();
     }
 
-    private void Initalize()
+    public void Initialize()
     {
         AttackTime = petSo.AttackTime;
+        Damage = petSo.Damage;
+        Range = petSo.AttackRange;
         UpgradeArray = petSo.IncreaseValues;
+        KnockbackPower = petSo.KnockbackPower;
 
         AfterInit();
     }
