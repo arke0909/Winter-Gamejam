@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
         SetComponent();
     }
 
+   
+
     private void FixedUpdate()
     {
         _playerMover.SetVelocity(InputCompo.InputDir);
