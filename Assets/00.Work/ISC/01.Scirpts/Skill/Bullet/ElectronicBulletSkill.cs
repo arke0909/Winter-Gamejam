@@ -16,6 +16,8 @@ public class ElectronicBulletSkill : Skill, IBulletAble
     
     private Transform _targetTrm;
     
+    public bool IsHas { get; set; }
+    
     protected override void AfterInit()
     {
         _chainCnt = upgradeValues[UpgradeArrIdx];
@@ -33,6 +35,8 @@ public class ElectronicBulletSkill : Skill, IBulletAble
 
     public void BulletAbility(Transform targetTrm)
     {
+        if (IsHas == false) IsHas = true;
+        
         _targetTrm = targetTrm;
         _cnt = Physics2D.OverlapCircle(_targetTrm.position, _chainRange, fliter, _colliders);
 
@@ -47,6 +51,7 @@ public class ElectronicBulletSkill : Skill, IBulletAble
             }
         }
     }
+
 
     private void OnDrawGizmos()
     {

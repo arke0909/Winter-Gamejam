@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using GGMPool;
+using UnityEngine.Serialization;
 
 public abstract class Pet : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public abstract class Pet : MonoBehaviour
     [SerializeField] private PetSO petSo;
     [SerializeField] protected PoolManagerSO poolManagerSO;
     [SerializeField] protected PoolTypeSO poolTypeSO;
+    [SerializeField] private LayerMask whatIsLayer;
     
     [field: SerializeField] public int CurrentLevel { get; protected set; } = 1;
     [field: SerializeField] public int UpgradeArrIdx { get; protected set; } = 0;
@@ -74,7 +76,7 @@ public abstract class Pet : MonoBehaviour
 
     public virtual void RangeDraw()
     {
-        Collider2D = Physics2D.OverlapCircle(transform.position, Range);
+        Collider2D = Physics2D.OverlapCircle(transform.position, Range, whatIsLayer);
         if (Collider2D != null)
         {
             if (CheckAttemptAttack())

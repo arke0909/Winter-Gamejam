@@ -17,6 +17,8 @@ public class BoomIsArtSkill : Skill, IBulletAble
 
     private Collider2D[] _colliders;
 
+    public bool IsHas { get; set; } = false;
+    
     private Gun _gun;
     protected override void AfterInit()
     {
@@ -25,6 +27,7 @@ public class BoomIsArtSkill : Skill, IBulletAble
 
     public void BulletAbility(Transform target)
     {
+        if (IsHas == false) IsHas = true;
         int cnt = Physics2D.OverlapCircle(transform.position, _values[UpgradeArrIdx].damageRadius, filter, _colliders);
 
         for (int i = 0; i < cnt; i++)
@@ -39,4 +42,5 @@ public class BoomIsArtSkill : Skill, IBulletAble
             }
         }
     }
+
 }

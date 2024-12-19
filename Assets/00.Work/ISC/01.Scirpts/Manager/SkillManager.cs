@@ -65,6 +65,11 @@ public class SkillManager : MonoSingleton<SkillManager>
 
         if (_skills[type].TryGetComponent(out IBulletAble bullet))
         {
+            if (bullet.IsHas)
+            {
+                Debug.Log($"{type}을 이미 보유중 입니다.");
+                return;
+            }
             OnHit += bullet.BulletAbility;
         }
         

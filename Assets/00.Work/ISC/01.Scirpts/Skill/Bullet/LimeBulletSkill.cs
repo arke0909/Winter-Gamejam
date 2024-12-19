@@ -20,6 +20,8 @@ public class LimeBulletSkill : Skill, IBulletAble
     
     private Collider2D _collider;
 
+    public bool IsHas { get; set; } = false;
+
     protected override void AfterInit()
     {
         _slowDuration = upgradeValues[UpgradeArrIdx];
@@ -42,6 +44,7 @@ public class LimeBulletSkill : Skill, IBulletAble
 
     public void BulletAbility(Transform targetTrm)
     {
+        if (IsHas == false) IsHas = true;
         _targetTrm = targetTrm;
         _collider = Physics2D.OverlapCircle(_targetTrm.position, range, whatIsEnemy);
         if (_collider != null)
@@ -60,6 +63,7 @@ public class LimeBulletSkill : Skill, IBulletAble
             }
         }
     }
+
 
     private void OnDrawGizmos()
     {

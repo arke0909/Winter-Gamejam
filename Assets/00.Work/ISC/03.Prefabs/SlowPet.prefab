@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.0852586, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -133,6 +133,9 @@ MonoBehaviour:
   petSo: {fileID: 11400000, guid: ca6d07d2a41635e43b12cba388e06885, type: 2}
   poolManagerSO: {fileID: 11400000, guid: d37261864854dfa41af86456b43594a7, type: 2}
   poolTypeSO: {fileID: 11400000, guid: 917c1e48b2a7ad04096a76643810f996, type: 2}
+  whatIsLayer:
+    serializedVersion: 2
+    m_Bits: 256
   <CurrentLevel>k__BackingField: 1
   <UpgradeArrIdx>k__BackingField: 0
   Damage: 0

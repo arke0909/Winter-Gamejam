@@ -9,7 +9,9 @@ public class CellBulletSkill : Skill, IBulletAble
     [SerializeField] private int[] upgradeValues;
     private float _angle;
     private float _plusAngle;
-    private Gun _gun; 
+    private Gun _gun;
+
+    public bool IsHas { get; set; } = false;
     
     protected override void AfterInit()
     {
@@ -23,6 +25,8 @@ public class CellBulletSkill : Skill, IBulletAble
 
     protected override void Upgrade()
     {
+        if (IsHas == false) IsHas = true;
+        
         int cnt = upgradeValues[UpgradeArrIdx];
         
         _plusAngle = 360 / (float)cnt;
@@ -40,4 +44,5 @@ public class CellBulletSkill : Skill, IBulletAble
             _angle += _plusAngle;
         }
     }
+
 }
