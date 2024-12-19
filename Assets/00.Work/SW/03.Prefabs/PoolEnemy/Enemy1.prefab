@@ -258,7 +258,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -6873036189813121371, guid: 466aba7a40a0adf469d0d63c8a82b6b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -407,7 +407,6 @@ MonoBehaviour:
   _enemyDataSO: {fileID: 11400000, guid: e4407828f9493574f8684b4d21fbd26e, type: 2}
   _poolType: {fileID: 11400000, guid: 6c408ebe43b6d5943b1753734e86c68d, type: 2}
   IsLongRange: 0
-  gunBasePosition: {fileID: 0}
 --- !u!50 &6754842230375171430
 Rigidbody2D:
   serializedVersion: 5
@@ -485,6 +484,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 0
   DieEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  HitEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &4590131816769928197

@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class RePositioning : MonoBehaviour
 {
-    private List<Spawner> _spawns;
+    private List<Spawner> _spawns = new List<Spawner>();
     [SerializeField] private Vector2 _size;
     [SerializeField] private Vector2 _position;
+    [SerializeField] private LayerMask spawnerLayer;
     private void Awake()
     {
-        var colliders = Physics2D.OverlapBoxAll(_position, _size, 0);
+        var colliders = Physics2D.OverlapBoxAll(_position, _size, 0,spawnerLayer);
         foreach (var collider in colliders)
         {
             if(collider.GetComponent<Spawner>() != null)
