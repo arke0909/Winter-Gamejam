@@ -18,6 +18,7 @@ public class EnemyBrain : MonoBehaviour, IPoolable
     private EnemyStat _enemyStat;
     private EnemyHealth _enemyHealth;
     private Pool _pool;
+    private EnemyAnimator _enemyAnimator;
 
     [SerializeField] private bool IsLongRange;
     [SerializeField] private Transform gunBasePosition;
@@ -26,10 +27,10 @@ public class EnemyBrain : MonoBehaviour, IPoolable
     public Player Target { get { return _player; } }
     public Rigidbody2D EnemyRIgidCompo {  get { return _rigidbody; } }
     public EnemyHealth EnemyHealthCompo { get { return _enemyHealth; } }
-
+    public EnemyAnimator EnemyAnimatorCompo => _enemyAnimator;
     public PoolTypeSO PoolType => _poolType;
-
     public GameObject GameObject => gameObject;
+    public DamageCaster DamageCasterCompo { get; private set; }
 
     private bool _alreadyCollected;
 
@@ -46,6 +47,9 @@ public class EnemyBrain : MonoBehaviour, IPoolable
         _rigidbody = GetComponent<Rigidbody2D>();
         _enemyHealth = GetComponent<EnemyHealth>();
         _enemyStat = GetComponent<EnemyStat>();
+        _enemyAnimator = GetComponentInChildren<EnemyAnimator>();
+        DamageCasterCompo = GetComponentInChildren<DamageCaster>();
+
         _enemyStat.SetStat(_enemyDataSO);
         _enemyHealth.Initialize(EnemyStatCompo.Hp);
         StartCoroutine(SpawnTiem());

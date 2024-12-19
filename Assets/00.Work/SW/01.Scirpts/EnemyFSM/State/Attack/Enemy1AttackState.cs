@@ -8,28 +8,31 @@ public class Enemy1AttackState : EnmyState
     [SerializeField] private LayerMask playerLayer;
     public override void OnEnterState()
     {
+        _brain.EnemyAnimatorCompo.OnAttackAnimation += Attack;
+        _brain.EnemyAnimatorCompo.EnemyAniChange(EnemyAnimation.Attack);
         if (moveDecision == null) 
             foreach(EnemyDecision decision in _decisions )
                 if (decision.GetComponent<MoveDecision>() != null) moveDecision = decision.GetComponent<MoveDecision>();
 
         moveDecision.IsMoveEnd = false;
         _brain.EnemyRIgidCompo.linearVelocity = Vector3.zero;
-
         Vector2 enemyRushDIr = (_brain.Target.transform.position - _brain.transform.position).normalized;
-        StartCoroutine(StartRushTime(enemyRushDIr, rushDistance));
-        
+        _brain.EnemyRIgidCompo.linearVelocity = enemyRushDIr * rushDistance;
+        StartCoroutine(StartRushTime());
     }
 
-    private IEnumerator StartRushTime(Vector2 rushDirection, float rushPower)
+    private void Attack()
     {
-        _brain.EnemyRIgidCompo.linearVelocity = rushDirection * rushPower;
-        if(Physics2D.OverlapCircle(transform.position,0.7f,playerLayer))
+        if (_brain.DamageCasterCompo.CastDamage(_stat.Damage, 0))
         {
             print("공격성공");
         }
-        yield return new WaitForSeconds(0.2f);
-        moveDecision.IsMoveEnd = true;
+    }
 
+    private IEnumerator StartRushTime()
+    {
+        yield return new WaitForSeconds(0.25f);
+        moveDecision.IsMoveEnd = true;
     }
 
     public override void OnExitState()
