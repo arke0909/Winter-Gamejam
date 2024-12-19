@@ -1,7 +1,20 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class RePositioning : MonoBehaviour
 {
+    private List<Spawner> _spawns;
+    [SerializeField] private Vector2 _size;
+    [SerializeField] private Vector2 _position;
+    private void Awake()
+    {
+        var colliders = Physics2D.OverlapBoxAll(_position, _size, 0);
+        foreach (var collider in colliders)
+        {
+            if(collider.GetComponent<Spawner>() != null)
+                _spawns.Add(collider.GetComponent<Spawner>());
+        }
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         print("Triggered");
@@ -48,8 +61,17 @@ public class RePositioning : MonoBehaviour
                 break;
 
             case "Enemy":
-                // 여따가 적 지우는 로직 하긴 해야함
+                foreach(Spawner spawner in _spawns)
+                {
+                    spawner.SetSpawnerPoint();
+                }
                 break;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(_position, _size);
     }
 }

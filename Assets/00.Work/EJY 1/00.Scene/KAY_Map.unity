@@ -4347,6 +4347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d35e36174f2d75d408a3d93312ecfb3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _size: {x: 20, y: 20}
+  _position: {x: 4, y: -5}
 --- !u!66 &370575773
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -8933,6 +8935,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d35e36174f2d75d408a3d93312ecfb3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _size: {x: 20, y: 20}
+  _position: {x: 4, y: 15}
 --- !u!1 &1448506115
 GameObject:
   m_ObjectHideFlags: 0
@@ -13220,6 +13224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d35e36174f2d75d408a3d93312ecfb3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _size: {x: 20, y: 20}
+  _position: {x: 24, y: -5}
 --- !u!1 &1497352703
 GameObject:
   m_ObjectHideFlags: 0
@@ -17706,6 +17712,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d35e36174f2d75d408a3d93312ecfb3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _size: {x: 20, y: 20}
+  _position: {x: 24, y: 15}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
