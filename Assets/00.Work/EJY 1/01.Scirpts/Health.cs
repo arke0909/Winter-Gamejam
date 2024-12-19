@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
 {
     [field : SerializeField]
     public float MaxHealth { get; private set; }
+
     private float _currentHealth;
     private Rigidbody2D _rigidCompo;
     private EnemyBrain _enemyBrain;
