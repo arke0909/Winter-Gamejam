@@ -1734,6 +1734,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Colors_65
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 275
+        width: 34
+        height: 1
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e38efa4bf5f17f43a2026a81a734277
+      internalID: 1008551632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1810,6 +1832,7 @@ TextureImporter:
       Colors_62: -2344702889888018162
       Colors_63: 5511766813511598420
       Colors_64: -8116357412550456751
+      Colors_65: 1008551632
       Colors_7: 4014654672444879362
       Colors_8: 155828256832868845
       Colors_9: 2637635718519816752

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SoundPlayer_Item
   m_EditorClassIdentifier: 
   poolType: {fileID: 11400000, guid: 621c2397049e7014082911c398995f63, type: 2}
-  prefab: {fileID: 0}
+  prefab: {fileID: 5253117105401481651, guid: d6661d553b6bef9429e0dd0be7e4c1db, type: 3}
   initCount: 30

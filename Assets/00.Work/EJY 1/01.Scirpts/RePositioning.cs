@@ -18,14 +18,13 @@ public class RePositioning : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Triggered" + collision.gameObject.name);
-
         if (!collision.CompareTag("Area"))
         {
             return;
         }
 
         Vector3 playerPos = GameManager.Instance.Player.transform.position;
+        Debug.Log("´©°¡");
         Vector3 myPos = transform.position;
 
         float diffX = Mathf.Abs(playerPos.x - myPos.x);

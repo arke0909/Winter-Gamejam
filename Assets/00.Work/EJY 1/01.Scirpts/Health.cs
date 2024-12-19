@@ -48,6 +48,8 @@ public class Health : MonoBehaviour
 
     public virtual void TakeDamage(float damage, Vector2 normal, Vector2 point, float knockbackPower = 0)
     {
+        Debug.Log(1);
+
         _currentHealth -= damage;
         HitEvent?.Invoke();
 

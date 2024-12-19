@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BoomEffect_Item
   m_EditorClassIdentifier: 
   poolType: {fileID: 11400000, guid: 88ff5d66409512e4db90c514cd7c8865, type: 2}
-  prefab: {fileID: 0}
+  prefab: {fileID: 2122736069300394273, guid: 2446f9b007a912246b9c027e65bf5b89, type: 3}
   initCount: 30

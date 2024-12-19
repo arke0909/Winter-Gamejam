@@ -11,6 +11,7 @@ public class SoundPlayer : MonoBehaviour, IPoolable
 
     [SerializeField] private AudioMixerGroup _sfxGroup, _musicGroup;
 
+    private Pool _pool;
     public PoolTypeSO PoolType => _poolType;
 
     public GameObject GameObject => gameObject;
@@ -64,6 +65,6 @@ public class SoundPlayer : MonoBehaviour, IPoolable
 
     public void SetUpPool(Pool pool)
     {
-        throw new System.NotImplementedException();
+        _pool = pool;
     }
 }

@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3017757573337562668}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.6422994, y: -2.261649, z: 0.083932936}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51,6 +51,9 @@ MonoBehaviour:
   _multiplyValueExpLimit: 0.2
   _maxExp: 100
   _exp: 0
+  LevelUpEvent:
+    m_PersistentCalls:
+      m_Calls: []
   <Level>k__BackingField: 1
 --- !u!1 &5091443015153490010
 GameObject:
@@ -148,11 +151,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   upgradeValues:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 0.25
+  - 0.4
+  - 0.5
+  - 0.58
+  - 0.62
 --- !u!114 &2048109195169807278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,7 +229,7 @@ MonoBehaviour:
   skillEnabled: 0
   poolManagerSo: {fileID: 11400000, guid: d37261864854dfa41af86456b43594a7, type: 2}
   poolTypeSo: {fileID: 11400000, guid: d53a5b90051789848a736e66e8a18644, type: 2}
-  upgradeValues: 0000000000000000000000000000000000000000
+  upgradeValues: 0300000004000000050000000700000009000000
 --- !u!114 &3012861299054012464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,7 +246,7 @@ MonoBehaviour:
   <MaxLevel>k__BackingField: 5
   skillEnabled: 0
   _chainRange: 0
-  upgradeValues: 0000000000000000000000000000000000000000
+  upgradeValues: 0300000004000000050000000700000009000000
   fliter:
     useTriggers: 0
     useLayerMask: 0
@@ -442,8 +445,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8137898691529538984}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.6422994, y: -2.261649, z: 0.083932936}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
