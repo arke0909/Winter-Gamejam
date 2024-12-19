@@ -31,7 +31,7 @@ public class EnemyAnimator : MonoBehaviour
                 _enemyAni.Play(_brain.PoolType.typeName + "Dead");
                 break;
             case EnemyAnimation.Idie:
-                _enemyAni.Play(_brain.PoolType.typeName + "Idie");
+                _enemyAni.Play(_brain.PoolType.typeName + "Idle");
                 break;
         }
     }
