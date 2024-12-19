@@ -18,5 +18,5 @@ MonoBehaviour:
     \uAE30\uBCF8\uC801\uC73C\uB85C \uC801\uC758 \uC774\uB3D9\uC18D\uB3C4\uC758 15/20/25/30/40%\uB9CC\uD07C
     \uAC10\uC18D\uC2DC\uD0A8\uB2E4."
   skillName: "\uC2AC\uB85C\uC6B0 \uD3AB"
-  icon: {fileID: -7028066036478859568, guid: 1b8b6a6770f2c174e96385cb721dad17, type: 3}
+  icon: {fileID: 735098819995849586, guid: 7b59dc5ab22210249938256c76b596b0, type: 3}
   itemId: 15

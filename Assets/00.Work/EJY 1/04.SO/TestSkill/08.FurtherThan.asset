@@ -15,5 +15,5 @@ MonoBehaviour:
   type: 7
   toolTip: "\uBCF4\uB2E4 \uBA40\uB9AC"
   skillName: "n\uBBF8\uD130 \uB9CC\uD07C \uCD1D\uC758 \uC0AC\uC815\uAC70\uB9AC \uC99D\uAC00"
-  icon: {fileID: 8459159267605562339, guid: 3d59228bf282f0748ab0a8b9068bd333, type: 3}
+  icon: {fileID: -5269953275009266549, guid: fa582f510380d9748a9fca1bc22933f6, type: 3}
   itemId: 8
