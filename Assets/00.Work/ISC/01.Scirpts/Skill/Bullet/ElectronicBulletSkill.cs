@@ -11,14 +11,14 @@ public class ElectronicBulletSkill : Skill, IBulletAble
     private LineRenderer _lineRenderer;
     private Gun _gun;
     
-    protected override void AtferInit()
+    protected override void AfterInit()
     {
         _chainCnt = upgradeValues[UpgradeArrIdx];
         _colliders = new Collider2D[_chainCnt];
         
         _lineRenderer = GetComponentInChildren<LineRenderer>();
 
-        _gun = _Player.GetCompo<Gun>();
+        _gun = Player.GetCompo<Gun>();
     }
 
     protected override void Upgrade()
