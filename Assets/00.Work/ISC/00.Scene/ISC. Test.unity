@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 36753786}
   - component: {fileID: 36753785}
   - component: {fileID: 36753784}
+  - component: {fileID: 36753788}
   m_Layer: 8
   m_Name: Square (1)
   m_TagString: Untagged
@@ -273,6 +274,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &36753788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36753783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6382297efe499c47829d5b575aab27e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &185821117
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,27 +898,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 701994116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffb1103c014a8af4d9e495b1d3d13743, type: 3}
+  m_Script: {fileID: 11500000, guid: 3fe67c820942640429bebc905d62226e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <UpgradeArrIdx>k__BackingField: 0
   skillEnabled: 0
-  _chainRange: 5
-  upgradeValues: 0300000005000000070000000800000009000000
-  fliter:
-    useTriggers: 1
-    useLayerMask: 1
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 256
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 256
+  upgradeValues:
+  - 1.5
+  - 2
+  - 2.5
+  - 2.75
+  - 3
+  range: 0.5
 --- !u!1 &1054933451
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,6 +925,7 @@ GameObject:
   - component: {fileID: 1054933452}
   - component: {fileID: 1054933454}
   - component: {fileID: 1054933455}
+  - component: {fileID: 1054933456}
   m_Layer: 8
   m_Name: Square
   m_TagString: Untagged
@@ -1060,6 +1068,18 @@ MonoBehaviour:
   HitEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1054933456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054933451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6382297efe499c47829d5b575aab27e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1237726264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,6 +1187,7 @@ GameObject:
   - component: {fileID: 1559521975}
   - component: {fileID: 1559521974}
   - component: {fileID: 1559521973}
+  - component: {fileID: 1559521977}
   m_Layer: 8
   m_Name: Square (2)
   m_TagString: Untagged
@@ -1309,6 +1330,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1559521977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559521972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6382297efe499c47829d5b575aab27e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1732401959
 GameObject:
   m_ObjectHideFlags: 0
