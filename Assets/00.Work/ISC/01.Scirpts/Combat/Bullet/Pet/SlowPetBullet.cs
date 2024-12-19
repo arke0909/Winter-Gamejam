@@ -25,7 +25,7 @@ public class SlowPetBullet : PetBullet
     private void Update()
     {
         base.Update();
-        if (Time.time - _slowStartTime > Duration)
+        if (Time.time - _slowStartTime > Duration && _isSlow)
         {
             if (_stat == null)
             {
@@ -33,12 +33,17 @@ public class SlowPetBullet : PetBullet
                 return;
             }
             _stat.SetSpeed(1);
+            _isSlow = false;
         }
     }
     
     protected override void PetHit()
     {
-        if (_isSlow) return;
+        if (_isSlow)
+        {
+            _slowStartTime = Time.time;
+            return;
+        }
         _stat = Target.GetComponent<EnemyStat>();
         _slowStartTime = Time.time;
         _isSlow = true;
