@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,6 +11,7 @@ public class Health : MonoBehaviour
     private Rigidbody2D _rigidCompo;
 
     public UnityEvent DieEvent;
+    public UnityEvent HitEvent;
 
     public float CurrentHealth
     {
@@ -33,32 +35,37 @@ public class Health : MonoBehaviour
         CurrentHealth = maxHealth;
     }
 
-    public virtual void TakeDamage(float damage/*, float knockPower*/)
+    public virtual void TakeDamage(float damage/*, Vector2 normal, Vector2 point, float knockbackPower*/)
     {
-        CurrentHealth -= damage;
+        _currentHealth -= damage;
+        HitEvent?.Invoke();
+
+        //if (knockbackPower > 0)
+            //GetKnockback(normal * -1, knockbackPower);
+
         if (_currentHealth == 0)
-            Die();
+            DieEvent?.Invoke();
+
     }
 
-    /*public void TakeDamage(int amount, Vector2 normal, Vector2 point, float knockbackPower)
+    /*public void GetKnockback(Vector3 direction, float power)
     {
-        _currentHealth -= amount;
-        OnHitEvent?.Invoke();
-        //normal과 point, 넉백 등은 차후에 여기서 사용합니다.
+        Vector3 difference = direction * power;
+        rbCompo.AddForce(difference, ForceMode2D.Impulse);
 
-        if (knockbackPower > 0)
-            _owner.MovementCompo.GetKnockback(normal * -1, knockbackPower);
+        if (_kbCoroutine != null)
+            StopCoroutine(_kbCoroutine);
 
-        if (_currentHealth <= 0)
-        {
-            OnDeadEvent?.Invoke();
-        }
+        _kbCoroutine = StartCoroutine(KnockbackCoroutine());
+    }
+
+    private IEnumerator KnockbackCoroutine()
+    {
+        _canMove = false;
+        yield return new WaitForSeconds(0.2f);
+        _rigidCompo.linearVelocity = Vector2.zero;
+        _canMove = true;
     }*/
-
-    protected virtual void Die()
-    {
-        DieEvent?.Invoke();
-    }
 
     public float GetCurrentHealth()
     {
