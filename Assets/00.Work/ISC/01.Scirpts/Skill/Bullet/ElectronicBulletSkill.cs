@@ -9,6 +9,7 @@ public class ElectronicBulletSkill : Skill, IBulletAble
     Collider2D[] _colliders;
     
     private LineRenderer _lineRenderer;
+    private Gun _gun;
     
     protected override void AtferInit()
     {
@@ -16,6 +17,8 @@ public class ElectronicBulletSkill : Skill, IBulletAble
         _colliders = new Collider2D[_chainCnt];
         
         _lineRenderer = GetComponentInChildren<LineRenderer>();
+
+        _gun = _Player.GetCompo<Gun>();
     }
 
     protected override void Upgrade()
@@ -32,7 +35,7 @@ public class ElectronicBulletSkill : Skill, IBulletAble
             if (_colliders[i].gameObject.TryGetComponent(out Health health))
             {
                 _lineRenderer.SetPosition(i, _colliders[i].transform.position);
-                health.TakeDamage(_Player);
+                health.TakeDamage(_gun.CurrentAttack * 0.65f);
             }
         }
     }
