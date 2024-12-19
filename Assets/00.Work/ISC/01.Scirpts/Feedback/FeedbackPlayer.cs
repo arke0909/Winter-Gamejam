@@ -12,7 +12,7 @@ public class FeedbackPlayer : MonoBehaviour
         _feedbacks = GetComponents<Feedback>().ToList();
     }
 
-    public void PlayFeddback()
+    public void PlayFeedback()
     {
         StopFeedback();
         _feedbacks.ForEach(t => t.PlayFeedback());
