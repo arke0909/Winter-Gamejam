@@ -9,8 +9,4 @@ public class EnemyHealth : Health
         return  MaxHealth - NextHealth;
     }
 
-    public override void TakeDamage(float damage)
-    {
-        base.TakeDamage(damage);
-    }
 }
