@@ -48,8 +48,15 @@ public class SkillManager : MonoSingleton<SkillManager>
         }
     }
     
-    public void GetSkill(SkillType type)
+    public void GetSkill(SkillType type, PetType petType = PetType.None)
     {
+        if (_skills[type].TryGetComponent(out SummonPetSkill pet) && petType != PetType.None)
+        {
+            Debug.Log($"{petType}소환!");
+            pet.CreatePet(petType);
+            return;
+        }
+        
         if (_skills.ContainsKey(type) == false)
         {
             Debug.Log($"{type} is not Found");
@@ -59,9 +66,6 @@ public class SkillManager : MonoSingleton<SkillManager>
         if (_skills[type].TryGetComponent(out IBulletAble bullet))
         {
             OnHit += bullet.BulletAbility;
-        }
-        else if (_skills[type].TryGetComponent(out Pet pet))
-        {
         }
         
         _skills[type].UpgradeSkill();
