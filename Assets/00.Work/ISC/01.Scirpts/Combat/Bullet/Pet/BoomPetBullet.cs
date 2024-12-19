@@ -30,7 +30,6 @@ public class BoomPetBullet : PetBullet
             if (_isBooming) return;
             foreach (var obj in _collider2D)
             {
-                Debug.Log("붐어택! 무려 여러번이지!");
                 damageCaster.CastDamage(_damage, _knockbackPower);
                 _isBooming = true;
             }
