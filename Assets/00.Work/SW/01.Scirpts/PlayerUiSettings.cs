@@ -5,14 +5,20 @@ public class PlayerUiSettings : MonoBehaviour
 {
     [SerializeField] private Image hpBa;
     [SerializeField] private Image expBa;
-
-    public void HpBaSet(float value)
+    [SerializeField] private Health playerHealth;
+    private void HpBaSet(float value)
     {
         hpBa.fillAmount = value;
     }
 
-    public void ExpBaSet(float value)
+    private void ExpBaSet(float value)
     {
         expBa.fillAmount = value;
+    }
+
+    private void Update()
+    {
+        HpBaSet(playerHealth.CurrentHealth/playerHealth.MaxHealth);
+        ExpBaSet(1 - GameManager.Instance.EXP/100);
     }
 }
