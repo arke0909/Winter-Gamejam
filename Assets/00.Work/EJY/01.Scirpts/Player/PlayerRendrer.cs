@@ -33,7 +33,7 @@ public class PlayerRendrer : MonoBehaviour, IPlayerComponent
 
     private void PlayerFlip()
     {
-        _spriteRenderer.flipX = _inputReader.MousePos.x < transform.position;
+        _spriteRenderer.flipX = _inputReader.MousePos.x < transform.position.x;
     }
 
     public void Hit()
