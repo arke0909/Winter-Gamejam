@@ -8,6 +8,8 @@ public class Gun : MonoBehaviour, IPlayerComponent
     [SerializeField] private PoolManagerSO _poolManager;
     [SerializeField] private Transform _firePos;
 
+    [SerializeField] private float _knockPower = 0.2f;
+
     private Player _player;
     private InputReader _inputReader;
 
@@ -72,7 +74,7 @@ public class Gun : MonoBehaviour, IPlayerComponent
         Debug.Log("Fire!!");
         Bullet bullet = _poolManager.Pop(_poolType) as Bullet;
 
-        bullet.Initialize(_firePos.position, _firePos.right, CurrentAttack, 0);
+        bullet.Initialize(_firePos.position, _firePos.right, CurrentAttack, _knockPower);
     }
 
     private void Reload()

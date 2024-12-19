@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     [field : SerializeField]
     public float MaxHealth { get; private set; }
     private float _currentHealth;
+    private Rigidbody2D _rigidCompo;
 
     public UnityEvent DieEvent;
 
@@ -32,12 +33,27 @@ public class Health : MonoBehaviour
         CurrentHealth = maxHealth;
     }
 
-    public virtual void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage/*, float knockPower*/)
     {
         CurrentHealth -= damage;
         if (_currentHealth == 0)
             Die();
     }
+
+    /*public void TakeDamage(int amount, Vector2 normal, Vector2 point, float knockbackPower)
+    {
+        _currentHealth -= amount;
+        OnHitEvent?.Invoke();
+        //normal과 point, 넉백 등은 차후에 여기서 사용합니다.
+
+        if (knockbackPower > 0)
+            _owner.MovementCompo.GetKnockback(normal * -1, knockbackPower);
+
+        if (_currentHealth <= 0)
+        {
+            OnDeadEvent?.Invoke();
+        }
+    }*/
 
     protected virtual void Die()
     {
