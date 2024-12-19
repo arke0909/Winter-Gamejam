@@ -19,7 +19,7 @@ public class PlayerBullet : Bullet
         SkillManager.Instance.OnHit?.Invoke(transform);
     }
 
-    private void OnDestroy()
+    private void OnApplicationQuit()
     {
         GameManager.Instance.Penetation.OnValueChanged -= HandlePenetationCount;
     }

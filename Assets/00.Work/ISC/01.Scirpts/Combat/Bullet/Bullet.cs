@@ -18,6 +18,7 @@ public abstract class Bullet : MonoBehaviour, IPoolable
 
     protected GameObject Target;
 
+    [SerializeField]
     protected int PenetrationCnt = 0;
     
     public PoolTypeSO PoolType => poolType;
