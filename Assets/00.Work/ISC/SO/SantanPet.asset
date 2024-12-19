@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 5
   LifeTime: 0.6
-  Speed: 25
+  Speed: 18
   AttackTime: 5
   AttackRange: 3.2
   KnockbackPower: 1

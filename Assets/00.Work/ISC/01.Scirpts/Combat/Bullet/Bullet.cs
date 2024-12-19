@@ -19,6 +19,8 @@ public abstract class Bullet : MonoBehaviour, IPoolable
     protected float _damage, _knockbackPower;
 
     protected GameObject Target;
+
+    protected int PenetrationCnt = 0;
     
     public PoolTypeSO PoolType => poolType;
     public GameObject GameObject => this.gameObject;
@@ -35,7 +37,7 @@ public abstract class Bullet : MonoBehaviour, IPoolable
         _startTime = Time.time;
     }
 
-    private void Update()
+    protected  void Update()
     {
         CalculateTime();
     }
@@ -47,6 +49,8 @@ public abstract class Bullet : MonoBehaviour, IPoolable
         Hit();
 
         damageCaster.CastDamage(_damage, _knockbackPower);
+        if (PenetrationCnt <= 0) return;
+        PenetrationCnt--;
         poolManagerSo.Push(this);
     }
 

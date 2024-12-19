@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SlowPet : Pet
 {
-    private float _slowPower;
+    [SerializeField] private float _slowPower;
     protected override void AfterInit()
     {
         _slowPower = UpgradeArray[UpgradeArrIdx];

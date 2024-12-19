@@ -14,11 +14,11 @@ public abstract class Pet : MonoBehaviour
     [field: SerializeField] public int UpgradeArrIdx { get; protected set; } = 0;
 
     private readonly int _maxLevel = 5;
-    protected float Damage => petSo.Damage;
-    protected float AttackTime;
-    protected float[] UpgradeArray;
-    protected float Range => petSo.AttackRange;
-    protected float KnockbackPower => petSo.KnockbackPower;
+    [SerializeField] protected float Damage;
+    [SerializeField] protected float AttackTime;
+    [SerializeField] protected float[] UpgradeArray;
+    [SerializeField] protected float Range;
+    [SerializeField] protected float KnockbackPower;
 
     private float cooldown;
 
@@ -30,10 +30,13 @@ public abstract class Pet : MonoBehaviour
         Initialize();
     }
 
-    private void Initialize()
+    public void Initialize()
     {
         AttackTime = petSo.AttackTime;
+        Damage = petSo.Damage;
+        Range = petSo.AttackRange;
         UpgradeArray = petSo.IncreaseValues;
+        KnockbackPower = petSo.KnockbackPower;
 
         AfterInit();
     }

@@ -4,7 +4,7 @@ public class SlowPetBullet : PetBullet
 {
     public float SlowPower { get; protected set; }
 
-    private float _startTime = 0;
+    private float _slowStartTime = 0;
     private const float Duration = 2.75f;
     
     private bool _isSlow = false;
@@ -24,8 +24,14 @@ public class SlowPetBullet : PetBullet
 
     private void Update()
     {
-        if (Time.time - _startTime > Duration)
+        base.Update();
+        if (Time.time - _slowStartTime > Duration)
         {
+            if (_stat == null)
+            {
+                Debug.Log("Stat Is Null or Empty");
+                return;
+            }
             _stat.SetSpeed(1);
         }
     }
@@ -34,7 +40,7 @@ public class SlowPetBullet : PetBullet
     {
         if (_isSlow) return;
         _stat = Target.GetComponent<EnemyStat>();
-        _startTime = Time.time;
+        _slowStartTime = Time.time;
         _isSlow = true;
         _stat.SetSpeed(SlowPower);
     }

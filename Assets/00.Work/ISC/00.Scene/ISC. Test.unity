@@ -266,6 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 509700517}
   - component: {fileID: 509700516}
+  - component: {fileID: 509700518}
   - component: {fileID: 509700515}
   m_Layer: 0
   m_Name: Circle2
@@ -292,6 +293,12 @@ MonoBehaviour:
   poolTypeSO: {fileID: 11400000, guid: 917c1e48b2a7ad04096a76643810f996, type: 2}
   <CurrentLevel>k__BackingField: 1
   <UpgradeArrIdx>k__BackingField: 0
+  Damage: 0
+  AttackTime: 0
+  UpgradeArray: []
+  Range: 0
+  KnockbackPower: 0
+  _slowPower: 0
 --- !u!212 &509700516
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -356,13 +363,40 @@ Transform:
   m_GameObject: {fileID: 509700514}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1095879, y: 0.2333704, z: 0}
+  m_LocalPosition: {x: 6.95, y: 0.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1237726265}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &509700518
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509700514}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &578767272
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,8 +679,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1782142481}
   - component: {fileID: 1782142480}
-  - component: {fileID: 1782142479}
   - component: {fileID: 1782142482}
+  - component: {fileID: 1782142479}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -672,6 +706,11 @@ MonoBehaviour:
   poolTypeSO: {fileID: 11400000, guid: d53a5b90051789848a736e66e8a18644, type: 2}
   <CurrentLevel>k__BackingField: 1
   <UpgradeArrIdx>k__BackingField: 0
+  Damage: 0
+  AttackTime: 0
+  UpgradeArray: []
+  Range: 0
+  KnockbackPower: 0
 --- !u!212 &1782142480
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -780,6 +819,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2102261490}
   - component: {fileID: 2102261489}
+  - component: {fileID: 2102261491}
   - component: {fileID: 2102261488}
   m_Layer: 0
   m_Name: Circle3
@@ -806,6 +846,11 @@ MonoBehaviour:
   poolTypeSO: {fileID: 11400000, guid: 00f26ce9924f87441b20d9620e1208c5, type: 2}
   <CurrentLevel>k__BackingField: 1
   <UpgradeArrIdx>k__BackingField: 0
+  Damage: 0
+  AttackTime: 0
+  UpgradeArray: []
+  Range: 0
+  KnockbackPower: 0
 --- !u!212 &2102261489
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -870,13 +915,40 @@ Transform:
   m_GameObject: {fileID: 2102261487}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1095879, y: 0.2333704, z: 0}
+  m_LocalPosition: {x: -3.79, y: 0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1322068539}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &2102261491
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102261487}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

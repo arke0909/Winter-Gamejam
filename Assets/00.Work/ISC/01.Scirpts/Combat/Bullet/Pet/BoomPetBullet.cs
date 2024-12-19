@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
 
 public class BoomPetBullet : PetBullet
 {
-    private float _startTime;
+    private float _explosionStartTime;
     private float _boomRange = 3f;
     private const float Duration = 1.5f;
 
@@ -10,9 +11,10 @@ public class BoomPetBullet : PetBullet
     
     private void Update()
     {
-        if (Time.time - _startTime > Duration)
+        base.Update();
+        if (Time.time - _explosionStartTime > Duration)
         {
-            Destroy(gameObject);
+            _collider2D = null;
         }
     }
 
@@ -26,5 +28,12 @@ public class BoomPetBullet : PetBullet
                 damageCaster.CastDamage(_damage, _knockbackPower);
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, _boomRange);
+        Gizmos.color = Color.white;
     }
 }

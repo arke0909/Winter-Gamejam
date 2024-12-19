@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 192436338307667731}
   - component: {fileID: 8823484527066474621}
+  - component: {fileID: -3748187672106196968}
   - component: {fileID: -6825602794420788314}
   m_Layer: 0
   m_Name: BoomPetBullet
@@ -88,6 +89,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &-3748187672106196968
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440422081799377207}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &-6825602794420788314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: febe58dcbacc2d74da831911915b775a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolManagerSO: {fileID: 11400000, guid: d37261864854dfa41af86456b43594a7, type: 2}
+  poolManagerSo: {fileID: 11400000, guid: d37261864854dfa41af86456b43594a7, type: 2}
   poolType: {fileID: 11400000, guid: 00f26ce9924f87441b20d9620e1208c5, type: 2}
   damageCaster: {fileID: 0}
   speed: 0

@@ -15,8 +15,8 @@ MonoBehaviour:
   Damage: 5
   LifeTime: 1
   Speed: 18
-  AttackTime: 6
-  AttackRange: 7.5
+  AttackTime: 7.5
+  AttackRange: 6
   KnockbackPower: 1
   IncreaseValues:
   - 0.15

@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53224fc99917fd540b85ee5c601ed57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolManagerSO: {fileID: 11400000, guid: d37261864854dfa41af86456b43594a7, type: 2}
+  poolManagerSo: {fileID: 11400000, guid: d37261864854dfa41af86456b43594a7, type: 2}
   poolType: {fileID: 11400000, guid: d53a5b90051789848a736e66e8a18644, type: 2}
   damageCaster: {fileID: 0}
   speed: 0
