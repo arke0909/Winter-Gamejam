@@ -39,16 +39,12 @@ public class Spawner : MonoBehaviour
             spawnCoolTiem = true;
             StartCoroutine(StartSpawnCoolTiem());
         }
-        if(Vector3.Distance(transform.position,_player.transform.position) > 10)
-        {
-            SetSpawnerPoint();
-        }
     }
 
     public void SetSpawnerPoint()
     {
-        float x = Random.Range(-10, 10);
-        float y = Random.Range(-10, 10);
+        float x = Random.Range(-20, 20);
+        float y = Random.Range(-20, 20);
         transform.position = new Vector2(_player.transform.position.x + x, _player.transform.position.y + y);
     }
 
