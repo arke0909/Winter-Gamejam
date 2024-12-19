@@ -5,16 +5,36 @@ using UnityEngine.SceneManagement;
 public class GameOverUI : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI tmp;
-
+    [SerializeField] GameObject over;
+    public GameObject realQuit;
     public void GameOver()
     {
+        print(18);
         tmp.text = "Score :" +(Time.time).ToString();
+        over.SetActive(true);
+        realHide();
         Time.timeScale = 0f;
     }
-
+    public void realShow()
+    {
+        realQuit.SetActive(true);
+    }
+    private void Awake()
+    {
+        over.SetActive(false);
+    }
     public void newGame()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        over.SetActive(false);
+        SceneManager.LoadScene(1);
+    }
+    public void realHide()
+    {
+        realQuit.SetActive(false);
+    }
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
