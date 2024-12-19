@@ -30,6 +30,9 @@ public class SamtanPet : Pet
             Quaternion q = Quaternion.Euler(0f, 0f, _rotates[i]);
             fireForceTrm.localRotation = q;
             SamtanPetBullet obj = poolManagerSO.Pop(poolTypeSO) as SamtanPetBullet;
+            float flip = _dir.x > fireForceTrm.position.x ? -1 : 1;
+            obj.transform.localScale = new Vector3(flip, 1, 1);
+            obj.transform.rotation = flip == 1 ? Quaternion.Euler(0,0,fireForceTrm.localRotation.eulerAngles.z - 180) : Quaternion.Euler(0,0,fireForceTrm.localRotation.eulerAngles.z);
             obj.Initialize(fireForceTrm.position, fireForceTrm.right, Damage, KnockbackPower);
         }
     }

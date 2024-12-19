@@ -35,7 +35,6 @@ public class SkillManager : MonoSingleton<SkillManager>
         _player = GameManager.Instance.Player;
         foreach (SkillType skillType in Enum.GetValues(typeof(SkillType)))
         {
-            Debug.Log($"{skillType} initialized");
             Skill skill = GetComponent($"{skillType.ToString()}Skill") as Skill;
             if (skill == null)
             {

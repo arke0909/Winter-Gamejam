@@ -73,8 +73,8 @@ public abstract class Bullet : MonoBehaviour, IPoolable
     public void Initialize(Vector3 position , Vector3 dir, float damage, float knockbackPower)
     {
         transform.position = position;
-        transform.right = dir.normalized;
-        SetMove(transform.right);
+        Vector2 direction = dir.normalized;
+        SetMove(direction);
         _damage = damage;
         _knockbackPower = knockbackPower;
     }

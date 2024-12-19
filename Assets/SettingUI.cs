@@ -7,7 +7,11 @@ public class SettingUI : MonoBehaviour
     private void Awake()
     {
         realQuit.SetActive(false);
-        
+        if(!(gameObject.name == "StartUI"))
+            gameObject.SetActive(false);
+
+
+
     }
     public void Show()
     {
