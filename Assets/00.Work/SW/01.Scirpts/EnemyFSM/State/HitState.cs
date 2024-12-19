@@ -21,7 +21,6 @@ public class HitState : EnmyState
     private IEnumerator HitTime()
     {
         yield return new WaitForSeconds(0.2f);
-        print("µð¹ö±×");
         IsHit = false;
         moveDecision.IsMoveEnd = true;
     }
