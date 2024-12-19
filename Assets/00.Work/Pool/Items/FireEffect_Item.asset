@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1486e263e7016b643b78c6fb1c6caafd, type: 3}
-  m_Name: BoomEffect_Item
+  m_Name: FireEffect_Item
   m_EditorClassIdentifier: 
-  poolType: {fileID: 11400000, guid: 88ff5d66409512e4db90c514cd7c8865, type: 2}
-  prefab: {fileID: 2122736069300394273, guid: 2446f9b007a912246b9c027e65bf5b89, type: 3}
-  initCount: 30
+  poolType: {fileID: 11400000, guid: a63225e85b4eae348ab7ac09245cb703, type: 2}
+  prefab: {fileID: 565989747363068853, guid: b9aee0204d0150a448f66bea02f397ac, type: 3}
+  initCount: 1
