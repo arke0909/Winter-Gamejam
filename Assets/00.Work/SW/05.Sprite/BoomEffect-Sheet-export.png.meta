@@ -1,0 +1,366 @@
+fileFormatVersion: 2
+guid: 9bf587df7b71b0f4ea759b6fde229486
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6152105234294145545
+    second: BoomEffect-Sheet-export_0
+  - first:
+      213: -2713222004654465741
+    second: BoomEffect-Sheet-export_1
+  - first:
+      213: 1264152502930891447
+    second: BoomEffect-Sheet-export_2
+  - first:
+      213: 8441785192623785998
+    second: BoomEffect-Sheet-export_3
+  - first:
+      213: 9203064962392639519
+    second: BoomEffect-Sheet-export_4
+  - first:
+      213: -6792727409738739100
+    second: BoomEffect-Sheet-export_5
+  - first:
+      213: -7792522051529752083
+    second: BoomEffect-Sheet-export_6
+  - first:
+      213: 793541858117636248
+    second: BoomEffect-Sheet-export_7
+  - first:
+      213: 1860984990781535702
+    second: BoomEffect-Sheet-export_8
+  - first:
+      213: -8665808488807385726
+    second: BoomEffect-Sheet-export_9
+  - first:
+      213: -7562583296102109932
+    second: BoomEffect-Sheet-export_10
+  - first:
+      213: -1794979912326799122
+    second: BoomEffect-Sheet-export_11
+  - first:
+      213: 5774946278920530199
+    second: BoomEffect-Sheet-export_12
+  - first:
+      213: 1907544941967075340
+    second: BoomEffect-Sheet-export_13
+  - first:
+      213: -5480505623937186310
+    second: BoomEffect-Sheet-export_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BoomEffect-Sheet-export_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 4
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fd731972e45f9aa0800000000000000
+      internalID: -6152105234294145545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoomEffect-Sheet-export_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 4
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33d1cc746f2b85ad0800000000000000
+      internalID: -2713222004654465741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoomEffect-Sheet-export_2
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 0
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b2ed1fe00c2b8110800000000000000
+      internalID: 1264152502930891447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoomEffect-Sheet-export_3
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 2
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e084e7cf7ee372570800000000000000
+      internalID: 8441785192623785998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoomEffect-Sheet-export_4
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 0
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f18c148c2dad7bf70800000000000000
+      internalID: 9203064962392639519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoomEffect-Sheet-export_5
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 0
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 462967609626bb1a0800000000000000
+      internalID: -6792727409738739100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoomEffect-Sheet-export_6
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 0
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de1cb2e0b766bd390800000000000000
+      internalID: -7792522051529752083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoomEffect-Sheet-export_7
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 0
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89051879d1a330b00800000000000000
+      internalID: 793541858117636248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 22214dd351c2b304985c173598479b1a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BoomEffect-Sheet-export_0: -6152105234294145545
+      BoomEffect-Sheet-export_1: -2713222004654465741
+      BoomEffect-Sheet-export_10: -7562583296102109932
+      BoomEffect-Sheet-export_11: -1794979912326799122
+      BoomEffect-Sheet-export_12: 5774946278920530199
+      BoomEffect-Sheet-export_13: 1907544941967075340
+      BoomEffect-Sheet-export_14: -5480505623937186310
+      BoomEffect-Sheet-export_2: 1264152502930891447
+      BoomEffect-Sheet-export_3: 8441785192623785998
+      BoomEffect-Sheet-export_4: 9203064962392639519
+      BoomEffect-Sheet-export_5: -6792727409738739100
+      BoomEffect-Sheet-export_6: -7792522051529752083
+      BoomEffect-Sheet-export_7: 793541858117636248
+      BoomEffect-Sheet-export_8: 1860984990781535702
+      BoomEffect-Sheet-export_9: -8665808488807385726
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
