@@ -440,6 +440,9 @@ MonoBehaviour:
   _multiplyValueExpLimit: 20
   _maxExp: 100
   _exp: 0
+  LevelUpEvent:
+    m_PersistentCalls:
+      m_Calls: []
   <Level>k__BackingField: 1
 --- !u!1 &190593101
 GameObject:
@@ -3603,15 +3606,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4941004149882304577, guid: 9b695c2ee19d1ac4d96e5ffa2c47983b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8792435441225832752, guid: 9b695c2ee19d1ac4d96e5ffa2c47983b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.87
+      value: 5.48
       objectReference: {fileID: 0}
     - target: {fileID: 8792435441225832752, guid: 9b695c2ee19d1ac4d96e5ffa2c47983b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8792435441225832752, guid: 9b695c2ee19d1ac4d96e5ffa2c47983b, type: 3}
       propertyPath: m_LocalPosition.z
