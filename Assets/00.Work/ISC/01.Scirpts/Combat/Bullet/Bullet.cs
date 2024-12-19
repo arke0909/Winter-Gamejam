@@ -1,7 +1,5 @@
-using System;
 using GGMPool;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public abstract class Bullet : MonoBehaviour, IPoolable
 {
@@ -27,7 +25,7 @@ public abstract class Bullet : MonoBehaviour, IPoolable
     
     [field: SerializeField] public float LifeTime { get; set; }
     private float _startTime;
-    private void Awake()
+    protected virtual void Awake()
     {
         _rigid = GetComponent<Rigidbody2D>();
     }
