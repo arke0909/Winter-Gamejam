@@ -4,14 +4,15 @@ public class HpBa : MonoBehaviour
 {
     [SerializeField] private EnemyHealth _enemyHealth;
     [SerializeField] private Transform _hpBa;
-    private float x = 0;
-    private float y;
+    private float x = 0.65f;
+    private float y = 1.575f;
     public void SetHpBa()
     {
         float value = (_enemyHealth.CurrentHealth / _enemyHealth.MaxHealth) * 5;
+        if(value <= 0 ) value = 0;
         _hpBa.localScale = new Vector2(value, 5);
         float xx = 0.65f - (1 - (value / 5));
-        _hpBa.position = new Vector2(xx + _enemyHealth.transform.position.x, _hpBa.position.y);
+        _hpBa.position = new Vector2(xx + _enemyHealth.transform.position.x, y + _enemyHealth.transform.position.y);
         
     }
 
@@ -19,11 +20,6 @@ public class HpBa : MonoBehaviour
     public void HpReset()
     {
         _hpBa.localScale = new Vector2(5,5);
-        if (x == 0)
-        {
-            x = _hpBa.position.x;
-            y = _hpBa.position.y;
-        }
-        _hpBa.position = new Vector2((float)x, (float)y);
+        _hpBa.position = new Vector2(x + _enemyHealth.transform.position.x, y + _enemyHealth.transform.position.y);
     }
 }

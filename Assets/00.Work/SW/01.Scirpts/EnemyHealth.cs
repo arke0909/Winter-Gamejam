@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyHealth : Health
 {
-    public float NextHealth { get; set; } = 1;
+    public float NextHealth { get; set; } = 10;
 
     public float GetNextHealth()
     {
