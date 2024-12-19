@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 573de054014e2364f9f3bd5ebc6355e0, type: 3}
   m_Name: 15.SlowPet
   m_EditorClassIdentifier: 
-  petType: 2
-  type: 12
+  type: 14
   toolTip: "\uC911\uCCA9\uC774 \uB418\uC9C0 \uC54A\uB294 \uB454\uD654 \uC0C1\uD0DC\uB97C
     \uC801\uC6A9\uD558\uB294 \uCD1D\uC54C\uC744 \uBC1C\uC0AC\uD55C\uB2E4.           
     \uAE30\uBCF8\uC801\uC73C\uB85C \uC801\uC758 \uC774\uB3D9\uC18D\uB3C4\uC758 15/20/25/30/40%\uB9CC\uD07C
