@@ -30,7 +30,7 @@ public class EnemyBrain : MonoBehaviour, IPoolable
     public PoolTypeSO PoolType => _poolType;
     public GameObject GameObject => gameObject;
     public DamageCaster DamageCasterCompo { get; private set; }
-    public bool _CanMove { get; set; }
+    public bool _CanMove { get; set; } = true;
 
     private bool _alreadyCollected;
 
@@ -69,6 +69,11 @@ public class EnemyBrain : MonoBehaviour, IPoolable
     {
         if (_currentState == null) return;
         _currentState.UpdateState();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            _enemyHealth.TakeDamage(1);
+        }
     }
 
     public void ChangeState(EnmyState golemAIState)

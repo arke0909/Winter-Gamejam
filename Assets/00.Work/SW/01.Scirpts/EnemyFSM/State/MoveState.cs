@@ -9,7 +9,6 @@ public class MoveState : EnmyState
     {
         if(_stat.Range >= 3) longRange = true;
         _brain.EnemyAnimatorCompo.EnemyAniChange(EnemyAnimation.Move);
-        _brain._CanMove = true;
     }
 
     public override void OnExitState()
