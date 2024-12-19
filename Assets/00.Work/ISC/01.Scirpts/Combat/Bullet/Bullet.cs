@@ -9,7 +9,7 @@ public abstract class Bullet : MonoBehaviour, IPoolable
     
     [SerializeField] protected float speed;
     
-    private Rigidbody2D _rigid;
+    protected Rigidbody2D _rigid;
     private Pool _pool;
 
     private bool _isDead = false;
@@ -73,7 +73,7 @@ public abstract class Bullet : MonoBehaviour, IPoolable
         _knockbackPower = knockbackPower;
     }
 
-    private void SetMove(Vector2 dir)
+    protected void SetMove(Vector2 dir)
     {
         _rigid.linearVelocity = dir * speed;
     }
