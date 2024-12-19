@@ -68,12 +68,6 @@ public class EnemyBrain : MonoBehaviour, IPoolable
     {
         if (_currentState == null) return;
         _currentState.UpdateState();
-
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            _enemyHealth.TakeDamage(1);
-        }
-
     }
 
     public void ChangeState(EnmyState golemAIState)
