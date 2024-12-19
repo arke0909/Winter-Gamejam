@@ -9,6 +9,8 @@ public class BloodedBulletSkill : Skill, IBulletAble
     [SerializeField] private float[] upgradeValues;
     private float _tickTime = 0.5f;
     
+    public bool IsHas { get; set; } = false;
+    
     private float _bloodedStartTime, _bloodedDamage;
     private const float BloodedDuration = 3f;
     private int _damageCnt = 5;
@@ -30,6 +32,7 @@ public class BloodedBulletSkill : Skill, IBulletAble
 
     public void BulletAbility(Transform targetTrm)
     {
+        if (IsHas == false) IsHas = true;
         _targetTrm = targetTrm;
         _collider = Physics2D.OverlapCircle(_targetTrm.position, 0.6f, whatIsEnemy);
 
@@ -47,6 +50,7 @@ public class BloodedBulletSkill : Skill, IBulletAble
             }
         }
     }
+
 
     private IEnumerator BloodedCoroutine(Health health)
     {

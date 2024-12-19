@@ -6,6 +6,7 @@ public class PetBullet : Bullet
 
     protected override void Hit()
     {
+        Debug.Log("펫이 쏴씀");
         PetHit();
     }
 

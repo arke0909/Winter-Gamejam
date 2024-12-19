@@ -39,6 +39,7 @@ public class SlowPetBullet : PetBullet
     
     protected override void PetHit()
     {
+        Debug.Log("슬로어택!");
         if (_isSlow)
         {
             _slowStartTime = Time.time;
