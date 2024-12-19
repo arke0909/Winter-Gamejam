@@ -17,9 +17,9 @@ public class BoomIsArtSkill : Skill, IBulletAble
     private Collider2D[] _colliders;
 
     private Gun _gun;
-    protected override void AtferInit()
+    protected override void AfterInit()
     {
-        _gun = _Player.GetComponent<Gun>();
+        _gun = Player.GetComponent<Gun>();
     }
 
     public void BulletAbility(Transform target)
