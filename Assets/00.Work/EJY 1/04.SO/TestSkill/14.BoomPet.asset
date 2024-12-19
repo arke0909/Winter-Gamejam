@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 573de054014e2364f9f3bd5ebc6355e0, type: 3}
   m_Name: 14.BoomPet
   m_EditorClassIdentifier: 
-  type: 12
+  type: 13
   toolTip: "\uC801\uC5D0\uAC8C \uC801\uC911 \uC2DC \uBC18\uC9C0\uB984 3\uB9CC\uD07C
     \uD3ED\uBC1C\uD558\uB294 \uCD1D\uC54C\uC744 \uBC1C\uC0AC\uD55C\uB2E4.  \uAE30\uBCF8
     \uACF5\uACA9\uB825 : 6/10/12/16/18  \uD0C4\uC18D : 15   \uC0AC\uAC70\uB9AC :
