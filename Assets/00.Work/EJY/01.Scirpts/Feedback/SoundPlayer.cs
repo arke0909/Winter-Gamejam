@@ -10,8 +10,6 @@ public class SoundPlayer : MonoBehaviour, IPoolable
     [SerializeField] private PoolTypeSO _poolType;
 
     [SerializeField] private AudioMixerGroup _sfxGroup, _musicGroup;
-    [SerializeField] private string _poolName;
-    public string PoolName => _poolName;
 
     public PoolTypeSO PoolType => _poolType;
 

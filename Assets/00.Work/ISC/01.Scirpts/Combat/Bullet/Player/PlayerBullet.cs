@@ -9,6 +9,8 @@ public class PlayerBullet : Bullet
     [SerializeField] private bool isHoming;
     private Collider2D _enemyCollider = null;
 
+    private TrailRenderer _trailRenderer;
+
     private Vector2 moveDir;
 
     protected override void Awake()
