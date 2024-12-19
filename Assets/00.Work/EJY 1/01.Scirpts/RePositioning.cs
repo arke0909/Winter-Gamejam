@@ -24,48 +24,32 @@ public class RePositioning : MonoBehaviour
             return;
         }
 
-        Vector3 playerPos = WorldManager.instance.player.transform.position;
+        Vector3 playerPos = WorldManager.instance.player.transform.position; // => 이거 인풋벡터로 바꿔볼수 있남 
         Vector3 myPos = transform.position;
+        float diffX = Mathf.Abs(playerPos.x - myPos.x);
+        float diffY = Mathf.Abs(playerPos.y - myPos.y);
 
-       
-        float dirX = playerPos.x - myPos.x;
-        float dirY = playerPos.y - myPos.y;
+        // Vector3 playerDir = GameManager.instance.player.inputVec;   // 들고와야함
+        Vector3 playerDir = WorldManager.instance.player.transform.position;
+        float dirX = playerDir.x < 0 ? -1 : 1;
+        float dirY = playerDir.y < 0 ? -1 : 1;
 
-        float diffX = Mathf.Abs(dirX);
-        float diffY = Mathf.Abs(dirY);
-
-      
-        dirX = dirX > 0 ? 1 : -1;
-        dirY = dirY > 0 ? 1 : -1;
-
-       
         switch (transform.tag)
         {
             case "Ground":
-               
-                if (Mathf.Abs(diffX - diffY) <= 0.1f)
-                {
-                    
-                    transform.Translate(Vector3.up * dirY * 40 + Vector3.right * dirX * 40);
+                if (diffX > diffY)
+                {    //X축 이동시
+                    transform.Translate(Vector3.right * dirX * 40); //X축으로 2칸 이동
                 }
                 else if (diffX < diffY)
-                {
-                  
-                    transform.Translate(Vector3.up * dirY * 40);
+                {   //Y축 이동시
+                    transform.Translate(Vector3.up * dirY * 40);    //Y축으로 2칸 이동
                 }
-                else if (diffX > diffY)
-                {
-                   
-                    transform.Translate(Vector3.right * dirX * 40);
-                }
+                break;
+            case "Enemy":
+
                 break;
 
-            case "Enemy":
-                foreach(Spawner spawner in _spawns)
-                {
-                    spawner.SetSpawnerPoint();
-                }
-                break;
         }
     }
 
