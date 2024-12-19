@@ -30,8 +30,12 @@ public class EnemyAnimator : MonoBehaviour
             case EnemyAnimation.Dead:
                 _enemyAni.Play(_brain.PoolType.typeName + "Dead");
                 break;
+            case EnemyAnimation.Idie:
+                _enemyAni.Play(_brain.PoolType.typeName + "Idie");
+                break;
         }
     }
+
 
     public void Flip(float x)
     {
@@ -50,5 +54,6 @@ public enum EnemyAnimation
     Move,
     Attack,
     Hit,
-    Dead
+    Dead,
+    Idie
 }
