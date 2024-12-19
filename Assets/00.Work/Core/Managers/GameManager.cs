@@ -1,8 +1,8 @@
-using System;
 using UnityEngine;
 
 public class GameManager : MonoSingleton<GameManager>
 {
+    public NotifyValue<int> Penetation = new NotifyValue<int>(0);
 
     [SerializeField] private float _multiplyValueExpLimit = 20;
 
@@ -60,4 +60,8 @@ public class GameManager : MonoSingleton<GameManager>
         Level++;
     }
 
+    public void SetPenetation(int value)
+    {
+        Penetation.Value = value;
+    }
 }

@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class ReloadSkill : Skill
 {
     [field : SerializeField]
-    public float[] values = new float[5];
+    private float[] values = new float[5];
 
     private Gun _gun;
 
