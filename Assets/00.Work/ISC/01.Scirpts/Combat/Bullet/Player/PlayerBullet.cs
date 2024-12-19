@@ -6,7 +6,7 @@ public class PlayerBullet : Bullet
     [SerializeField] private LayerMask _whatIsEnemy;
     [SerializeField] private float _radius = 1;
     [SerializeField] private float rotateSpeed = 5;
-    private bool isHoming;
+    [SerializeField] private bool isHoming;
     private Collider2D _enemyCollider = null;
 
     private Vector2 moveDir;
