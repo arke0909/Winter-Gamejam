@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PenetrationSkill : Skill
 {
@@ -7,5 +8,11 @@ public class PenetrationSkill : Skill
     protected override void Upgrade()
     {
         GameManager.Instance.SetPenetation(_values[UpgradeArrIdx]);
+    }
+
+    private void Update()
+    {
+        if(Keyboard.current.digit1Key.wasPressedThisFrame)
+            UpgradeSkill();
     }
 }

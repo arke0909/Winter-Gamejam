@@ -1,7 +1,5 @@
-using System;
 using GGMPool;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public abstract class Bullet : MonoBehaviour, IPoolable
 {
@@ -20,6 +18,7 @@ public abstract class Bullet : MonoBehaviour, IPoolable
 
     protected GameObject Target;
 
+    [SerializeField]
     protected int PenetrationCnt = 0;
     
     public PoolTypeSO PoolType => poolType;
@@ -27,7 +26,7 @@ public abstract class Bullet : MonoBehaviour, IPoolable
     
     [field: SerializeField] public float LifeTime { get; set; }
     private float _startTime;
-    private void Awake()
+    protected virtual void Awake()
     {
         _rigid = GetComponent<Rigidbody2D>();
     }
