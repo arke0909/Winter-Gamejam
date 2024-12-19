@@ -30,6 +30,7 @@ public class EnemyBrain : MonoBehaviour, IPoolable
     public PoolTypeSO PoolType => _poolType;
     public GameObject GameObject => gameObject;
     public DamageCaster DamageCasterCompo { get; private set; }
+    public bool _CanMove { get; set; }
 
     private bool _alreadyCollected;
 
