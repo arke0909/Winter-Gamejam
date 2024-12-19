@@ -24,7 +24,11 @@ public class SettingUI : MonoBehaviour
     {
         Application.Quit();
     }
-
+    private void Update()
+    {
+        if(Input.GetKeyUp(KeyCode.Escape))
+            Hide();
+    }
     public void realShow()
     {
         realQuit.SetActive(true);
