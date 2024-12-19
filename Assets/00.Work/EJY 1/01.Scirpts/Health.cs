@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
     [field : SerializeField]
     public float MaxHealth { get; private set; }
 
+    [SerializeField]
     private float _currentHealth;
     private Rigidbody2D _rigidCompo;
     private EnemyBrain _enemyBrain;
@@ -43,8 +44,8 @@ public class Health : MonoBehaviour
 
     public void Initialize(float maxHealth)
     {
-        MaxHealth = maxHealth; 
-        CurrentHealth = maxHealth;
+        MaxHealth = maxHealth;
+        _currentHealth = maxHealth;
     }
 
     public virtual void TakeDamage(float damage, Vector2 normal, Vector2 point, float knockbackPower = 0)
