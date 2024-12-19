@@ -14,24 +14,22 @@ public class augmentationUI : MonoBehaviour
 
     public void Show()
     {
-        Time.timeScale = 0f;
         rect.localScale = Vector3.one;
         NextLevel();
-
+        Time.timeScale = 0f;
     }
     public void Hide()
     {
         Time.timeScale = 1f;
         rect.localScale = Vector3.zero;
     }
-
-    private void Update() // Only test
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-            Show();
-        if(Input.GetKeyDown(KeyCode.S))
-            Hide();
-    }
+    // private void Update() // Only test
+    // {
+    //     if (Input.GetKeyDown(KeyCode.G))
+    //         Show();
+    //     if(Input.GetKeyDown(KeyCode.S))
+    //         Hide();
+    // }
 
     void NextLevel()
     {
