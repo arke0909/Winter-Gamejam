@@ -18,40 +18,52 @@ public class RePositioning : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        print("Triggered");
+        Debug.Log("Triggered" + collision.gameObject.name);
 
         if (!collision.CompareTag("Area"))
         {
             return;
         }
 
-        Vector3 playerPos = WorldManager.instance.player.transform.position; // => 이거 인풋벡터로 바꿔볼수 있남 
+        Vector3 playerPos = GameManager.Instance.Player.transform.position;
         Vector3 myPos = transform.position;
+
         float diffX = Mathf.Abs(playerPos.x - myPos.x);
         float diffY = Mathf.Abs(playerPos.y - myPos.y);
 
         Vector3 playerDir = GameManager.Instance.Player.InputCompo.InputDir;
-        
-        //Vector3 playerDir = WorldManager.instance.player.transform.position;
+
         float dirX = playerDir.x < 0 ? -1 : 1;
         float dirY = playerDir.y < 0 ? -1 : 1;
 
         switch (transform.tag)
         {
             case "Ground":
-                if (diffX > diffY)
-                {    //X축 이동시
-                    transform.Translate(Vector3.right * dirX * 40); //X축으로 2칸 이동
+                //if (Mathf.Abs(diffX - diffY) <= 0.1f) // X와 Y의 차이가 거의 같으면
+                //{
+                //    // X와 Y 방향 모두 한 번에 이동
+                //    transform.Translate(Vector3.up * dirY * 40);
+                //    transform.Translate(Vector3.right * dirX * 40);
+                //}
+                //else
+               // Debug.Log("X" + diffX + " y" + diffY);
+                if (diffX > diffY) // X축 이동이 더 크면
+                {
+                    transform.Translate(Vector3.right * dirX * 40);
                 }
-                else if (diffX < diffY)
-                {   //Y축 이동시
-                    transform.Translate(Vector3.up * dirY * 40);    //Y축으로 2칸 이동
+                else if (diffX < diffY) // Y축 이동이 더 크면
+                {
+                    transform.Translate(Vector3.up * dirY * 40);
                 }
                 break;
+
             case "Enemy":
-
+                // 여기서 적 관련 로직을 추가하십시오
+                foreach (Spawner spawner in _spawns)
+                {
+                    spawner.SetSpawnerPoint();
+                }
                 break;
-
         }
     }
 
