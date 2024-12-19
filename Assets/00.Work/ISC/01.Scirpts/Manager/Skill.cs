@@ -10,16 +10,16 @@ public abstract class Skill : MonoBehaviour
     
     public bool skillEnabled = false;
     
-    protected Player _Player;
+    protected Player Player;
 
     public virtual void Initialize(Player player)
     {
-        _Player = player;
+        Player = player;
 
-        AtferInit();
+        AfterInit();
     }
 
-    protected virtual void AtferInit()
+    protected virtual void AfterInit()
     {
     }
 
