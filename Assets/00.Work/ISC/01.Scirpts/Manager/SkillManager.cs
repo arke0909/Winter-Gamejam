@@ -2,21 +2,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-
+[Serializable]
 public enum SkillType
 {
-    Reload,
-    Haste,
-    TriggerStrength,
-    Adrenaline,
-    Penetration,
-    ElectronicBullet,
-    BoomIsArt,
-    CatchMe,
-    LimeBullet,
-    CellBullet,
-    Seasoneded,
-    BloodedBullet,
+    Reload = 0,
+    Haste = 1,
+    TriggerStrength = 2,
+    Adrenaline = 3,
+    Penetration= 4,
+    ElectronicBullet = 5,
+    BoomIsArt = 6,
+    CatchMe = 7,
+    LimeBullet = 8,
+    CellBullet = 9,
+    Seasoneded = 10,
+    BloodedBullet = 11,
+    SummonPet = 12,
 }
 public class SkillManager : MonoSingleton<SkillManager>
 {
@@ -46,18 +47,7 @@ public class SkillManager : MonoSingleton<SkillManager>
             _skills.Add(skillType, skill);
         }
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            foreach (SkillType skillType in Enum.GetValues(typeof(SkillType)))
-            {
-                GetSkill(skillType);
-            }
-        }
-    }
-
+    
     public void GetSkill(SkillType type)
     {
         if (_skills.ContainsKey(type) == false)
@@ -69,6 +59,9 @@ public class SkillManager : MonoSingleton<SkillManager>
         if (_skills[type].TryGetComponent(out IBulletAble bullet))
         {
             OnHit += bullet.BulletAbility;
+        }
+        else if (_skills[type].TryGetComponent(out Pet pet))
+        {
         }
         
         _skills[type].UpgradeSkill();
