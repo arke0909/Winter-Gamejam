@@ -91,7 +91,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2291946656799213437}
@@ -287,7 +287,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1.8}
+  m_Size: {x: 3, y: 5}
   m_Direction: 0
 --- !u!114 &968376596251925202
 MonoBehaviour:
@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magneticPower: 2.5
-  _radius: 1.5
+  _radius: 7.5
   _contactFilter:
     useTriggers: 1
     useLayerMask: 1
@@ -401,7 +401,7 @@ Transform:
   m_GameObject: {fileID: 4409783383009174775}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.5, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -426,6 +426,9 @@ MonoBehaviour:
   _knockPower: 0.2
   <BaseReloadTime>k__BackingField: 2
   <BaseAttack>k__BackingField: 10
+  OnFire:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5586589170734280366
 GameObject:
   m_ObjectHideFlags: 0

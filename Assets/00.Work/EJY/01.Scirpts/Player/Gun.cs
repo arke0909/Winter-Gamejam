@@ -1,6 +1,7 @@
 using GGMPool;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Gun : MonoBehaviour, IPlayerComponent
 {
@@ -24,6 +25,8 @@ public class Gun : MonoBehaviour, IPlayerComponent
     public float BaseAttack { get; private set; } = 10;
 
     public float CurrentAttack { get; private set; }
+
+    public UnityEvent OnFire;
 
     public void Initialize(Player player)
     {
@@ -65,6 +68,7 @@ public class Gun : MonoBehaviour, IPlayerComponent
         if (_canFire)
         {
             Fire();
+            OnFire?.Invoke();
             Reload();
         }
     }

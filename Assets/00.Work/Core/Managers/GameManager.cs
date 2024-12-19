@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoSingleton<GameManager>
 {
@@ -13,6 +14,8 @@ public class GameManager : MonoSingleton<GameManager>
     private float _mutiplyExp = 1;
 
     private float _originMaxExp;
+
+    public UnityEvent LevelUpEvent;
 
 
     private Player player;
@@ -61,6 +64,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void LevelUp()
     {
+        LevelUpEvent?.Invoke();
         Level++;
     }
 

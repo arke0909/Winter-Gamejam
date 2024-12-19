@@ -148,11 +148,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   upgradeValues:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 0.25
+  - 0.4
+  - 0.5
+  - 0.58
+  - 0.62
 --- !u!114 &2048109195169807278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,7 +226,7 @@ MonoBehaviour:
   skillEnabled: 0
   poolManagerSo: {fileID: 11400000, guid: d37261864854dfa41af86456b43594a7, type: 2}
   poolTypeSo: {fileID: 11400000, guid: d53a5b90051789848a736e66e8a18644, type: 2}
-  upgradeValues: 0000000000000000000000000000000000000000
+  upgradeValues: 0300000004000000050000000700000009000000
 --- !u!114 &3012861299054012464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,7 +243,7 @@ MonoBehaviour:
   <MaxLevel>k__BackingField: 5
   skillEnabled: 0
   _chainRange: 0
-  upgradeValues: 0000000000000000000000000000000000000000
+  upgradeValues: 0300000004000000050000000700000009000000
   fliter:
     useTriggers: 0
     useLayerMask: 0
