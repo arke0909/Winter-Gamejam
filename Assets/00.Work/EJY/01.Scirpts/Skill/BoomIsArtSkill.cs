@@ -10,6 +10,8 @@ struct BoomSkillValue
 
 public class BoomIsArtSkill : Skill, IBulletAble
 {
+    //[SerializeField] private 
+
     [SerializeField] private BoomSkillValue[] _values = new BoomSkillValue[5];
     [SerializeField] private ContactFilter2D filter;
 

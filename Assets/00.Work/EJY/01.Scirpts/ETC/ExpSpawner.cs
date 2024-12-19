@@ -10,6 +10,8 @@ public class ExpSpawner : MonoBehaviour
 
     public void ExpDrop()
     {
+        Debug.Log("¶³±À");
+
         int idx = Random.Range(0, _poolType.Count);
         PoolTypeSO poolType = _poolType[idx];
 
