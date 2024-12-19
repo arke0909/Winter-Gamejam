@@ -24,7 +24,7 @@ public class KAYBoomBullet : MonoBehaviour
             {
                
                 float damage = Damage * ExplosionDamageMultiplier;
-                targetHealth.TakeDamage(damage);  
+                //targetHealth.TakeDamage(damage);   
                 Debug.Log($"{target.name}에게 {damage}만큼 대미지를 입힘.");
             }
         }

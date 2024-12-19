@@ -13,6 +13,8 @@ public class BoomIsArtSkill : Skill, IBulletAble
     [SerializeField] private BoomSkillValue[] _values = new BoomSkillValue[5];
     [SerializeField] private ContactFilter2D filter;
 
+    [SerializeField] private float knockbackPower;
+
     private Collider2D[] _colliders;
 
     private Gun _gun;
@@ -33,7 +35,7 @@ public class BoomIsArtSkill : Skill, IBulletAble
 
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, direction.normalized, direction.magnitude, filter.layerMask);
 
-                health.TakeDamage(_gun.CurrentAttack * _values[UpgradeArrIdx].multiply);
+                health.TakeDamage(_gun.CurrentAttack * _values[UpgradeArrIdx].multiply, hit.normal, hit.point, knockbackPower);
             }
         }
     }

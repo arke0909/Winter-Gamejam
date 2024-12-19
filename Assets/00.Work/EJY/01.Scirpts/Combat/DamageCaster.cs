@@ -27,7 +27,7 @@ public class DamageCaster : MonoBehaviour
 
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, direction.normalized, direction.magnitude, filter.layerMask);
 
-                health.TakeDamage(damage);
+                health.TakeDamage(damage,hit.normal, hit.point, knockbackPower);
             }
         }
 
