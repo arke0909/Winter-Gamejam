@@ -14,29 +14,23 @@ public enum PetType
 public class SummonPetSkill : Skill
 {
     [SerializeField] private Transform target;
-    [SerializeField] private List<Pet> pets;
+    [SerializeField] private Pet petPrefab;
 
-    private Dictionary<PetType, Pet> _currentPets = new Dictionary<PetType, Pet>();
+    private Pet pet = null;
+
+    private static Dictionary<PetType, Pet> _petsDictionary = new Dictionary<PetType, Pet>();
 
     public void CreatePet(PetType type)
     {
-        if (_currentPets.ContainsKey(type))
+        if (pet != null)
         {
-            _currentPets[type].Upgrade();
+            _petsDictionary[type].Upgrade();
             return;
         }
 
-        foreach (Pet item in pets)
-        {
-            Transform trm = item.transform;
-            if (type.ToString() == item.name)
-            {
-                GameObject petGo = Instantiate(item.gameObject, trm.position, quaternion.identity);
-                petGo.transform.position = target.transform.position;
-                petGo.SetActive(true);
-                Pet pet = petGo.GetComponent($"{type}") as Pet;
-                _currentPets.Add(type, pet);
-            }
-        }
+        GameObject petObj = Instantiate(petPrefab.gameObject, target.position, quaternion.identity);
+        petObj.transform.parent = target;
+        pet = petObj.GetComponent<Pet>();
+        _petsDictionary.Add(type, pet);
     }
 }
