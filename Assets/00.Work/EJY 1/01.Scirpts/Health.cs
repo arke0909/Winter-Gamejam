@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     public UnityEvent DieEvent;
     public UnityEvent HitEvent;
 
+    private Coroutine _kbCoroutine;
     public float CurrentHealth
     {
         get
@@ -40,18 +41,18 @@ public class Health : MonoBehaviour
         _currentHealth -= damage;
         HitEvent?.Invoke();
 
-        //if (knockbackPower > 0)
-            //GetKnockback(normal * -1, knockbackPower);
+       /* if (knockbackPower > 0)
+            GetKnockback(normal * -1, knockbackPower);*/
 
         if (_currentHealth == 0)
             DieEvent?.Invoke();
 
     }
 
-    /*public void GetKnockback(Vector3 direction, float power)
+    public void GetKnockback(Vector3 direction, float power)
     {
         Vector3 difference = direction * power;
-        rbCompo.AddForce(difference, ForceMode2D.Impulse);
+        _rigidCompo.AddForce(difference, ForceMode2D.Impulse);
 
         if (_kbCoroutine != null)
             StopCoroutine(_kbCoroutine);
@@ -61,11 +62,11 @@ public class Health : MonoBehaviour
 
     private IEnumerator KnockbackCoroutine()
     {
-        _canMove = false;
+        //_canMove = false;
         yield return new WaitForSeconds(0.2f);
         _rigidCompo.linearVelocity = Vector2.zero;
-        _canMove = true;
-    }*/
+        //_canMove = true;
+    }
 
     public float GetCurrentHealth()
     {
