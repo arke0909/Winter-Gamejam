@@ -9,8 +9,10 @@ public class GameOverUI : MonoBehaviour
     public GameObject realQuit;
     public void GameOver()
     {
+        print(18);
         tmp.text = "Score :" +(Time.time).ToString();
         over.SetActive(true);
+        realHide();
         Time.timeScale = 0f;
     }
     public void realShow()
