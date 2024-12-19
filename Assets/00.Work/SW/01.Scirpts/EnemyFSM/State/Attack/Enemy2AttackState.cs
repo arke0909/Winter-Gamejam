@@ -10,6 +10,7 @@ public class Enemy2AttackState : EnmyState
     [SerializeField] private PoolManagerSO poolManager;
     public override void OnEnterState()
     {
+        _brain.EnemyAnimatorCompo.OnAttackAnimation += Attack;
         _brain.EnemyAnimatorCompo.EnemyAniChange(EnemyAnimation.Attack);
         if (moveDecision == null)
             foreach (EnemyDecision decision in _decisions)
@@ -22,11 +23,15 @@ public class Enemy2AttackState : EnmyState
 
     private IEnumerator StartAttackTime()
     {
+        yield return new WaitForSeconds(0.4f);
+        moveDecision.IsMoveEnd = true;
+    }
+
+    private void Attack()
+    {
         Bullet poolable = poolManager.Pop(poolType) as Bullet;
         Vector2 bulletDir = _brain.Target.transform.position - transform.position;
         poolable.Initialize(transform.position, bulletDir, _stat.Damage, 0);
-        yield return new WaitForSeconds(0.2f);
-        moveDecision.IsMoveEnd = true;
     }
 
     public override void OnExitState()
