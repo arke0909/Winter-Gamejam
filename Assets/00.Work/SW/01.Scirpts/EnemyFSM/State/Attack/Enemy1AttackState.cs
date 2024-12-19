@@ -23,10 +23,7 @@ public class Enemy1AttackState : EnmyState
 
     private void Attack()
     {
-        if (_brain.DamageCasterCompo.CastDamage(_stat.Damage, 0))
-        {
-
-        }
+        _brain.DamageCasterCompo.CastDamage(_stat.Damage, 0);
     }
 
     private IEnumerator StartRushTime()

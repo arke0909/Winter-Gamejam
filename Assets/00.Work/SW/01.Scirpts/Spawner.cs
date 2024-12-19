@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
     private int minuteCount = 0;
     private float Drainage = 1.3f;
 
-    private int SpawnerProbability = 20;
+    private int SpawnerProbability = 40;
     private bool spawnCoolTiem;
 
     private void Spawn()
@@ -30,7 +30,8 @@ public class Spawner : MonoBehaviour
         {
             print("°­È­");    
             minuteCount++;
-            SpawnerProbability--;
+            if(SpawnerProbability <= 20)
+            SpawnerProbability += 5;
         }
         if(!spawnCoolTiem)
         {

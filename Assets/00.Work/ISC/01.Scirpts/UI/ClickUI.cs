@@ -6,11 +6,11 @@ public class ClickUI : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private TestSkillSO testSkillSo;
     
-    public UnityEvent<SkillType, PetType> OnSkillClicked;
+    public UnityEvent<SkillType> OnSkillClicked;
     
     public void OnPointerClick(PointerEventData eventData)
     {
         GetComponent<Item>().OnClick();
-        OnSkillClicked?.Invoke(testSkillSo.type, testSkillSo.petType);
+        OnSkillClicked?.Invoke(testSkillSo.type);
     }
 }

@@ -28,7 +28,6 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 
     private void OnDisable()
     {
-        Debug.Log("¸ÕÀú°Ô");
         IsDestroyed = true;
     }
 }
