@@ -27,7 +27,7 @@ public class GameOverUI : MonoBehaviour
     {
         Time.timeScale = 1f;
         over.SetActive(false);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(1);
     }
     public void realHide()
     {
