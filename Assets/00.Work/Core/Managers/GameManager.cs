@@ -10,7 +10,10 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField] private float _maxExp = 100;
     [SerializeField] private float _exp;
 
+    private float _mutiplyExp = 1;
+
     private float _originMaxExp;
+
 
     private Player player;
     public Player Player => player;
@@ -41,7 +44,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void EXPUp(float expValue)
     {
-        _exp += expValue;
+        _exp += expValue * _mutiplyExp;
 
         if (_exp >= _maxExp)
         {
@@ -59,6 +62,11 @@ public class GameManager : MonoSingleton<GameManager>
     private void LevelUp()
     {
         Level++;
+    }
+
+    public void SetMultiplyWithExp(float value)
+    {
+        _mutiplyExp = value;
     }
 
     public void SetHomingValue(bool value)
