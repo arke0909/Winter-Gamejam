@@ -17,7 +17,9 @@ public enum SkillType
     CellBullet = 9,
     Seasoneded = 10,
     BloodedBullet = 11,
-    SummonPet = 12,
+    SummonSamtan = 12,
+    SummonBoom = 13,
+    SummonSlow = 14,
 }
 public class SkillManager : MonoSingleton<SkillManager>
 {
@@ -47,14 +49,8 @@ public class SkillManager : MonoSingleton<SkillManager>
         }
     }
     
-    public void GetSkill(SkillType type, PetType petType = PetType.None)
+    public void GetSkill(SkillType type)
     {
-        if (_skills[type].TryGetComponent(out SummonPetSkill pet) && petType != PetType.None)
-        {
-            Debug.Log($"{petType}소환!");
-            pet.CreatePet(petType);
-            return;
-        }
         
         if (_skills.ContainsKey(type) == false)
         {

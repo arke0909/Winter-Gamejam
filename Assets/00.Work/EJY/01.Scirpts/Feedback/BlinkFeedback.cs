@@ -13,12 +13,12 @@ public class BlinkFeedback : Feedback
 
     private void Awake()
     {
-        //스프라이트 렌더러에 있는 매티리얼을 가져온다.
         _targetMat = _targetRenderer.material;
     }
 
     public override void PlayFeedback()
     {
+        Debug.Log("blink");
         _targetMat.SetInt(_isHitHash, 1);
         StartCoroutine(DelayBlink());
     }
