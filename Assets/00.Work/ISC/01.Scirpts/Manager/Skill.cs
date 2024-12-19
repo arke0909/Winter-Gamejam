@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public abstract class Skill : MonoBehaviour
 {
@@ -46,4 +47,12 @@ public abstract class Skill : MonoBehaviour
     protected virtual void Upgrade()
     {
     }
+
+#if UNITY_EDITOR
+    protected virtual void Update()
+    {
+        if(Keyboard.current.digit1Key.wasPressedThisFrame)
+            UpgradeSkill();
+    }
+#endif
 }

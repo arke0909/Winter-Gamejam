@@ -22,6 +22,7 @@ public class Health : MonoBehaviour
         _rigidCompo = GetComponent<Rigidbody2D>();
         _enemyBrain = GetComponent<EnemyBrain>();
 
+        Initialize(MaxHealth);
     }
 
     public float CurrentHealth
@@ -44,7 +45,6 @@ public class Health : MonoBehaviour
     {
         MaxHealth = maxHealth; 
         CurrentHealth = maxHealth;
-        _rigidCompo = GetComponent<Rigidbody2D>();
     }
 
     public virtual void TakeDamage(float damage, Vector2 normal, Vector2 point, float knockbackPower = 0)

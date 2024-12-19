@@ -1,3 +1,4 @@
+using GGMPool;
 using System;
 using UnityEngine;
 
@@ -10,7 +11,8 @@ struct BoomSkillValue
 
 public class BoomIsArtSkill : Skill, IBulletAble
 {
-    //[SerializeField] private 
+    [SerializeField] private PoolManagerSO _poolManager;
+    [SerializeField] private PoolTypeSO _poolType;
 
     [SerializeField] private BoomSkillValue[] _values = new BoomSkillValue[5];
     [SerializeField] private ContactFilter2D filter;
@@ -32,6 +34,8 @@ public class BoomIsArtSkill : Skill, IBulletAble
         if (IsHas == false) IsHas = true;
         int cnt = Physics2D.OverlapCircle(transform.position, _values[UpgradeArrIdx].damageRadius, filter, _colliders);
 
+        EffectPlayer effect = _poolManager.Pop(_poolType) as EffectPlayer;
+        effect.transform.localScale = new Vector2(_values[UpgradeArrIdx].damageRadius, _values[UpgradeArrIdx].damageRadius);
         for (int i = 0; i < cnt; i++)
         {
             if (_colliders[i].TryGetComponent(out Health health))
