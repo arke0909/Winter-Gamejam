@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/00.Work/Pool/Items/FireEffect_Item.asset.meta
 guid: 844de00318420fc469161e7fdcf56116
 NativeFormatImporter:
+========
+guid: 6e8f08a16b814454c89e62f9b8f5c270
+PrefabImporter:
+>>>>>>>> KAY:Assets/00.Work/EJY 1/03.Prefabs/GameOver.prefab.meta
   externalObjects: {}
   mainObjectFileID: 11400000
   userData: 
