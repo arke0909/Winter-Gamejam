@@ -24,6 +24,9 @@ public class EnemyAnimator : MonoBehaviour
             case EnemyAnimation.Attack:
                 _enemyAni.Play(_brain.PoolType.typeName + "Attack");
                 break;
+            case EnemyAnimation.Hit:
+                _enemyAni.Play(_brain.PoolType.typeName + "Hit");
+                break;
             case EnemyAnimation.Dead:
                 _enemyAni.Play(_brain.PoolType.typeName + "Dead");
                 break;
@@ -46,5 +49,6 @@ public enum EnemyAnimation
 {
     Move,
     Attack,
+    Hit,
     Dead
 }

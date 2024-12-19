@@ -76,6 +76,11 @@ public class EnemyBrain : MonoBehaviour, IPoolable
             gunBasePosition.rotation = Quaternion.Euler(0,0,z);
         }
 
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            _enemyHealth.TakeDamage(1);
+        }
+
     }
 
     public void ChangeState(EnmyState golemAIState)
