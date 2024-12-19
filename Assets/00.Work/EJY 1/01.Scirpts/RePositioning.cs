@@ -24,6 +24,7 @@ public class RePositioning : MonoBehaviour
         }
 
         Vector3 playerPos = GameManager.Instance.Player.transform.position;
+        Debug.Log("´©°¡");
         Vector3 myPos = transform.position;
 
         float diffX = Mathf.Abs(playerPos.x - myPos.x);
