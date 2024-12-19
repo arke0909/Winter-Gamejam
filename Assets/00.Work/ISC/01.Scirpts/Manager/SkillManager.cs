@@ -51,24 +51,20 @@ public class SkillManager : MonoSingleton<SkillManager>
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            Debug.Log(_skills[SkillType.Reload]);
-            Debug.Log(_skills[SkillType.Haste]);
-            Debug.Log(_skills[SkillType.TriggerStrength]);
-            Debug.Log(_skills[SkillType.Adrenaline]);
-            Debug.Log(_skills[SkillType.Penetration]);
-             Debug.Log(_skills[SkillType.ElectronicBullet]);
-             Debug.Log(_skills[SkillType.BoomIsArt]);
-             Debug.Log(_skills[SkillType.CatchMe]);
-             Debug.Log(_skills[SkillType.LimeBullet]);
-            Debug.Log(_skills[SkillType.CellBullet]);
-             Debug.Log(_skills[SkillType.Seasoneded]);
-            Debug.Log(_skills[SkillType.BloodedBullet]);
+            foreach (SkillType skillType in Enum.GetValues(typeof(SkillType)))
+            {
+                GetSkill(skillType);
+            }
         }
     }
 
     public void GetSkill(SkillType type)
     {
-        if (_skills.ContainsKey(type) == false) Debug.Log($"{type} is not Found");
+        if (_skills.ContainsKey(type) == false)
+        {
+            Debug.Log($"{type} is not Found");
+            return;
+        }
 
         if (_skills[type].TryGetComponent(out IBulletAble bullet))
         {

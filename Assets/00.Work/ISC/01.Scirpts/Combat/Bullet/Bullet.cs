@@ -48,9 +48,12 @@ public abstract class Bullet : MonoBehaviour, IPoolable
         Hit();
 
         damageCaster.CastDamage(_damage, _knockbackPower);
-        if (PenetrationCnt <= 0) return;
+        if (PenetrationCnt <= 0)
+        {
+            poolManagerSo.Push(this);
+            return;
+        }
         PenetrationCnt--;
-        poolManagerSo.Push(this);
     }
 
     protected abstract void Hit();
