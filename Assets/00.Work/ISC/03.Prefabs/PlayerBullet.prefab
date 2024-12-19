@@ -181,12 +181,12 @@ MonoBehaviour:
   damageCaster: {fileID: 6166700009833908229}
   speed: 20
   PenetrationCnt: 0
-  <LifeTime>k__BackingField: 0.7
+  <LifeTime>k__BackingField: 1.3
   _whatIsEnemy:
     serializedVersion: 2
     m_Bits: 256
   _radius: 5
-  rotateSpeed: 2000
+  rotateSpeed: 1000
 --- !u!1 &8062067070581369006
 GameObject:
   m_ObjectHideFlags: 0

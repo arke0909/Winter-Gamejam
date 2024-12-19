@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class AdrenalineSkill : Skill
 {
@@ -13,12 +12,6 @@ public class AdrenalineSkill : Skill
         base.Initialize(player);
 
         _health = player.GetComponent<Health>();
-    }
-
-    private void Update()
-    {
-        if(Keyboard.current.digit1Key.wasPressedThisFrame)
-            UpgradeSkill();
     }
 
     protected override void Upgrade()
