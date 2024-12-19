@@ -24,8 +24,10 @@ public class MoveState : EnmyState
             _brain.EnemyRIgidCompo.linearVelocity = Vector2.zero;
             _brain.EnemyAnimatorCompo.Flip(enemyDIr.x);
             _brain.EnemyAnimatorCompo.EnemyAniChange(EnemyAnimation.Idie);
-            if (moveStartTime >= _stat.AttackSpeed)
+            if (moveStartTime >= _stat.AttackSpeed|| _brain.EnemyHealthCompo.CurrentHealth <= _brain.EnemyHealthCompo.GetNextHealth() || _brain.EnemyHealthCompo.GetCurrentHealth() <= 0)
+            {
                 base.UpdateState();
+            }
             else
                 moveStartTime += Time.deltaTime;
 

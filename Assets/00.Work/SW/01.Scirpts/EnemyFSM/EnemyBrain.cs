@@ -11,6 +11,8 @@ public class EnemyBrain : MonoBehaviour, IPoolable
     [SerializeField] private EnemyDataSO _enemyDataSO;
     [SerializeField] private PoolTypeSO _poolType;
     [SerializeField] private HpBa _hpBa;
+    [SerializeField] private HitState hitState;
+    [SerializeField] private DeadState deadState;
 
     private Player _player;
     private List<EnmyState> _enmyStates;
@@ -70,6 +72,16 @@ public class EnemyBrain : MonoBehaviour, IPoolable
 
     private void Update()
     {
+        if (EnemyHealthCompo.GetCurrentHealth() <= 0)
+        {
+            ChangeState(deadState);
+            return;
+        }
+        if (EnemyHealthCompo.CurrentHealth <= EnemyHealthCompo.GetNextHealth())
+        {
+            ChangeState(hitState);
+            return;
+        }
         if (_currentState == null) return;
         _currentState.UpdateState();
     }

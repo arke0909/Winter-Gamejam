@@ -839,6 +839,8 @@ MonoBehaviour:
   _enemyDataSO: {fileID: 11400000, guid: fac0a431c3ea347439c17961e6a0db7e, type: 2}
   _poolType: {fileID: 11400000, guid: 322e07d88a4dd054fa99e539ce30572e, type: 2}
   _hpBa: {fileID: 3678585864274133097}
+  hitState: {fileID: 4037920192182262400}
+  deadState: {fileID: 2565283167702128048}
   IsLongRange: 1
 --- !u!50 &5138255169215034628
 Rigidbody2D:
@@ -916,6 +918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 0
+  _currentHealth: 0
   DieEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1189,8 +1192,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8079720891611276596, guid: 3d686147286450b409bc218c605adf2d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7262625005025104163}
   m_SourcePrefab: {fileID: 100100000, guid: 3d686147286450b409bc218c605adf2d, type: 3}
+--- !u!1 &1588332278257367837 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8079720891611276596, guid: 3d686147286450b409bc218c605adf2d, type: 3}
+  m_PrefabInstance: {fileID: 7361710409643712041}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7262625005025104163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588332278257367837}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5a7c5b43f59cc43a3fb55c3348550a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolManager: {fileID: 11400000, guid: d37261864854dfa41af86456b43594a7, type: 2}
+  poolType: {fileID: 11400000, guid: 621c2397049e7014082911c398995f63, type: 2}
+  soundData: {fileID: 11400000, guid: 95c971ff898f0e841bd17cfb1296e704, type: 2}
 --- !u!4 &1723365272727446171 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8196712987087748274, guid: 3d686147286450b409bc218c605adf2d, type: 3}
