@@ -71,7 +71,6 @@ public class Gun : MonoBehaviour, IPlayerComponent
 
     private void Fire()
     {
-        Debug.Log("Fire!!");
         Bullet bullet = _poolManager.Pop(_poolType) as Bullet;
 
         bullet.Initialize(_firePos.position, _firePos.right, CurrentAttack, _knockPower);

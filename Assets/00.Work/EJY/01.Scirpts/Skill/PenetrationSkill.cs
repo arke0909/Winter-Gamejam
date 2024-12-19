@@ -9,10 +9,4 @@ public class PenetrationSkill : Skill
     {
         GameManager.Instance.SetPenetation(_values[UpgradeArrIdx]);
     }
-
-    private void Update()
-    {
-        if(Keyboard.current.digit1Key.wasPressedThisFrame)
-            UpgradeSkill();
-    }
 }
