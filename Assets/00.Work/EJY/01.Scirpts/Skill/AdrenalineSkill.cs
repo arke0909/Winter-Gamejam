@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class AdrenalineSkill : Skill
 {
     [field: SerializeField]
-    public float[] _values = new float[5];
+    private float[] _values = new float[5];
 
     private Health _health;
 

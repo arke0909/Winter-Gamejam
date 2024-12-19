@@ -3,8 +3,8 @@ using UnityEngine.InputSystem;
 
 public class HasteSkill : Skill
 {
-    [field : SerializeField] 
-    public float[] _values = new float[5];
+    [field : SerializeField]
+    private float[] _values = new float[5];
     private PlayerMover _playerMover;
 
     public override void Initialize(Player player)
