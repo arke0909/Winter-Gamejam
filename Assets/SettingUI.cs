@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class SettingUI : MonoBehaviour
 {
-   public void Show()
+    public GameObject realQuit;
+
+    private void Awake()
+    {
+        realQuit.SetActive(false);
+        
+    }
+    public void Show()
     {
         gameObject.SetActive(true);
     }
@@ -13,4 +20,14 @@ public class SettingUI : MonoBehaviour
     {
         Application.Quit();
     }
-}
+
+    public void realShow()
+    {
+        realQuit.SetActive(true);
+    }
+    
+    public void realHide()
+    {
+        realQuit.SetActive(false);
+    }
+}   
