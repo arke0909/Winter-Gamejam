@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 370575770}
   - component: {fileID: 370575772}
   - component: {fileID: 370575773}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tilemap
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -4492,12 +4492,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772667752}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.16, y: -0.07, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1253652678}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &772667756
 MonoBehaviour:
@@ -4629,6 +4629,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 772667755}
   - {fileID: 1709808583}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4660,7 +4661,7 @@ GameObject:
   - component: {fileID: 1428819480}
   - component: {fileID: 1428819479}
   - component: {fileID: 1428819484}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tilemap (2)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -8947,7 +8948,7 @@ GameObject:
   - component: {fileID: 1448506118}
   - component: {fileID: 1448506117}
   - component: {fileID: 1448506122}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tilemap (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -13275,7 +13276,7 @@ GameObject:
   - component: {fileID: 1709808583}
   - component: {fileID: 1709808584}
   - component: {fileID: 1709808585}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Area
   m_TagString: Area
   m_Icon: {fileID: 0}
@@ -13433,7 +13434,7 @@ GameObject:
   - component: {fileID: 1895902448}
   - component: {fileID: 1895902447}
   - component: {fileID: 1895902452}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tilemap (3)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -17709,7 +17710,6 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 772667755}
   - {fileID: 1827693369}
   - {fileID: 1253652678}
   - {fileID: 1497352705}
