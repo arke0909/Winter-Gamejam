@@ -1088,7 +1088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9136349355109006861, guid: 9b95c83d2fb3b434290ee41909054bd9, type: 3}
       propertyPath: damageRadius
-      value: 0.7
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 9136349355109006861, guid: 9b95c83d2fb3b434290ee41909054bd9, type: 3}
       propertyPath: filter.layerMask.m_Bits
