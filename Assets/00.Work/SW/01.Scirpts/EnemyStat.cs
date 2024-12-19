@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class EnemyStat : MonoBehaviour
 {
-    public float Hp { get;private set; } //Ã¼·Â
-    public float Damage { get; private set; } //µ¥¹ÌÁö
-    public float AttackSpeed { get; private set; } //°ø°Ý¼Óµµ
-    public float Range { get; private set; }//»çÁ¤°Å¸®
-    public float MoveSpeed { get; private set; } //ÀÌµ¿¼Óµµ
+    public float Hp { get;private set; } //Ã¼ï¿½ï¿½
+    public float Damage { get; private set; } //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    public float AttackSpeed { get; private set; } //ï¿½ï¿½ï¿½Ý¼Óµï¿½
+    public float Range { get; private set; }//ï¿½ï¿½ï¿½ï¿½ï¿½Å¸ï¿½
+    public float MoveSpeed { get; private set; }
+
+    private float _originSpeed;//ï¿½Ìµï¿½ï¿½Óµï¿½
 
     public void SetStat(EnemyDataSO dataSO)
     {
@@ -15,11 +17,17 @@ public class EnemyStat : MonoBehaviour
         AttackSpeed = dataSO.attackSpeed;
         Range = dataSO.range;
         MoveSpeed = dataSO.moveSpeed;
+        _originSpeed = MoveSpeed;
     }
 
     public void UpgradeStat(float value)
     {
         Hp *= value;
         Damage *= value;
+    }
+
+    public void SetSpeed(float multiply)
+    {
+        MoveSpeed = _originSpeed * multiply;
     }
 }

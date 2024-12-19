@@ -21,7 +21,7 @@ public class Gun : MonoBehaviour, IPlayerComponent
     [field: SerializeField]
     public float BaseAttack { get; private set; } = 10;
 
-    private float currentAttack;
+    public float CurrentAttack { get; private set; }
 
     public void Initialize(Player player)
     {
@@ -30,6 +30,7 @@ public class Gun : MonoBehaviour, IPlayerComponent
         _inputReader = _player.GetCompo<InputReader>();
 
         currentReloadTime = BaseReloadTime;
+        CurrentAttack = BaseAttack;
 
         _inputReader.OnAttackEvent += HandleSAttackEvent;
     }
@@ -71,7 +72,7 @@ public class Gun : MonoBehaviour, IPlayerComponent
         Debug.Log("Fire!!");
         Bullet bullet = _poolManager.Pop(_poolType) as Bullet;
 
-        bullet.Initialize(_firePos.position, _firePos.right, currentAttack, 0);
+        bullet.Initialize(_firePos.position, _firePos.right, CurrentAttack, 0);
     }
 
     private void Reload()
@@ -94,11 +95,10 @@ public class Gun : MonoBehaviour, IPlayerComponent
     public void ReloadUpgrade(float multiply)
     {
         currentReloadTime = BaseReloadTime - (BaseReloadTime * multiply);
-        Debug.Log(currentReloadTime);
     }
 
     public void AttackUpgrade(float multiply)
     {
-
+        CurrentAttack = BaseAttack * multiply;
     }
 }

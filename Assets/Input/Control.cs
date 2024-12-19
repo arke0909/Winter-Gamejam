@@ -24,7 +24,7 @@ public partial class @Control: IInputActionCollection2, IDisposable
     ""name"": ""Control"",
     ""maps"": [
         {
-            ""name"": ""Player"",
+            ""name"": ""_Player"",
             ""id"": ""df70fa95-8a34-4494-b137-73ab6b9c7d37"",
             ""actions"": [
                 {
@@ -292,7 +292,7 @@ public partial class @Control: IInputActionCollection2, IDisposable
     ]
 }");
         // Player
-        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
+        m_Player = asset.FindActionMap("_Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_ESC = m_Player.FindAction("ESC", throwIfNotFound: true);
@@ -304,7 +304,7 @@ public partial class @Control: IInputActionCollection2, IDisposable
 
     ~@Control()
     {
-        UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, Control.Player.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, Control._Player.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, Control.UI.Disable() has not been called.");
     }
 

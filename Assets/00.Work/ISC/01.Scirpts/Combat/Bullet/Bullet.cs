@@ -1,12 +1,11 @@
-using System;
 using GGMPool;
 using UnityEngine;
 
 public abstract class Bullet : MonoBehaviour, IPoolable
 {
-    [SerializeField] private PoolManagerSO poolManagerSO;
+    [SerializeField] private PoolManagerSO poolManagerSo;
     [SerializeField] private PoolTypeSO poolType;
-    [SerializeField] private DamageCaster damageCaster;
+    [SerializeField] protected DamageCaster damageCaster;
     
     [SerializeField] protected float speed;
     
@@ -15,14 +14,18 @@ public abstract class Bullet : MonoBehaviour, IPoolable
 
     private bool _isDead = false;
 
-    private float _damage, _knockbackPower;
+    protected float _damage, _knockbackPower;
+
+    protected GameObject Target;
+
+    protected int PenetrationCnt = 0;
     
     public PoolTypeSO PoolType => poolType;
     public GameObject GameObject => this.gameObject;
     
     [field: SerializeField] public float LifeTime { get; set; }
     private float _startTime;
-    private void Awake()
+    protected virtual void Awake()
     {
         _rigid = GetComponent<Rigidbody2D>();
     }
@@ -32,7 +35,7 @@ public abstract class Bullet : MonoBehaviour, IPoolable
         _startTime = Time.time;
     }
 
-    private void Update()
+    protected  void Update()
     {
         CalculateTime();
     }
@@ -40,10 +43,13 @@ public abstract class Bullet : MonoBehaviour, IPoolable
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (_isDead) return;
-
+        Target = other.gameObject;
         Hit();
 
         damageCaster.CastDamage(_damage, _knockbackPower);
+        if (PenetrationCnt <= 0) return;
+        PenetrationCnt--;
+        poolManagerSo.Push(this);
     }
 
     protected abstract void Hit();
@@ -53,7 +59,7 @@ public abstract class Bullet : MonoBehaviour, IPoolable
         if (Time.time - _startTime > LifeTime)
         {
             _isDead = true;
-            poolManagerSO.Push(this);
+            poolManagerSo.Push(this);
         }
     }
 
