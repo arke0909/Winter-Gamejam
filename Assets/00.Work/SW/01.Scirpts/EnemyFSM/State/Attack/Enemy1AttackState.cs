@@ -25,7 +25,7 @@ public class Enemy1AttackState : EnmyState
     {
         if (_brain.DamageCasterCompo.CastDamage(_stat.Damage, 0))
         {
-            print("공격성공");
+
         }
     }
 

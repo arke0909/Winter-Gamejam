@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
     private int minuteCount = 0;
     private float Drainage = 1.3f;
 
-    private int SpawnerProbability = 10;
+    private int SpawnerProbability = 20;
     private bool spawnCoolTiem;
 
     private void Spawn()

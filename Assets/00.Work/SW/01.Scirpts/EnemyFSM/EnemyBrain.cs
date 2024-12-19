@@ -55,7 +55,7 @@ public class EnemyBrain : MonoBehaviour, IPoolable
         _hpBa.HpReset();
         _enemyStat.SetStat(_enemyDataSO);
         _enemyHealth.Initialize(EnemyStatCompo.Hp);
-        _enemyHealth.NextHealth = 1;
+        _enemyHealth.NextHealth = 10;
         StartCoroutine(SpawnTiem());
         _enmyStates.ForEach(state => state.Init(this, _enemyStat));
         _currentState = startState;

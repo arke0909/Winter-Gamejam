@@ -44,10 +44,4 @@ public class MoveState : EnmyState
         else
             moveStartTime += Time.deltaTime;
     }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, _brain.EnemyStatCompo.Range);
-    }
 }
