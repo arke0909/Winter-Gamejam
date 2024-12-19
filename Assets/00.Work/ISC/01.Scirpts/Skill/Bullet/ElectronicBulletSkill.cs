@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class ElectronicBulletSkill : Skill, IBulletAble
@@ -10,6 +11,10 @@ public class ElectronicBulletSkill : Skill, IBulletAble
     
     private LineRenderer _lineRenderer;
     private Gun _gun;
+
+    private int _cnt;
+    
+    private Transform _targetTrm;
     
     protected override void AfterInit()
     {
@@ -28,15 +33,25 @@ public class ElectronicBulletSkill : Skill, IBulletAble
 
     public void BulletAbility(Transform targetTrm)
     {
-        int cnt = Physics2D.OverlapCircle(targetTrm.position, _chainRange, fliter, _colliders);
+        _targetTrm = targetTrm;
+        _cnt = Physics2D.OverlapCircle(_targetTrm.position, _chainRange, fliter, _colliders);
 
-        for (int i = 0; i < cnt; i++)
+        _lineRenderer.positionCount = _cnt;
+        for (int i = 0; i < _cnt; i++)
         {
             if (_colliders[i].gameObject.TryGetComponent(out Health health))
             {
+                Debug.Log("이거 개수만큼 맞은거");
                 _lineRenderer.SetPosition(i, _colliders[i].transform.position);
                 health.TakeDamage(_gun.CurrentAttack * 0.65f);
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        if (_targetTrm == null) return;
+        Gizmos.DrawWireSphere(_targetTrm.position, _chainRange);
     }
 }

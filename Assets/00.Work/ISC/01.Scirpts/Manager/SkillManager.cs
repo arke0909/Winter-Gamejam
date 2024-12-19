@@ -34,11 +34,12 @@ public class SkillManager : MonoSingleton<SkillManager>
         _player = GameManager.Instance.Player;
         foreach (SkillType skillType in Enum.GetValues(typeof(SkillType)))
         {
+            Debug.Log($"{skillType} initialized");
             Skill skill = GetComponent($"{skillType.ToString()}Skill") as Skill;
             if (skill == null)
             {
-                Debug.LogError($"{skillType} is not Found");
-                return;
+                Debug.Log($"{skillType} is not Found");
+                continue;
             }
             skill.Initialize(_player);
             Type type = skill.GetType();
@@ -46,9 +47,24 @@ public class SkillManager : MonoSingleton<SkillManager>
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            foreach (SkillType skillType in Enum.GetValues(typeof(SkillType)))
+            {
+                GetSkill(skillType);
+            }
+        }
+    }
+
     public void GetSkill(SkillType type)
     {
-        Debug.Assert(_skills.ContainsKey(type) == true, $"{type} is not Found");
+        if (_skills.ContainsKey(type) == false)
+        {
+            Debug.Log($"{type} is not Found");
+            return;
+        }
 
         if (_skills[type].TryGetComponent(out IBulletAble bullet))
         {

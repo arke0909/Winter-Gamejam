@@ -39,7 +39,7 @@ public class EnemyAnimator : MonoBehaviour
 
     public void Flip(float x)
     {
-        _brain.transform.rotation = x > 0 ? new Quaternion(0, 0, 0, 0) : new Quaternion(0, -180, 0, 0);
+        transform.rotation = x > 0 ? new Quaternion(0, 0, 0, 0) : new Quaternion(0, -180, 0, 0);
     }
 
     public void InvokeOnAttackAnimationAction()
