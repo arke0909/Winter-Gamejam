@@ -4802,6 +4802,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4060498330391073986, guid: e18d3230dbea6ef408c35811c23ce629, type: 3}
+      propertyPath: m_SortingOrder
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 4168033307903982321, guid: e18d3230dbea6ef408c35811c23ce629, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -14052,6 +14056,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1745657735 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1447039020145008253, guid: e18d3230dbea6ef408c35811c23ce629, type: 3}
+  m_PrefabInstance: {fileID: 1205775986}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1045ce7ae0c91143a8d3ddaff4b2280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1926273311
 GameObject:
   m_ObjectHideFlags: 0
@@ -18555,6 +18570,34 @@ PrefabInstance:
     - target: {fileID: 4107813922180359918, guid: 6c5e2f606dc77fe479ce71a9b02dc8ad, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243613384768931174, guid: 6c5e2f606dc77fe479ce71a9b02dc8ad, type: 3}
+      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243613384768931174, guid: 6c5e2f606dc77fe479ce71a9b02dc8ad, type: 3}
+      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243613384768931174, guid: 6c5e2f606dc77fe479ce71a9b02dc8ad, type: 3}
+      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1745657735}
+    - target: {fileID: 8243613384768931174, guid: 6c5e2f606dc77fe479ce71a9b02dc8ad, type: 3}
+      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243613384768931174, guid: 6c5e2f606dc77fe479ce71a9b02dc8ad, type: 3}
+      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GameOver
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243613384768931174, guid: 6c5e2f606dc77fe479ce71a9b02dc8ad, type: 3}
+      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameOverUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243613384768931174, guid: 6c5e2f606dc77fe479ce71a9b02dc8ad, type: 3}
+      propertyPath: DieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
