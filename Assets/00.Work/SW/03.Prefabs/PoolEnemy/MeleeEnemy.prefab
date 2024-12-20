@@ -633,6 +633,8 @@ MonoBehaviour:
   _enemyDataSO: {fileID: 11400000, guid: e4407828f9493574f8684b4d21fbd26e, type: 2}
   _poolType: {fileID: 11400000, guid: 6c408ebe43b6d5943b1753734e86c68d, type: 2}
   _hpBa: {fileID: 5701913318491950282}
+  hitState: {fileID: 1505519130362501184}
+  deadState: {fileID: 300428326993906374}
   IsLongRange: 0
 --- !u!50 &6754842230375171430
 Rigidbody2D:
@@ -710,16 +712,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 0
+  _currentHealth: 0
   DieEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5629316720306819261}
         m_TargetAssemblyTypeName: ExpSpawner, Assembly-CSharp
         m_MethodName: ExpDrop
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 10036952137172695}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1114,14 +1117,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8079720891611276596, guid: 3d686147286450b409bc218c605adf2d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2042172762997873002}
   m_SourcePrefab: {fileID: 100100000, guid: 3d686147286450b409bc218c605adf2d, type: 3}
 --- !u!114 &2039032892346558515 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2162834977764587816, guid: 3d686147286450b409bc218c605adf2d, type: 3}
   m_PrefabInstance: {fileID: 166623768370073883}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8245836073685431343}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc227a29d62d5544d8885839af7be1c1, type: 3}
@@ -1138,6 +1144,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc227a29d62d5544d8885839af7be1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8245836073685431343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8079720891611276596, guid: 3d686147286450b409bc218c605adf2d, type: 3}
+  m_PrefabInstance: {fileID: 166623768370073883}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2042172762997873002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8245836073685431343}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5a7c5b43f59cc43a3fb55c3348550a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolManager: {fileID: 11400000, guid: d37261864854dfa41af86456b43594a7, type: 2}
+  poolType: {fileID: 11400000, guid: 621c2397049e7014082911c398995f63, type: 2}
+  soundData: {fileID: 11400000, guid: 95c971ff898f0e841bd17cfb1296e704, type: 2}
 --- !u!4 &8326984632224968105 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8196712987087748274, guid: 3d686147286450b409bc218c605adf2d, type: 3}

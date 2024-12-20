@@ -17,5 +17,5 @@ MonoBehaviour:
     \uB300\uBBF8\uC9C0\uC758 n%\uB9CC\uD07C \uB300\uBBF8\uC9C0,  \uAC15\uD654\uD560
     \uB54C \uB9C8\uB2E4 \uD558\uB098\uC529 \uC99D\uAC00"
   skillName: "\uC138\uD3EC\uD0C4"
-  icon: {fileID: -7028066036478859568, guid: 1b8b6a6770f2c174e96385cb721dad17, type: 3}
+  icon: {fileID: 21300000, guid: 34985ba35e2530d4d89f242123f00202, type: 3}
   itemId: 10

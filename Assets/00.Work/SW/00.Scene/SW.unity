@@ -416,31 +416,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8245836073685431343, guid: 751af127fdbcdc24dbdcd2fe8c8dff81, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 277744479}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 751af127fdbcdc24dbdcd2fe8c8dff81, type: 3}
---- !u!1 &277744478 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8245836073685431343, guid: 751af127fdbcdc24dbdcd2fe8c8dff81, type: 3}
-  m_PrefabInstance: {fileID: 277744477}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &277744479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 277744478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad5a7c5b43f59cc43a3fb55c3348550a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolManager: {fileID: 11400000, guid: d37261864854dfa41af86456b43594a7, type: 2}
-  poolType: {fileID: 11400000, guid: 621c2397049e7014082911c398995f63, type: 2}
-  soundData: {fileID: 0}
 --- !u!1 &300960202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,6 +1462,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2291946656799213437, guid: 6c5e2f606dc77fe479ce71a9b02dc8ad, type: 3}
   m_PrefabInstance: {fileID: 411488521}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1936585941 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8243613384768931174, guid: 6c5e2f606dc77fe479ce71a9b02dc8ad, type: 3}
+  m_PrefabInstance: {fileID: 411488521}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cfd4f55a57507247974d90870bfbda8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1992739153
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,7 +1590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpBa: {fileID: 2054588391}
   expBa: {fileID: 1309582096}
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 1936585941}
 --- !u!224 &2054588390 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7600517195931241240, guid: a5ef3176fd7e79b438afa3224fcf5401, type: 3}
@@ -1674,31 +1662,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1588332278257367837, guid: 823774857f87971499936fecdfc432e3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2084242474}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 823774857f87971499936fecdfc432e3, type: 3}
---- !u!1 &2084242473 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1588332278257367837, guid: 823774857f87971499936fecdfc432e3, type: 3}
-  m_PrefabInstance: {fileID: 2084242472}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2084242474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2084242473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad5a7c5b43f59cc43a3fb55c3348550a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolManager: {fileID: 11400000, guid: d37261864854dfa41af86456b43594a7, type: 2}
-  poolType: {fileID: 11400000, guid: 621c2397049e7014082911c398995f63, type: 2}
-  soundData: {fileID: 11400000, guid: 95c971ff898f0e841bd17cfb1296e704, type: 2}
 --- !u!4 &1536459146166314658 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6154857385081989118, guid: 2446f9b007a912246b9c027e65bf5b89, type: 3}

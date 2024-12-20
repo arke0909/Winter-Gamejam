@@ -12,12 +12,14 @@ public class TestUIInput : MonoBehaviour
             {
                 setting.SetActive(false);
                 Scene = false;
+                Time.timeScale = 1f;
             }
                
             else
             {
                 setting.SetActive(true);
                 Scene = true;
+                Time.timeScale = 0f;
             }
         }
             
