@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 
 [Serializable]
 public enum SkillType
@@ -52,6 +53,8 @@ public class SkillManager : MonoSingleton<SkillManager>
     public void GetSkill(SkillType type)
     {
         
+        Debug.Log(type);
+        
         if (_skills.ContainsKey(type) == false)
         {
             Debug.Log($"{type} is not Found");
@@ -60,12 +63,24 @@ public class SkillManager : MonoSingleton<SkillManager>
 
         if (_skills[type].TryGetComponent(out IBulletAble bullet))
         {
+            string str = type.ToString() + "Skill";
+            List<IBulletAble> able = _skills[type].GetComponents<IBulletAble>().ToList();
+            foreach (var b in able)
+            {
+                if (str == b.GetType().ToString())
+                {
+                    OnHit += bullet.BulletAbility;
+                }
+            }
+            
             if (bullet.IsHas)
             {
                 Debug.Log($"{type}을 이미 보유중 입니다.");
+                
+                _skills[type].UpgradeSkill();
+                _skills[type].OnSkill();
                 return;
             }
-            OnHit += bullet.BulletAbility;
         }
         
         _skills[type].UpgradeSkill();
