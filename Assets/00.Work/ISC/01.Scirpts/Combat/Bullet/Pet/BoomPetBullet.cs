@@ -1,10 +1,11 @@
 using System;
+using GGMPool;
 using UnityEngine;
 
 public class BoomPetBullet : PetBullet
 {
     [SerializeField] private LayerMask whatIsEnemy;
-    
+    [SerializeField] private PoolTypeSO boomEffectType;
     private float _explosionStartTime;
     private float _boomRange = 3f;
     private const float Duration = 1.5f;
@@ -36,10 +37,12 @@ public class BoomPetBullet : PetBullet
         }
     }
 
+    #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, _boomRange);
         Gizmos.color = Color.white;
     }
+    #endif
 }
