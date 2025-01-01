@@ -7,10 +7,7 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Transform _firePos;
-
-    [SerializeField] private PoolManagerSO poolManager;
-    [SerializeField] private PoolTypeSO poolType;
+    
 
     [field: SerializeField] public InputReader InputCompo { get; private set; }
 
@@ -23,8 +20,6 @@ public class Player : MonoBehaviour
     {
         _components = new Dictionary<Type, IPlayerComponent>();
         _playerMover = GetComponentInChildren<PlayerMover>();
-
-        InputCompo.OnAttackEvent += Fire;
 
         SetComponent();
     }
@@ -58,14 +53,5 @@ public class Player : MonoBehaviour
         }
 
         return default;
-    }
-
-    private void Fire()
-    {
-        Bullet bullet = poolManager.Pop(poolType) as Bullet;
-
-        bullet.Initialize(_firePos.position, _firePos.right);
-
-        InputCompo.OnAttackEvent -= Fire;
     }
 }

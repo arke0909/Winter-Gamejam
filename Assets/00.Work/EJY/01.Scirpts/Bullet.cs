@@ -60,8 +60,7 @@ public class Bullet : MonoBehaviour, IPoolable
 
         float moveDirAngle = transform.rotation.eulerAngles.z * Mathf.Deg2Rad;
         moveDir = new Vector2(Mathf.Cos(moveDirAngle), Mathf.Sin(moveDirAngle));
-        Vector2 movePosition = _rigid.position + (moveDir * speed) * Time.fixedDeltaTime;
-        _rigid.MovePosition(movePosition);
+        _rigid.linearVelocity = moveDir.normalized * speed;
     }
 
     private void SetDead()
