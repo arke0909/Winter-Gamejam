@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/00.Work/EJY 1/00.Scene/KAY_StartScene.unity
     guid: 24c97150f7b214c4986ff5066df1c423
   - enabled: 1
-    path: Assets/00.Work/Scene/Stage1.unity
+    path: Assets/00.Work/Scene/Stage/Stage1.unity
     guid: 46fd6f69ee9962f4b926a5d6c69a9164
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

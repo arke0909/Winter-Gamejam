@@ -33,8 +33,6 @@ RectTransform:
   - {fileID: 220941894250667247}
   - {fileID: 2519176322292560039}
   - {fileID: 7401957506589870106}
-  - {fileID: 1371133167804370865}
-  - {fileID: 7809499486712617383}
   - {fileID: 1011984591730028077}
   m_Father: {fileID: 5291202223854280694}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -737,12 +735,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1371133167804370865}
+  - {fileID: 7809499486712617383}
   m_Father: {fileID: 2194410880043893711}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -318}
+  m_AnchoredPosition: {x: 0, y: -280}
   m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9084994509244639823
@@ -815,11 +815,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7334444090949679709}
-  m_Father: {fileID: 2194410880043893711}
+  m_Father: {fileID: 7401957506589870106}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -423}
+  m_AnchoredPosition: {x: 0, y: -105}
   m_SizeDelta: {x: 83.5349, y: 28.8836}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1345599177175201557
@@ -933,7 +933,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1011984591730028077
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1312,11 +1312,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1919390222426827437}
-  m_Father: {fileID: 2194410880043893711}
+  m_Father: {fileID: 7401957506589870106}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -213}
+  m_AnchoredPosition: {x: 0, y: 105}
   m_SizeDelta: {x: 83.5349, y: 28.8836}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6365531700702779138
@@ -1464,6 +1464,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tmp: {fileID: 4296741337459052320}
+  over: {fileID: 0}
+  realQuit: {fileID: 0}
 --- !u!114 &8672234502894939975
 MonoBehaviour:
   m_ObjectHideFlags: 0
