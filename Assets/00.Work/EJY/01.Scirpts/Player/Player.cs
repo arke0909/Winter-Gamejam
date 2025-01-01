@@ -1,24 +1,33 @@
+using GGMPool;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player : MonoBehaviour
 {
-    [field : SerializeField]  public InputReader InputCompo {  get; private set; }
+    [SerializeField] private Transform _firePos;
+
+    [SerializeField] private PoolManagerSO poolManager;
+    [SerializeField] private PoolTypeSO poolType;
+
+    [field: SerializeField] public InputReader InputCompo { get; private set; }
 
     private Dictionary<Type, IPlayerComponent> _components;
     private PlayerMover _playerMover;
 
+    public bool IsShot { get; private set; } = false;
+
     private void Awake()
     {
         _components = new Dictionary<Type, IPlayerComponent>();
-        _playerMover = GetComponent<PlayerMover>();
+        _playerMover = GetComponentInChildren<PlayerMover>();
+
+        InputCompo.OnAttackEvent += Fire;
 
         SetComponent();
     }
-
-   
 
     private void FixedUpdate()
     {
@@ -49,5 +58,14 @@ public class Player : MonoBehaviour
         }
 
         return default;
+    }
+
+    private void Fire()
+    {
+        Bullet bullet = poolManager.Pop(poolType) as Bullet;
+
+        bullet.Initialize(_firePos.position, _firePos.right);
+
+        InputCompo.OnAttackEvent -= Fire;
     }
 }

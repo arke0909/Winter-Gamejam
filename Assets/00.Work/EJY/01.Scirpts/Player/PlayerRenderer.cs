@@ -1,29 +1,32 @@
-using System;
 using UnityEngine;
 
 public class PlayerRenderer : MonoBehaviour, IPlayerComponent
 {
-    private SpriteRenderer _spriteRenderer;
     private Player _player;
     private InputReader _inputReader;
 
     public void Initialize(Player player)
     {
         _player = player;
-    }
-
-    private void Awake()
-    {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _inputReader = _player.GetCompo<InputReader>();
     }
 
     private void Update()
     {
-        PlayerSpriteFlip();
+        if (_player.IsShot == true) return;
+
+        RotateAndFlip();
     }
 
-    private void PlayerSpriteFlip()
+    private void RotateAndFlip()
     {
-        _spriteRenderer.flipX = _inputReader.MousePos.x > _player.transform.position.x;
+        Vector2 mousePos = _inputReader.MousePos;
+        float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+
+        transform.parent.rotation = Quaternion.Euler(0, 0, angle);
+
+        float scaleY = mousePos.x < _player.transform.position.x ? -1 : 1;
+
+        transform.localScale = new Vector3(1, scaleY, 1);
     }
 }

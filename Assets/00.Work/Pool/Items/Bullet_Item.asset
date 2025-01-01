@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1486e263e7016b643b78c6fb1c6caafd, type: 3}
-  m_Name: SoundPlayer_Item
+  m_Name: Bullet_Item
   m_EditorClassIdentifier: 
-  poolType: {fileID: 11400000, guid: 621c2397049e7014082911c398995f63, type: 2}
-  prefab: {fileID: 5253117105401481651, guid: d6661d553b6bef9429e0dd0be7e4c1db, type: 3}
-  initCount: 5
+  poolType: {fileID: 11400000, guid: b77bb4890723fe440bc4ffa7447a6771, type: 2}
+  prefab: {fileID: 288639611536451263, guid: c3e9afbd0f7e86b4494ba8f70500bae0, type: 3}
+  initCount: 1
