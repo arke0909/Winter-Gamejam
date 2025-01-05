@@ -5,8 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
-  - Ground
-  - Area
+  - ClearCheck
   layers:
   - Default
   - TransparentFX
@@ -17,8 +16,8 @@ TagManager:
   - Player
   - Bullet
   - Target
-  - 
-  - 
+  - CameraCollider
+  - Wall
   - 
   - 
   - 

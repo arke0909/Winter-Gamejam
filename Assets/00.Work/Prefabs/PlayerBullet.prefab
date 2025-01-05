@@ -75,13 +75,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7363a7e05cc8c4e45b5de0ac497f5728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolType: {fileID: 0}
+  poolType: {fileID: 11400000, guid: b77bb4890723fe440bc4ffa7447a6771, type: 2}
   _whatIsEnemy:
     serializedVersion: 2
     m_Bits: 256
   _radius: 5
-  speed: 20
-  rotateSpeed: 1000
+  speed: 16
+  rotateSpeed: 200
   OnDeadEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -196,9 +196,9 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1024178913
+  m_SortingLayer: 4
+  m_SortingOrder: -5
   m_Time: 0.1
   m_PreviewTimeScale: 1
   m_Parameters:
@@ -343,8 +343,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 817071351
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5ad7367d46205e544bb2ad0a37bb348a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

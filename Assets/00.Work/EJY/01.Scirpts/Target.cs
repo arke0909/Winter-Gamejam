@@ -5,6 +5,8 @@ public class Target : MonoBehaviour
 {
     public UnityEvent OnDeadEvent;
 
+    public bool IsDead => _isDead;
+
     private bool _isDead;
 
     private void Awake()

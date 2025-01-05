@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class Gun : MonoBehaviour, IPlayerComponent
 {
-    [SerializeField] private CinemachineCamera _cinemachineCamera;
 
     [SerializeField] private Transform _firePos;
     [SerializeField] private Transform _cameraFollowTrm;
@@ -16,10 +15,12 @@ public class Gun : MonoBehaviour, IPlayerComponent
     public UnityEvent OnFireEvent;
 
     private Player _player;
+    private CinemachineCamera _cinemaChineCamera;
 
     private void Awake()
     {
-        _cinemachineCamera.Follow = _cameraFollowTrm;
+        _cinemaChineCamera = GameManager.Instance.PlayerCam;
+        _cinemaChineCamera.Follow = _cameraFollowTrm;
     }
 
     public void Initialize(Player player)
@@ -37,7 +38,7 @@ public class Gun : MonoBehaviour, IPlayerComponent
 
         _player.InputCompo.OnAttackEvent -= Fire;
 
-        _cinemachineCamera.Follow = bullet.transform;
+        _cinemaChineCamera.Follow = bullet.transform;
 
         OnFireEvent?.Invoke();
     }
