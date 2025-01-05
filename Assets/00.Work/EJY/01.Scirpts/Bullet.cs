@@ -1,7 +1,5 @@
 using GGMPool;
-using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Bullet : MonoBehaviour, IPoolable
 {
@@ -23,8 +21,6 @@ public class Bullet : MonoBehaviour, IPoolable
 
     public GameObject GameObject => gameObject;
 
-    public UnityEvent OnDeadEvent;
-
     private void Awake()
     {
         _rigid = GetComponent<Rigidbody2D>();
@@ -38,6 +34,19 @@ public class Bullet : MonoBehaviour, IPoolable
         _rigid.linearVelocity = dir.normalized * speed;
 
         transform.rotation = Quaternion.FromToRotation(Vector2.right, dir);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("ClearCheck"))
+        {
+            if (GameManager.Instance.ClearManager.Check())
+                GameManager.Instance.OnClearEvent?.Invoke();
+            else
+                GameManager.Instance.OnClearEvent?.Invoke();
+
+            _rigid.linearVelocity = Vector2.zero;
+        }
     }
 
     private void FixedUpdate()
@@ -61,12 +70,6 @@ public class Bullet : MonoBehaviour, IPoolable
         float moveDirAngle = transform.rotation.eulerAngles.z * Mathf.Deg2Rad;
         moveDir = new Vector2(Mathf.Cos(moveDirAngle), Mathf.Sin(moveDirAngle));
         _rigid.linearVelocity = moveDir.normalized * speed;
-    }
-
-    private void SetDead()
-    {
-        _isDead = true;
-        OnDeadEvent?.Invoke();
     }
 
     public void SetUpPool(Pool pool)
