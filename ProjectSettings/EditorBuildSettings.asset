@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
+  - enabled: 0
     path: Assets/00.Work/EJY 1/00.Scene/KAY_StartScene.unity
     guid: 24c97150f7b214c4986ff5066df1c423
   - enabled: 1
