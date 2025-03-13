@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 6458538332432648920}
   - {fileID: 8725376088277741263}
-  m_Father: {fileID: 5380160607864350157}
+  m_Father: {fileID: 1157204602900543308}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5890463934762195842
 MonoBehaviour:
@@ -252,9 +252,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5380160607864350157}
   - component: {fileID: 5367133601693259416}
-  - component: {fileID: 1553744575944130183}
   - component: {fileID: 667587309844997929}
-  m_Layer: 0
+  - component: {fileID: 7430885505895568592}
+  m_Layer: 7
   m_Name: CameraFollowObject
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -273,8 +273,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6061596822810058995}
+  m_Children: []
   m_Father: {fileID: 1157204602900543308}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &5367133601693259416
@@ -304,19 +303,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1553744575944130183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8826854260239216186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90d2484dc5c5bd64f8b84dc35ca4e322, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _moveSpeed: 5
 --- !u!61 &667587309844997929
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -363,6 +349,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.1, y: 0.1}
   m_EdgeRadius: 0
+--- !u!114 &7430885505895568592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826854260239216186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1075ffa8916ca4cbbd160059489f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveSpeed: 15
 --- !u!1 &8860533782341470783
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,6 +372,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1157204602900543308}
   - component: {fileID: 5038081066857035961}
+  - component: {fileID: 6648146681253571065}
+  - component: {fileID: 422742822961651744}
   m_Layer: 0
   m_Name: Player-Gun
   m_TagString: Untagged
@@ -393,6 +394,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6061596822810058995}
   - {fileID: 5380160607864350157}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -409,3 +411,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <InputCompo>k__BackingField: {fileID: 11400000, guid: e790090ef595d5d4496afd3e693722fb, type: 2}
+  playerMover: {fileID: 422742822961651744}
+  camMover: {fileID: 7430885505895568592}
+--- !u!50 &6648146681253571065
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8860533782341470783}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &422742822961651744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8860533782341470783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1075ffa8916ca4cbbd160059489f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveSpeed: 5

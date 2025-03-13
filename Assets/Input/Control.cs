@@ -24,7 +24,7 @@ public partial class @Control: IInputActionCollection2, IDisposable
     ""name"": ""Control"",
     ""maps"": [
         {
-            ""name"": ""_Player"",
+            ""name"": ""Player"",
             ""id"": ""df70fa95-8a34-4494-b137-73ab6b9c7d37"",
             ""actions"": [
                 {
@@ -62,6 +62,15 @@ public partial class @Control: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Mode"",
+                    ""type"": ""Button"",
+                    ""id"": ""75c2dfd7-9526-40f7-b3d5-c2cff7a9806e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -88,31 +97,9 @@ public partial class @Control: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""8180e8bd-4097-4f4e-ab88-4523101a6ce9"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""down"",
                     ""id"": ""320bffee-a40b-4347-ac70-c210eb8bc73a"",
                     ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""1c5327b5-f71c-4f60-99c7-4e737386f1d1"",
-                    ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
@@ -132,31 +119,9 @@ public partial class @Control: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""left"",
-                    ""id"": ""2e46982e-44cc-431b-9f0b-c11910bf467a"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""right"",
                     ""id"": ""fcfe95b8-67b9-4526-84b5-5d0bc98d6400"",
                     ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""77bff152-3580-4b21-b6de-dcd0c7e41164"",
-                    ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
@@ -194,6 +159,17 @@ public partial class @Control: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Mouse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""008a83f1-b64c-4325-aacf-d69b515ec635"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mode"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -292,11 +268,12 @@ public partial class @Control: IInputActionCollection2, IDisposable
     ]
 }");
         // Player
-        m_Player = asset.FindActionMap("_Player", throwIfNotFound: true);
+        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_ESC = m_Player.FindAction("ESC", throwIfNotFound: true);
         m_Player_Mouse = m_Player.FindAction("Mouse", throwIfNotFound: true);
+        m_Player_Mode = m_Player.FindAction("Mode", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_ESC = m_UI.FindAction("ESC", throwIfNotFound: true);
@@ -304,7 +281,7 @@ public partial class @Control: IInputActionCollection2, IDisposable
 
     ~@Control()
     {
-        UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, Control._Player.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, Control.Player.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, Control.UI.Disable() has not been called.");
     }
 
@@ -371,6 +348,7 @@ public partial class @Control: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_ESC;
     private readonly InputAction m_Player_Mouse;
+    private readonly InputAction m_Player_Mode;
     public struct PlayerActions
     {
         private @Control m_Wrapper;
@@ -379,6 +357,7 @@ public partial class @Control: IInputActionCollection2, IDisposable
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @ESC => m_Wrapper.m_Player_ESC;
         public InputAction @Mouse => m_Wrapper.m_Player_Mouse;
+        public InputAction @Mode => m_Wrapper.m_Player_Mode;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -400,6 +379,9 @@ public partial class @Control: IInputActionCollection2, IDisposable
             @Mouse.started += instance.OnMouse;
             @Mouse.performed += instance.OnMouse;
             @Mouse.canceled += instance.OnMouse;
+            @Mode.started += instance.OnMode;
+            @Mode.performed += instance.OnMode;
+            @Mode.canceled += instance.OnMode;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -416,6 +398,9 @@ public partial class @Control: IInputActionCollection2, IDisposable
             @Mouse.started -= instance.OnMouse;
             @Mouse.performed -= instance.OnMouse;
             @Mouse.canceled -= instance.OnMouse;
+            @Mode.started -= instance.OnMode;
+            @Mode.performed -= instance.OnMode;
+            @Mode.canceled -= instance.OnMode;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -530,6 +515,7 @@ public partial class @Control: IInputActionCollection2, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnESC(InputAction.CallbackContext context);
         void OnMouse(InputAction.CallbackContext context);
+        void OnMode(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
