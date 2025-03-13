@@ -13,7 +13,6 @@ public class UISetting : MonoSingleton<UISetting>
     }
 
    
-  
     public void Show()
     {
         settingUI.SetActive(true);
@@ -31,12 +30,12 @@ public class UISetting : MonoSingleton<UISetting>
         Application.Quit();
     }
 
-    public void realShow()
+    public void RealShow()
     {
         realQuit.SetActive(true);
     }
 
-    public void realHide()
+    public void RealHide()
     {
         realQuit.SetActive(false);
     }

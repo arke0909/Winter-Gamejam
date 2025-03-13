@@ -11,6 +11,8 @@ public class InputReader : ScriptableObject, IPlayerActions, IPlayerComponent
 
     public Vector2 InputDir { get; private set; }
 
+    public bool isCamMode;
+
     public Vector2 MousePos
     {
         get
@@ -63,8 +65,15 @@ public class InputReader : ScriptableObject, IPlayerActions, IPlayerComponent
         _mousePos = context.ReadValue<Vector2>();
     }
 
+    public void OnMode(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+            isCamMode = !isCamMode;
+    }
+
     public void Initialize(Player player)
     {
         _player = player;
     }
+
 }

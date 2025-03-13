@@ -10,23 +10,26 @@ public class Player : MonoBehaviour
     
 
     [field: SerializeField] public InputReader InputCompo { get; private set; }
+    [SerializeField] private Mover playerMover;
+    [SerializeField] private Mover camMover;
 
     private Dictionary<Type, IPlayerComponent> _components;
-    private PlayerMover _playerMover;
 
     public bool IsShot { get; private set; } = false;
 
     private void Awake()
     {
         _components = new Dictionary<Type, IPlayerComponent>();
-        _playerMover = GetComponentInChildren<PlayerMover>();
 
         SetComponent();
     }
 
     private void FixedUpdate()
     {
-        _playerMover.SetVelocity(InputCompo.InputDir);
+        if(InputCompo.isCamMode)
+            playerMover.SetVelocity(InputCompo.InputDir);
+        else
+            camMover.SetVelocity(InputCompo.InputDir);
     }
 
     private void SetComponent()
